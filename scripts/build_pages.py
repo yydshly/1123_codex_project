@@ -11,6 +11,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent.parent
 PROJECT = "002-ai-overseas-revenue"
 TOOL_LAB = "004-ai-tool-entry-lab"
+GEO_GUIDE = "005-geo-discovery-guide"
 REPOSITORY = "https://github.com/yydshly/1123_codex_project"
 SOURCE = ROOT / "projects" / PROJECT
 STATIC_SUFFIXES = {
@@ -70,6 +71,7 @@ def build(output):
     copytree(ROOT / "docs", output)
     copy_static_site(SOURCE, output / PROJECT, excluded=LOCAL_ONLY_PAGES, transform_html=public_html)
     copy_static_site(ROOT / "projects" / TOOL_LAB / "web", output / TOOL_LAB)
+    copy_static_site(ROOT / "projects" / GEO_GUIDE / "web", output / GEO_GUIDE)
 
 
 if __name__ == "__main__":

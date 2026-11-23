@@ -8,6 +8,7 @@ on:
       - 'docs/**'
       - 'projects/002-ai-overseas-revenue/**'
       - 'projects/004-ai-tool-entry-lab/**'
+      - 'projects/005-geo-discovery-guide/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 

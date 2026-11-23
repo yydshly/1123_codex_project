@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从 Next Token Skill 的播客检索出发，用 AI 视频角色一致性实测练习跨站查证，再把方法用于 SEO 与 GEO，让还不知道产品名的人也能按需求找到它。">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="从 Next Token Skill 到 GEO｜搜索与产品发现">
+  <meta property="og:description" content="用 AI 视频角色一致性实测串起网页检索、SEO、GEO 与无品牌词验证，让用户有机会按需求发现产品。">
+  <meta property="og:url" content="https://yydshly.github.io/1123_codex_project/005-geo-discovery-guide/">
+  <meta property="og:image" content="https://yydshly.github.io/1123_codex_project/005-geo-discovery-guide/seo-geo-overview.png">
+  <meta property="og:image:alt" content="搜索、SEO 与 GEO 引导图，概括研究方法、发现效果、核心价值及五个产品方向。">
+  <link rel="canonical" href="https://yydshly.github.io/1123_codex_project/005-geo-discovery-guide/">
+  <title>从 Next Token Skill 到 GEO｜搜索与产品发现</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="guide.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="搜索与 GEO 指南首页"><span class="brand-mark" aria-hidden="true"></span>搜索与 GEO 指南</a>
+      <nav class="main-nav" aria-label="目录">
+        <a href="#opportunities">产品方向</a>
+        <a href="#research">怎么搜</a>
+        <a href="#geo">GEO 的价值</a>
+        <a href="#launch">怎么发布</a>
+        <a href="#sources">来源索引</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">从 Next Token Skill 的播客检索出发</p>
+        <h1 id="hero-title">从资料检索<br>到 <span>SEO 与 GEO</span></h1>
+        <p class="hero-description">Next Token Skill 让我们看到，播客逐字稿可以按问题检索。我们用 AI 视频角色一致性做了一次跨站查证，练习从原文、样片和失败记录里判断什么值得引用。</p>
+        <p class="hero-description">把问题反过来，就得到 SEO 和 GEO 的价值。<strong>当用户只描述需求，还不知道产品名时，也有机会在搜索结果或 AI 回答里发现产品。</strong>这份指南记录怎么发布证据、怎么验证效果，以及能延伸出哪些产品。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#opportunities">看产品方向与价值</a>
+          <a class="button button-secondary" href="#research">从搜索开始</a>
+        </div>
+      </div>
+      <figure class="hero-overview">
+        <a class="hero-preview" href="seo-geo-overview.png">
+          <img src="seo-geo-overview.png" width="2560" height="2784" alt="搜索、SEO 与 GEO 引导图，从 Next Token Skill 的检索起点到发布、复测和五个产品方向，点击查看原图">
+        </a>
+        <figcaption>研究引导图 · 点击查看高清原图</figcaption>
+      </figure>
+    </section>
+
+    <section class="quick-links shell" aria-label="三个核心问题">
+      <a href="#research"><span class="quick-label">找资料</span><strong>如何搜索，搜哪些？</strong><span>网页搜索、RSS、实测和来源入口。</span></a>
+      <a href="#geo"><span class="quick-label">理解 GEO</span><strong>GEO 是什么，有什么价值？</strong><span>用户还不知道你的名字，也可能通过需求发现你。</span></a>
+      <a href="#launch"><span class="quick-label">发布内容</span><strong>发布后，怎么被搜到？</strong><span>把用户问题变成公开内容，再核对搜索和推荐结果。</span></a>
+    </section>
+
+    <section class="chapter shell opportunities" id="opportunities" aria-labelledby="opportunities-title">
+      <div class="section-head">
+        <h2 id="opportunities-title">可以做哪些产品？</h2>
+        <p>每个方向都标出了它从哪项 Skill 或能力延伸。Next Token Skill 提供了固定来源同步和本地检索的基础，其他方向来自这次调研用到的搜索、实测和发布验证方法。</p>
+      </div>
+
+      <div class="two-columns">
+        <article class="card opportunity-feature">
+          <p class="eyebrow">优先验证</p>
+          <h3>AI 视频实测选型库</h3>
+          <dl class="capability-map">
+            <dt>对应能力</dt>
+            <dd><a href="#search-queries">跨站搜索</a>和实测证据筛选</dd>
+          </dl>
+          <p>帮短剧创作者回答「双人对话容易串脸，我该用哪个工具？」用同一套参考图测试多个模型，公开成功和失败样片，记录<strong>生成几次才拿到一条可用镜头</strong>。</p>
+          <div class="link-row"><a href="#evidence">查看实测案例</a></div>
+        </article>
+        <article class="card opportunity-feature">
+          <p class="eyebrow">有审片需求时延伸</p>
+          <h3>角色一致性验收工具</h3>
+          <dl class="capability-map">
+            <dt>对应能力</dt>
+            <dd><a href="#evidence">参考图与输出样片对照</a>，逐镜头记录失败</dd>
+          </dl>
+          <p>帮短剧团队在一批镜头里找出变脸、换衣服、道具接不上的片段。第一版并排展示参考图和视频关键帧，由人标记问题时间点，再导出待重做清单。</p>
+        </article>
+      </div>
+
+      <div class="opportunity-grid">
+        <article class="card">
+          <h3>多来源实测订阅</h3>
+          <dl class="capability-map">
+            <dt>对应 Skill</dt>
+            <dd><a href="#research">Next Token Skill</a> 的 RSS 同步和本地检索</dd>
+          </dl>
+          <p>把单站同步扩展到多位可信作者，再用网页搜索补充。每期筛出几条能改变工具选择的实测，附原文、样片和适用条件。</p>
+        </article>
+        <article class="card">
+          <h3>GEO 发布与复测工具</h3>
+          <dl class="capability-map">
+            <dt>对应能力</dt>
+            <dd><a href="#geo">GEO 需求研究</a>和<a href="#verify">无品牌词复测</a></dd>
+          </dl>
+          <p>帮独立产品团队找出用户会问什么、AI 常引哪一页、自己还缺什么材料。第一版生成无品牌词测试题，给出一页值得补的实测或文档，再记录发布前后的回答。</p>
+        </article>
+        <article class="card">
+          <h3>网站可发现性检查</h3>
+          <dl class="capability-map">
+            <dt>对应能力</dt>
+            <dd><a href="#launch">技术 SEO</a>，包括 HTML 正文和爬虫访问检查</dd>
+          </dl>
+          <p>帮网站发布者确认搜索引擎能否读到内容。输入网址，检查初始 HTML 正文、抓取规则、站内链接和站点地图，按影响排序给出修复项。</p>
+        </article>
+      </div>
+
+      <div class="value-strip opportunity-test">
+        <h3>先用一个双人对话专题验证</h3>
+        <p>用一套自有角色图对比两个模型，公开全部结果和采用理由。<strong>有人反复回来查新场景</strong>，就继续扩充选型库。<strong>有人带自己的素材来判断哪些镜头要重做</strong>，就优先试做验收工具。</p>
+      </div>
+
+      <details class="diagnosis">
+        <summary>现有产品做到了哪里？</summary>
+        <p>Feedly 已支持多源订阅和过滤，Artificial Analysis 已做视频模型盲测，Frame.io 已能逐帧批注。Peec 与 Webflow 也覆盖了 AI 引用追踪和内容缺口分析。可以先验证一个更具体的任务，例如同一套角色素材做某种镜头时，哪款成功率更高、哪些片段需要重做。</p>
+        <div class="link-row">
+          <a href="https://docs.feedly.com/article/699-guide-to-ai-feeds-market-intel">Feedly 订阅过滤</a>
+          <a href="https://artificialanalysis.ai/methodology/video">Artificial Analysis 盲测</a>
+          <a href="https://help.frame.io/en/articles/9105251-commenting-on-your-media">Frame.io 审片</a>
+          <a href="https://help.peec.ai/article/how-can-i-use-the-gap-analysis-n30lo9nkvic996mhf0lg6qq7">Peec 内容缺口</a>
+          <a href="https://help.webflow.com/hc/en-us/articles/51704193319955-AEO-agents-overview">Webflow 发布建议</a>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter shell" id="research" aria-labelledby="research-title">
+      <div class="section-head">
+        <p class="eyebrow">资料发现</p>
+        <h2 id="research-title">如何搜索，搜哪些？</h2>
+        <p>订阅解决「熟悉的作者最近发了什么」，网页搜索解决「名单外是否有人真正做过这件事」。</p>
+      </div>
+
+      <div class="two-columns">
+        <article class="card">
+          <h3>固定来源 · Next Token Skill</h3>
+          <p>原版查询的范围是「Next Token｜词元之外」官网。脚本读节目 RSS 和博客 RSS，抓取逐字稿，存到本地 SQLite，再按关键词和别名检索。Agent 负责归纳观点，链接来自原稿。部分时间戳是近似位置。</p>
+          <p><strong>适合重复查询</strong>同一档节目里的发言人、期号、跨期观点和原话。可用 <code>search</code> 找段落、<code>timeline</code> 看前后观点、<code>brief</code> 汇集专题。其他博客需要接各自的 RSS、API 或网页读取方式。</p>
+          <div class="link-row">
+            <a href="https://github.com/next-token-tv/next-token-skill">GitHub 仓库</a>
+            <a href="https://nexttoken.tv/weekly/rss.xml">节目 RSS</a>
+            <a href="https://nexttoken.tv/blog/rss.xml">博客 RSS</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>开放来源 · 网页搜索</h3>
+          <p>这次角色一致性调研用内置网页搜索临时找资料，先按主题查，再打开作者原文。底层搜索引擎未显示。视频通常是顺着原文找到的 X、YouTube 或文章内播放器。</p>
+          <p><strong>适合彼此补证</strong>，比如用同参考图评测看模型差异，用导演复盘看真实制作流程，用官方文档核对输入限制。</p>
+          <div class="link-row">
+            <a href="#search-queries">查看搜索词</a>
+            <a href="#evidence">查看实测例子</a>
+            <a href="#sources">查看查到的来源</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-block" id="search-queries">
+        <h3>先搜主题，再加模型和证据词</h3>
+        <p class="block-description">先查「AI 视频角色一致性」找到常用说法和工具，再把模型名、场景和证据词加进查询。优先打开作者博客、公开测评和官方文档，沿原文找到样片。</p>
+        <div class="snippet-list">
+          <div class="snippet"><span>同参考图对照</span><code id="search-compare">Seedance 2.5 vs Kling 4.0 character consistency creator test video identical reference</code><button type="button" data-copy="search-compare">复制</button></div>
+          <div class="snippet"><span>中文多镜头实测</span><code id="search-chinese">即梦 Seedance 2.0 一致性 实测 角色 脸 失败 多镜头 B站 创作者</code><button type="button" data-copy="search-chinese">复制</button></div>
+          <div class="snippet"><span>保留已有表演</span><code id="search-performance">Luma Ray3 Modify character reference preserves performance</code><button type="button" data-copy="search-performance">复制</button></div>
+        </div>
+      </div>
+
+      <div class="value-strip">
+        <h3>怎么筛掉噪音</h3>
+        <p>优先留<strong>交代输入、能对照输出、有失败细节</strong>的资料。重复转载回到首发。一次成功证明可行，多次尝试才有条件估算稳定性。厂商文档用来确认功能与限制，原始样片和作者记录用来判断效果。</p>
+      </div>
+      <section class="support-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="support-head">
+          <h3 id="evidence-title">搜索案例 · 角色一致性实测</h3>
+          <p>输入素材和输出样片分别标明。这里汇集公开案例与作者记录，作为选型线索和测试设计参考。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <p class="evidence-type">跨场景短剧 · 制作复盘</p>
+            <h4>先定角色，再定每个镜头的首帧</h4>
+            <p>《CATACOMBES》用正面、侧面、背面与特写建立角色参考。角色受伤后，导演先更新参考图，再用各镜头首帧生视频，最后筛选剪辑。适合跨地点、跨集反复使用同一角色。</p>
+            <p class="caveat">成片展示整套流程可用于长片，成片包含多次生成和人工选片。</p>
+            <div class="link-row"><a href="https://www.ecoledesvideastes.com/blog/catacombes-court-metrage-ia">导演复盘和角色图</a><a href="https://www.youtube.com/watch?v=jQdu9nNahJ8">完整成片</a></div>
+          </article>
+          <article class="evidence-card">
+            <p class="evidence-type">多人对话 · 同输入对照</p>
+            <h4>同一组角色图生成一场对话</h4>
+            <p>秋吉雅史把上部短剧的三位角色和新剧本给可灵 4.0 与 Seedance 2.5，各生成一次 30 秒办公室段落。作者记录中两款都保住了三人身份，仍出现重复台词、读错名字或多切镜头。</p>
+            <p class="caveat">适合初测多人对话。脸、台词归属和分镜需要分别核对。</p>
+            <div class="link-row"><a href="https://note.com/akiyoshisanbass/n/ne1973d20d76f?hl=en">对照原文第 3 节</a><a href="https://x.com/akiyoshisan/status/2111725657780810108">原始样片</a><a href="https://cellcog.ai/blog/seedance-2-5-vs-kling-4-0/">CellCog 对照测试</a></div>
+          </article>
+          <article class="evidence-card">
+            <p class="evidence-type">单图参考 · 场景相关结果</p>
+            <h4>一张头像能生成转头和新场景</h4>
+            <p>ZOOOP 给两个模型同一张虚构头像做雨夜转头，可灵末帧更接近原脸。另一组公交、办公室、住宅的对照里，两款都让角色保持可辨认，Seedance 的场景表现更自然。</p>
+            <p class="caveat">两组任务不同，各自只有单次样本；第二组是 OpenArt 赞助测试。</p>
+            <div class="link-row"><a href="https://zooop.ai/blog/kling-4-vs-seedance-2-5">雨夜样片与末帧</a><a href="https://www.youtube.com/watch?v=saUoEpQBVGk&amp;t=845s">三场景样片</a></div>
+          </article>
+          <article class="evidence-card">
+            <p class="evidence-type">保留动作 · 视频到视频</p>
+            <h4>已有真人表演时，改角色外形</h4>
+            <p>Oliver Korzen 用自己出镜的片段测试 Luma Ray3 Modify，把外形换成绿巨人，原动作和节奏仍可辨认。这里有输入视频，适合已经拍好表演、还要调整外形的情况。</p>
+            <p class="caveat">这个版本的官方 FAQ 给出的单段上限是 10 秒。</p>
+            <div class="link-row"><a href="https://www.thisweekinai.ai/p/this-ai-video-model-actually-preserves">创作者原文</a><a href="https://www.youtube.com/watch?v=rutaRUz4Xb8">换角色演示</a><a href="https://lumalabs.ai/learning-hub/ray3-modify-faqs">官方规格</a></div>
+          </article>
+        </div>
+        <div class="value-strip">
+          <h4>用自己的角色比较工具</h4>
+          <p>先选最难的三个镜头，例如近景、侧身回头、换光后的双人同框。用相同参考素材和设置，在候选模型上各跑三次，记录脸、服装、台词归属和道具连续性。优先比较<strong>有几条能剪进成片</strong>，再比较生成和返工成本。</p>
+        </div>
+        <p class="field-note"><strong>试用前确认素材入口。</strong> BytePlus 文档列明 Seedance 2.0 与 2.5 对直接上传真人脸的限制。不同入口按其公开规则核对。<a href="https://docs.byteplus.com/en/docs/ModelArk/create-video-generation-task-api">查看 BytePlus 文档</a></p>
+      </section>
+    </section>
+
+    <section class="chapter shell" id="geo" aria-labelledby="geo-title">
+      <div class="section-head">
+        <p class="eyebrow">GEO 与搜索算法</p>
+        <h2 id="geo-title">GEO 是什么，有什么价值？</h2>
+        <p>GEO 是生成式引擎优化。目标是当 AI 回答一个与你相关的问题时，你的内容有机会被引用，或你的产品有机会成为它给出的选项。</p>
+      </div>
+
+      <div class="two-columns">
+        <article class="card">
+          <h3>传统搜索让人找到网页</h3>
+          <p>搜产品名的人想找官网和入口，搜具体问题的人想找做法和样片。SEO 帮这些网页出现在相关搜索结果里，让人点进来查看。</p>
+        </article>
+        <article class="card">
+          <h3>还不认识你的人也能发现你</h3>
+          <p>用户只问「双人对话怎么减少串脸」。如果 AI 找到你的实测，能说清工具适合谁、有哪些限制并给出原文，你的产品就有机会进入用户的候选名单。</p>
+        </article>
+      </div>
+      <div class="value-strip">
+        <h3>平台用算法决定展示和引用</h3>
+        <p>搜索引擎会判断意图，从索引里找相关页面并排序。部分 AI 搜索还会拆成几个查询，再结合找到的材料生成回答。发布者可以提高页面的可访问性、相关性与证据质量，平台决定具体排名、引用和推荐。</p>
+        <div class="link-row"><a href="https://arxiv.org/abs/2311.09735">GEO 原论文</a><a href="https://www.google.com/intl/en_us/search/howsearchworks/how-search-works/ranking-results/">搜索排序说明</a><a href="https://developers.google.com/search/docs/appearance/ai-features">AI 搜索指南</a></div>
+      </div>
+    </section>
+
+    <section class="chapter shell" id="launch" aria-labelledby="launch-title">
+      <div class="section-head">
+        <p class="eyebrow">发布与推广</p>
+        <h2 id="launch-title">发布后，怎么更容易被搜到？</h2>
+        <p>先研究用户会怎么问，看看已有结果缺什么。把你能证明的答案发布到用户常去的平台，再用同一批问题复测。</p>
+      </div>
+
+      <ol class="work-plan">
+        <li><h3>选一个需求</h3><p>从用户原话、搜索联想或 Search Console 找候选词。实际查「双人对话怎么避免串脸」，看结果给了怎样的素材、方法和证据。已经有案例时，可以反推它能回答哪个真实问题。</p></li>
+        <li><h3>写场景页和实测页</h3><p>场景页说清适用人群、预期效果与试用入口。实测页记录参考图、日期、模型版本、生成总数、可用数量、失败镜头和限制。</p></li>
+        <li><h3>让页面可以抓取</h3><p>正文、关键结论和素材说明直接进 HTML。用稳定网址、站内链接和站点地图。内容相对固定可用 SSG，按请求生成的公开内容可考虑 SSR。视频播放器和 3D 交互可以单独加载。</p></li>
+        <li><h3>选一个主发布渠道</h3><p>先找目标用户最常用的入口。早期选一个渠道做完整的对照内容，观察用户从看到案例到试用的路径。付费测试按有效试用、线索或付费成本评估。</p></li>
+      </ol>
+
+      <div class="example-panel">
+        <div>
+          <p class="eyebrow">场景页示例</p>
+          <h3>AI 短剧双人对话怎么减少串脸？</h3>
+          <p>把两位角色的参考图、双人同框结果和失败镜头放在一页。让读者能够用示例素材试一遍，并知道要核对脸、衣服、谁在说话和动作是否接得上。</p>
+        </div>
+        <div class="example-urls">
+          <div><span>场景页</span><code>/use-cases/consistent-character</code></div>
+          <div><span>实测页</span><code>/tests/character-consistency</code></div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3>每个平台发布什么</h3>
+        <dl class="platform-plan">
+          <div><dt>官网</dt><dd>给场景页和实测页各一个公开网址。标题用用户问题，正文给步骤、证据和试用入口。检查可抓取性和收录。</dd></div>
+          <div><dt>B 站或 YouTube</dt><dd>发布参考图和样片对照。标题写场景，简介和字幕写清用了什么工具、做到了什么，按平台规则提供完整实测入口。</dd></div>
+          <div><dt>创作者博客或垂直社区</dt><dd>请创作者用自己的素材做一次完整实测，发布使用条件、失败镜头和判断。产品名和署名保持一致，便于回搜。</dd></div>
+        </dl>
+      </div>
+
+      <div class="link-row section-links">
+        <a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics">JavaScript 抓取指南</a>
+        <a href="https://developers.google.com/search/docs/appearance/ai-features">Google AI 搜索指南</a>
+        <a href="https://developers.openai.com/api/docs/bots">OpenAI 搜索爬虫</a>
+        <a href="#verify">用无品牌词复测</a>
+      </div>
+
+      <section class="support-section" id="verify" aria-labelledby="verify-title">
+        <div class="support-head">
+          <h3 id="verify-title">发布后验证 · 用无品牌词测试推荐</h3>
+          <p>发布前记基线。每题在每个平台开独立会话跑三次。固定语言、地区和联网模式，保留日期、完整回答与引用链接。</p>
+        </div>
+
+        <div class="verify-grid">
+          <div class="card verify-questions">
+            <h4>可复制的测试题</h4>
+            <ol class="prompt-list" id="test-questions">
+              <li>有哪些 AI 视频工具能让同一个角色跨三个场景保持一致？</li>
+              <li>只有一张角色图，想拍正脸、侧脸和背身回头，哪个工具适合？</li>
+              <li>做双人对话短剧，想减少串脸，有哪些工具有实测样片？</li>
+              <li>有现成的演员表演视频，想保留手势节奏并替换角色外形，可以用什么？</li>
+              <li>想拍夜景近景和白天全身镜头，有没有维护同一套角色参考图的做法？</li>
+              <li>一部多集 AI 短剧，怎么设计测试来判断角色一致性是否可用？</li>
+            </ol>
+            <button class="button button-secondary" type="button" data-copy="test-questions">复制全部测试题</button>
+          </div>
+          <div class="verify-aside">
+            <article class="card result-card">
+              <h4>分开记录三种结果</h4>
+              <dl class="metrics">
+                <div><dt>品牌提及</dt><dd>回答有没有主动说出产品名</dd></div>
+                <div><dt>准确推荐</dt><dd>明确建议它并说对适用场景</dd></div>
+                <div><dt>引用页面</dt><dd>记录官网或第三方来源的具体网址</dd></div>
+              </dl>
+              <p class="sample-note">记分示例 · 18 次中提及 4 次，准确推荐 2 次，分别记 4/18 和 2/18。</p>
+            </article>
+            <article class="card">
+              <h4>把推荐与业务结果接起来</h4>
+              <p>站长报告看展示和引用。推广链接加 UTM，查看到站、试用、第一次成功导出和付费。人工复测用来核对实际推荐内容。</p>
+              <div class="link-row"><a href="https://support.google.com/webmasters/answer/16984139">Google AI 效果报告</a><a href="https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c">Bing AI Performance</a><a href="https://support.google.com/analytics/answer/10917952">UTM 来源追踪</a></div>
+            </article>
+          </div>
+        </div>
+
+        <details class="diagnosis">
+          <summary>按结果诊断下一步</summary>
+          <dl>
+            <div><dt>网页还没被收录</dt><dd>先核对公开访问、HTML 正文、站内链接和站点地图。</dd></div>
+            <div><dt>有展示或引用，产品很少被推荐</dt><dd>对照问法检查页面是否解决了对应场景，并补能直接支撑建议的实验。</dd></div>
+            <div><dt>有访问，用户拿不到第一次结果</dt><dd>检查试用要求、等待时间、输出质量，以及推广演示与实际体验是否一致。</dd></div>
+          </dl>
+        </details>
+      </section>
+    </section>
+
+    <section class="chapter shell" id="sources" aria-labelledby="sources-title">
+      <div class="section-head">
+        <p class="eyebrow">来源与工具</p>
+        <h2 id="sources-title">来源索引</h2>
+        <p>按用途找原文、订阅入口、样片和官方文档。</p>
+      </div>
+      <div class="source-toolbar" id="source-toolbar" hidden>
+        <div class="filters" role="group" aria-label="筛选来源类型">
+          <button type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-filter="subscribe" aria-pressed="false">订阅与检索</button>
+          <button type="button" data-filter="study" aria-pressed="false">实测与样片</button>
+          <button type="button" data-filter="publish" aria-pressed="false">发布与抓取</button>
+          <button type="button" data-filter="measure" aria-pressed="false">验证与数据</button>
+        </div>
+        <label class="search-field"><span class="query-icon" aria-hidden="true"></span><span class="visually-hidden">搜索来源</span><input id="source-search" type="search" placeholder="搜索来源，例如 Seedance" autocomplete="off"></label>
+        <p id="source-count" class="visually-hidden" aria-live="polite"></p>
+      </div>
+      <p class="empty-state" id="source-empty" hidden>没有匹配来源。可以换个关键词或选择「全部」。</p>
+      <div class="source-grid" id="source-list">
+        <article data-category="subscribe" class="source-card"><h3>Next Token Skill</h3><p>播客本地检索实现和用法。节目 RSS 发现更新，博客 RSS 抓取文章。</p><div class="link-row"><a href="https://github.com/next-token-tv/next-token-skill">仓库</a><a href="https://nexttoken.tv/weekly/rss.xml">节目 RSS</a><a href="https://nexttoken.tv/blog/rss.xml">博客 RSS</a><a href="https://nexttoken.tv/weekly">节目列表</a></div></article>
+        <article data-category="subscribe" class="source-card"><h3>创作者与通讯 RSS</h3><p>通过 Note 作者主页的菜单取 RSS。This Week in AI 提供公开 feed。</p><div class="link-row"><a href="https://www.help-note.com/hc/ja/articles/900001001246">Note RSS 说明</a><a href="https://www.thisweekinai.ai/feed">This Week in AI RSS</a><a href="https://support.substack.com/hc/en-us/articles/360038239391-Is-there-an-RSS-feed-for-my-publication">Substack RSS 说明</a></div></article>
+        <article data-category="study" class="source-card"><h3>秋吉雅史 · 可灵与 Seedance</h3><p>同提示、同参考图的一次生成对照。第 3 节是三人办公室短剧，第 5 节是动作参考。</p><div class="link-row"><a href="https://note.com/akiyoshisanbass/n/ne1973d20d76f?hl=en">制作原文</a><a href="https://x.com/akiyoshisan/status/2111725657780810108">三人短剧样片</a></div></article>
+        <article data-category="study" class="source-card"><h3>ZOOOP · 单图雨夜对照</h3><p>文章第 2 轮有同一参考头像、两段输出和末帧对比。</p><div class="link-row"><a href="https://zooop.ai/blog/kling-4-vs-seedance-2-5">同图对照与样片</a></div></article>
+        <article data-category="study" class="source-card"><h3>CellCog · 十项实测</h3><p>公开提示词和各模型单次结果，双人对话与动作迁移可以直接对照。</p><div class="link-row"><a href="https://cellcog.ai/blog/seedance-2-5-vs-kling-4-0/">测试和视频</a></div></article>
+        <article data-category="study" class="source-card"><h3>Youri · 角色换地点</h3><p>公交、办公室和住宅三场景对照。来源为创作者视频与 JQ Visions 复盘。</p><div class="link-row"><a href="https://visions.joaoqueiros.com/blog/kling-4-0-vs-seedance-2-5-six-prompt-test-openart/">实测复盘</a><a href="https://www.youtube.com/watch?v=saUoEpQBVGk&amp;t=845s">测试片段</a></div></article>
+        <article data-category="study" class="source-card"><h3>《CATACOMBES》导演复盘</h3><p>完整短片、角色设定图和逐镜头首帧方法。</p><div class="link-row"><a href="https://www.ecoledesvideastes.com/blog/catacombes-court-metrage-ia">制作原文</a><a href="https://www.youtube.com/watch?v=jQdu9nNahJ8">成片</a></div></article>
+        <article data-category="study" class="source-card"><h3>Oliver Korzen · Luma</h3><p>用已有视频替换人物外形，同时保留可辨认的原动作节奏。</p><div class="link-row"><a href="https://www.thisweekinai.ai/p/this-ai-video-model-actually-preserves">作者实测</a><a href="https://www.youtube.com/watch?v=rutaRUz4Xb8">演示</a><a href="https://lumalabs.ai/learning-hub/ray3-modify-faqs">Luma FAQ</a></div></article>
+        <article data-category="study" class="source-card"><h3>模型规格 · 可灵与 Seedance</h3><p>用于核对输入方式和产品入口限制。</p><div class="link-row"><a href="https://ir.kuaishou.com/zh-hans/news-releases/news-release-details/kelingaixinyidaimoxingklin1g-40zhengshishangxian/">可灵 4.0</a><a href="https://docs.byteplus.com/en/docs/ModelArk/seedance-2-5">Seedance 2.5</a><a href="https://docs.byteplus.com/en/docs/ModelArk/create-video-generation-task-api">素材输入规范</a></div></article>
+        <article data-category="publish" class="source-card"><h3>Google 搜索与 GEO</h3><p>了解发现、索引、排序与 AI 答案如何找支持来源。</p><div class="link-row"><a href="https://developers.google.com/search/docs/fundamentals/how-search-works">搜索工作原理</a><a href="https://developers.google.com/search/docs/appearance/ai-features">AI 搜索</a><a href="https://arxiv.org/abs/2311.09735">GEO 原论文</a></div></article>
+        <article data-category="publish" class="source-card"><h3>网页渲染与爬虫</h3><p>核对 HTML、SSR 与静态生成、站点地图和 OAI-SearchBot。</p><div class="link-row"><a href="https://web.dev/articles/rendering-on-the-web">渲染方式</a><a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics">JS 抓取</a><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap">站点地图</a><a href="https://developers.openai.com/api/docs/bots">OpenAI 爬虫</a></div></article>
+        <article data-category="publish" class="source-card"><h3>频道分发与内容质量</h3><p>将场景、使用证据和可信作者信息写清楚，再选择分发平台。</p><div class="link-row"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Google 内容指南</a><a href="https://support.google.com/youtube/answer/16090438">YouTube 搜索</a><a href="https://www.ycombinator.com/library/4D-yc-s-essential-startup-advice">YC 早期建议</a></div></article>
+        <article data-category="measure" class="source-card"><h3>抓取检查与 AI 展示</h3><p>看网页是否收录、实际查询有哪些，以及 AI 搜索展示了哪些页面。</p><div class="link-row"><a href="https://support.google.com/webmasters/answer/9012289?hl=zh-Hans">网址检查</a><a href="https://support.google.com/webmasters/answer/7576553?hl=zh-Hans">搜索效果</a><a href="https://support.google.com/webmasters/answer/16984139">生成式 AI 效果</a></div></article>
+        <article data-category="measure" class="source-card"><h3>推荐复测与来源追踪</h3><p>用临时聊天减少个性化影响，用站长报告和来源标记补充观察。</p><div class="link-row"><a href="https://help.openai.com/en/articles/8914046-temporary-chat-in-chatgpt">ChatGPT 临时聊天</a><a href="https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c">Bing AI 引用</a><a href="https://support.google.com/analytics/answer/10917952">UTM</a><a href="https://support.google.com/google-ads/answer/1722054">广告转化</a></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><p>搜索与 GEO 实战指南</p><a href="#top">回到顶部</a></div></footer>
+  <p class="toast" id="feedback" role="status" aria-live="polite"></p>
+</body>
+</html>
