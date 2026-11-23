@@ -20,6 +20,7 @@
 | 010 | [Reddit 运营实战研究](projects/010-reddit-ops-research/README.md) | 整理 13 位中文创作者的 37 条运营资料，核对 3 个版块与 12 条 AI 视频角色相关原帖，提炼 5 类重复痛点。把双人对白问题做成首轮对照测试，用创作者实际选型和重做判断决定先做选型库还是镜头验收工具。 | [引导图](#reddit-运营实战引导图) | [在线研究网页](https://yydshly.github.io/1123_codex_project/010-reddit-ops-research/) |
 | 011 | [用 AI 复盘项目的历史 bug](projects/011-ai-bug-history/README.md) | 从当前仓库的提交、旧修复和审查评论中找出反复出现的故障，验证它们是否有共同根因。把最值得修的共用逻辑改成可执行的约束，再用旧案例检验它能否拦住同类问题。 | [引导图](#ai-复盘历史-bug-引导图) | 未部署 |
 | 012 | [开源实时数字人研究](projects/012-realtime-avatar-research/README.md) | 对照 LiveTalking 的本地口型引擎、赛博小雅的 Vidu 互动舞台和 Gary AI 的直播间工作台，说明各自需要的素材、服务和可复用能力。再用三种本地单图模型判断口播、可控表情和指令动作分别适合哪条路线。 | [引导图](#开源实时数字人引导图) | 未部署 |
+| 013 | [AI 时代值得做的小团队 App](projects/013-paid-app-workflows/README.md) | 从 App Store 营收估算追到公开实收和客户原评，再拆解摄影师从 NAS、网盘发图到回找原片的流程。优先验证能减少返工的环节，尤其是定制订单中把客户确认的那一版准确交给生产。 | [引导图](#ai-时代小团队-app-研究引导图) | 未部署 |
 
 ## Motion2MixamoRig 引导图
 
@@ -92,6 +93,12 @@
 [![实时数字人引导图，比较 LiveTalking、赛博小雅和 Gary AI 的本质、能力与价值，并列出三种本地单图模型](projects/012-realtime-avatar-research/images/realtime-avatar-projects.png)](projects/012-realtime-avatar-research/images/realtime-avatar-projects.png)
 
 图中对照谁负责画面、声音和回复，以及我们能复用的是口型能力、互动表演还是直播间调度。 [研究详情](projects/012-realtime-avatar-research/README.md) · [高清 PNG](projects/012-realtime-avatar-research/images/realtime-avatar-projects.png)
+
+## AI 时代小团队 App 研究引导图
+
+[![小团队 App 研究引导图，汇总营收证据、摄影交付流程、值得试单的行业环节和验证方法](projects/013-paid-app-workflows/images/ai-app-research-map.png)](projects/013-paid-app-workflows/images/ai-app-research-map.png)
+
+从客户已经在做的事出发，比较哪一步能省工时、避免返工或推进成交。我们的首选是用真实定制订单验证客户确认稿与生产原件能否准确交接。 [研究详情](projects/013-paid-app-workflows/README.md) · [高清 PNG](projects/013-paid-app-workflows/images/ai-app-research-map.png)
 
 ## 收录约定
 
