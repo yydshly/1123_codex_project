@@ -7,6 +7,7 @@ on:
       - '.github/workflows/pages.yml'
       - 'docs/**'
       - 'projects/002-ai-overseas-revenue/**'
+      - 'projects/004-ai-tool-entry-lab/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>真实论文数字校对 · 无书签演示</title>
+  <link rel="stylesheet" href="../scan-review/review.css">
+  <link rel="stylesheet" href="paper.css">
+  <script src="samples.generated.js" defer></script>
+  <script src="../scan-review/office.js" defer></script>
+  <script src="matching.js" defer></script>
+  <script src="paper.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="back" href="../scan-review/index.html">‹ 角色扫描原型</a>
+      <span class="brand">公式与表格校对</span>
+      <span class="privacy"><span aria-hidden="true"></span> 浏览器内处理</span>
+    </div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">没有书签，怎么对上论文数字</h1>
+      <p>用 Palmer Penguins 论文和公开数据，实测正文、表格和图注如何找到 Excel 来源。</p>
+      <div class="provenance">
+        <p>Word 是按论文和数据重建的中文摘编。图注的有效样本数由数据复算，另加一条缺少范围的附注做测试。</p>
+        <div><a href="https://journal.r-project.org/articles/RJ-2022-020/" target="_blank" rel="noopener">论文原文 ↗</a><a href="https://allisonhorst.github.io/palmerpenguins/" target="_blank" rel="noopener">公开数据 ↗</a></div>
+      </div>
+      <div class="flow">
+        <div class="scenario-action">
+          <button class="primary" type="button" id="alter" disabled>排除 1 条观测并核对 <span aria-hidden="true">→</span></button>
+          <button class="quiet" type="button" id="reset" disabled>重置样例</button>
+        </div>
+        <p class="scenario-note" id="run-status" role="status">正在读取样例文件…</p>
+      </div>
+    </section>
+
+    <div class="workspace">
+      <section class="results panel" aria-labelledby="results-title">
+        <header class="panel-head"><h2 id="results-title">校对结果</h2><span id="count" class="count" aria-live="polite">读取中</span></header>
+        <div id="checks"></div>
+      </section>
+      <section class="source panel" aria-labelledby="source-title">
+        <header class="panel-head">
+          <h2 id="source-title">原文与依据</h2>
+          <div class="source-tabs" role="group" aria-label="预览文件">
+            <button id="word-tab" type="button" aria-pressed="true">Word 段落</button>
+            <button id="excel-tab" type="button" aria-pressed="false">Excel 单元格</button>
+          </div>
+        </header>
+        <div class="source-filebar"><span id="file-name"></span><a id="download" class="quiet" download>下载原文件 ↓</a></div>
+        <div class="match-details" id="details"></div>
+        <div class="document-scroll" id="word-panel">
+          <article class="paper" id="word-preview"></article>
+        </div>
+        <div class="document-scroll" id="excel-panel" hidden>
+          <div class="sheet-formula" id="excel-formula"></div>
+          <div class="sheet-scroll" id="excel-preview"></div>
+          <div class="sheet-note" id="excel-note"></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="file-controls" aria-labelledby="file-controls-title">
+      <div>
+        <h2 id="file-controls-title">换成自己的文件试试</h2>
+        <p>这版自动识别常见的样本量写法，按列标题和统计范围匹配。范围不明时，你可以选候选项或填 Excel 地址。</p>
+        <p>使用 Excel 保存的数值和可读公式。改数据后先在 Excel 重算、保存，再导入。</p>
+      </div>
+      <div class="file-actions">
+        <label class="quiet upload">导入 Word<input id="upload-word" type="file" accept=".docx" disabled></label>
+        <label class="quiet upload">导入 Excel<input id="upload-excel" type="file" accept=".xlsx" disabled></label>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

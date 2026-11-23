@@ -19,6 +19,9 @@
     section { display: grid; gap: .8rem; margin: 1.3rem 0; }
     article { border: 1px solid #d8e0e9; border-radius: .7rem; background: #fff; padding: 1rem 1.2rem; }
     nav { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+    .project-with-guide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); gap: 1rem; align-items: start; }
+    .project-with-guide img { display: block; width: 100%; height: auto; border: 1px solid #d8e0e9; border-radius: .4rem; }
+    @media (max-width: 38rem) { .project-with-guide { grid-template-columns: minmax(0, 1fr); } }
   </style>
 </head>
 <body>
@@ -43,6 +46,18 @@
         <h2>003 AI 控制 Blender 的四轮建模工作流</h2>
         <p>让 AI 通过 Python 控制 Blender，按灰模、倒角、材质、灯光四轮逼近建模目标。每轮用同机位预览和检查数值定位偏差，定点修改并重渲复验，还能复用场景批量出变体。</p>
         <a href="https://github.com/yydshly/1123_codex_project/tree/main/projects/003-blender-workflow">研究记录与引导图</a>
+      </article>
+      <article class="project-with-guide">
+        <div>
+          <h2>004 七个工具的价值与实践成果</h2>
+          <p>研究资料研读、联网查源、在线课程、翻译与术语、图像编辑、数学可视化和视频试镜。用论文、角色参考图与扫描动画展示怎样留下可查的出处、可改的素材和可复算的结果，另附两套 Word 与 Excel 校对原型。</p>
+          <nav aria-label="004 项目入口">
+            <a href="004-ai-tool-entry-lab/">在线手册与演示</a>
+            <a href="004-ai-tool-entry-lab/#summary">成果汇总</a>
+            <a href="https://github.com/yydshly/1123_codex_project/tree/main/projects/004-ai-tool-entry-lab">项目文档与源码</a>
+          </nav>
+        </div>
+        <a href="004-ai-tool-entry-lab/assets/tool-research-summary.png"><img src="004-ai-tool-entry-lab/assets/tool-research-summary.png" width="2160" height="1932" alt="七个工具的价值、案例效果和对项目的意义，点击查看高清引导图"></a>
       </article>
     </section>
     <a href="https://github.com/yydshly/1123_codex_project">GitHub 研究总库</a>

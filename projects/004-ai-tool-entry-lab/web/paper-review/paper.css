@@ -1,0 +1,26 @@
+.provenance { display: flex; justify-content: space-between; gap: 8px 14px; flex-wrap: wrap; margin-top: 12px; color: var(--muted); font-size: .82rem; line-height: 1.65; }
+.provenance div { display: flex; gap: 14px; }
+.intro .flow { margin-top: 13px; }
+.study-clues { font-size: .75rem; color: var(--muted); grid-column: 1 / -1; margin-top: 4px; }
+.check[data-pending="true"] .check-link, .check[data-pending="true"] .study-clues { color: var(--warning); }
+.check .check-link { grid-row-end: span 3; }
+.source-tabs [aria-pressed="true"] { background: #fff; color: var(--green-dark); box-shadow: 0 1px 2px #20352d1a; }
+.match-details { padding: 11px 14px; border-top: 1px solid var(--line); color: var(--ink); background: #fbfcf9; min-width: 0; }
+.detail-title { font-size: .88rem; margin: 0 0 4px; }
+.detail-line { color: var(--muted); font-size: .8rem; line-height: 1.6; overflow-wrap: anywhere; }
+.detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 5px; }
+.detail-actions button { border-color: var(--line); }
+.detail-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; max-width: 100%; }
+.detail-actions input { min-width: min(185px, 100%); padding: 5px 7px; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); font-size: .8rem; }
+.manual-label { font-size: .77rem; color: var(--muted); }
+.paper mark[data-pending="true"] { text-decoration: underline dotted var(--warning); text-underline-offset: 3px; }
+.paper .caption img { margin: 2px auto; }
+.sheet-formula { flex-wrap: wrap; }
+.sheet-preview-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.sheet-scroll th[scope="row"] { min-width: 36px; }
+.sheet-scroll td { min-width: 62px; }
+.sheet-scroll td[data-active="true"] { background: #dff0e3; }
+.sheet-scroll .paper-sheet td { background: #fff; color: var(--ink); font-weight: 400; }
+.sheet-scroll .paper-sheet td[data-active="true"] { background: #dff0e3; font-weight: 700; }
+.sheet-note .quiet { padding: 4px 6px; border-color: var(--line); }
+.empty-result { padding: 14px; color: var(--muted); font-size: .84rem; }

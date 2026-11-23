@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>公式与表格校对 · 角色扫描</title>
+  <link rel="stylesheet" href="review.css">
+  <script src="samples.generated.js" defer></script>
+  <script src="office.js" defer></script>
+  <script src="review.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="back" href="../index.html#desmos/proofreading">‹ 校对成果</a>
+      <span class="brand">公式与表格校对</span>
+      <span class="privacy"><span aria-hidden="true"></span> 浏览器内处理</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">角色扫描报告校对</h1>
+      <p>改动 Excel 的扫描总时长，检查 Word 的正文、表格和图注是否还在用旧数字。</p>
+      <a class="quiet prototype-link" href="../paper-review/index.html">试用无书签的真实论文 →</a>
+      <div class="flow">
+        <div class="scenario">
+          <span class="scenario-label">扫描总时长 T</span>
+          <div class="scenario-values">
+            <span>1.08 <small>秒</small></span>
+            <span class="arrow" aria-hidden="true">→</span>
+            <span>0.90 <small>秒</small></span>
+          </div>
+        </div>
+        <div class="scenario-action">
+          <button class="primary" type="button" id="change" disabled>应用 Excel 改动 <span aria-hidden="true">→</span></button>
+          <button class="quiet" type="button" id="reset" disabled>重置示例</button>
+        </div>
+        <p class="scenario-note" id="run-status" role="status">正在读取样例文件…</p>
+      </div>
+    </section>
+
+    <div class="workspace">
+      <section class="results panel" aria-labelledby="results-title">
+        <header class="panel-head"><h2 id="results-title">校对结果</h2><span id="count" class="count" aria-live="polite">读取中</span></header>
+        <div id="checks"></div>
+        <div class="calculation" id="calculation" hidden>
+          <h3>按 Excel 参数复算</h3>
+          <div class="calculation-line" id="time-calc"></div>
+          <div class="calculation-line" id="distance-calc"></div>
+          <button type="button" class="quiet source-button" id="show-excel">核对 Excel 单元格 B10 <span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section class="source panel" aria-labelledby="source-title">
+        <header class="panel-head">
+          <h2 id="source-title">原文件预览</h2>
+          <div class="source-tabs" role="tablist" aria-label="预览文件">
+            <button id="word-tab" type="button" role="tab" aria-controls="word-panel" aria-selected="true">Word 报告</button>
+            <button id="excel-tab" type="button" role="tab" aria-controls="excel-panel" aria-selected="false" tabindex="-1">Excel 参数</button>
+          </div>
+        </header>
+        <div class="source-filebar">
+          <span id="file-name"></span>
+          <a id="download-source" class="quiet" download>下载原文件 <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="document-scroll" id="word-panel" role="tabpanel" aria-labelledby="word-tab" tabindex="0">
+          <article class="paper" id="word-preview"></article>
+        </div>
+        <div class="document-scroll" id="excel-panel" role="tabpanel" aria-labelledby="excel-tab" tabindex="0" hidden>
+          <div class="sheet-formula"><strong id="cell-reference">B10</strong><code id="cell-formula"></code></div>
+          <div class="sheet-scroll" id="excel-preview"></div>
+          <p class="sheet-note" id="sheet-note">选择 B5、B9 或 B10 查看内容和公式。</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="file-controls" aria-labelledby="file-controls-title">
+      <div>
+        <h2 id="file-controls-title">用这份样例自己改一次</h2>
+        <p>下载 Excel，编辑 B5 并保存，再重新导入。原型按样例中的 Word 书签定位三处数字，取样时刻固定为 0.27 秒。</p>
+      </div>
+      <div class="file-actions">
+        <label class="quiet upload">重新导入 Word<input id="upload-word" type="file" accept=".docx"></label>
+        <label class="quiet upload">重新导入 Excel<input id="upload-excel" type="file" accept=".xlsx"></label>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

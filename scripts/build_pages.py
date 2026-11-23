@@ -10,11 +10,12 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 PROJECT = "002-ai-overseas-revenue"
+TOOL_LAB = "004-ai-tool-entry-lab"
 REPOSITORY = "https://github.com/yydshly/1123_codex_project"
 SOURCE = ROOT / "projects" / PROJECT
 STATIC_SUFFIXES = {
     ".html", ".css", ".js", ".png", ".jpg", ".webp", ".mp3", ".wav",
-    ".mp4", ".srt", ".pdf", ".xlsx", ".zip", ".csv", ".txt",
+    ".mp4", ".srt", ".pdf", ".docx", ".xlsx", ".zip", ".csv", ".txt",
 }
 LOCAL_ONLY_PAGES = {
     "01-independent-website/align.html",
@@ -50,20 +51,25 @@ def public_html(text, path):
     return DOCUMENT_LINK.sub(document_link, text)
 
 
-def build(output):
-    copytree(ROOT / "docs", output)
-    for source in SOURCE.rglob("*"):
-        path = source.relative_to(SOURCE)
+def copy_static_site(source_root, destination_root, *, excluded=(), transform_html=None):
+    for source in source_root.rglob("*"):
+        path = source.relative_to(source_root)
         if any(part.startswith(".") for part in path.parts) or source.suffix.lower() not in STATIC_SUFFIXES:
             continue
-        if not source.is_file() or path.as_posix() in LOCAL_ONLY_PAGES:
+        if not source.is_file() or path.as_posix() in excluded:
             continue
-        destination = output / PROJECT / path
+        destination = destination_root / path
         destination.parent.mkdir(parents=True, exist_ok=True)
-        if source.suffix == ".html":
-            destination.write_text(public_html(source.read_text(encoding="utf-8"), path), encoding="utf-8")
+        if transform_html and source.suffix == ".html":
+            destination.write_text(transform_html(source.read_text(encoding="utf-8"), path), encoding="utf-8")
         else:
             copy2(source, destination)
+
+
+def build(output):
+    copytree(ROOT / "docs", output)
+    copy_static_site(SOURCE, output / PROJECT, excluded=LOCAL_ONLY_PAGES, transform_html=public_html)
+    copy_static_site(ROOT / "projects" / TOOL_LAB / "web", output / TOOL_LAB)
 
 
 if __name__ == "__main__":
