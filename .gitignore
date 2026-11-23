@@ -1,6 +1,9 @@
 # Local dependencies
 node_modules/
 
+# Generated GitHub Pages files
+/_site/
+
 # Local environment files
 .env
 .env.*

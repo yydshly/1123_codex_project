@@ -2,12 +2,14 @@
 
 记录值得深入研究的 GitHub 项目和可复用的产品探索，整理研究问题、实现方式与验证结果。每个子项目有独立的研究记录，可附截图与 Web 演示。
 
+[打开研究库线上目录](https://yydshly.github.io/1123_codex_project/)
+
 ## 项目索引
 
 | 编号 | 研究项目 | 摘要 | 预览 | Web 演示 |
 | --- | --- | --- | --- | --- |
 | 001 | [Motion2MixamoRig](projects/001-motion2mixamorig/README.md) | 从单人视频提取动作，或从全身照片估计姿势，再将动作或姿势迁移到可更换的已绑定 3D 角色。一次提取可让多个角色复用同一段表演，便于短片换机位、跨镜头衔接和制作可编辑的动画初稿。 | [引导图](#motion2mixamorig-引导图) | 未部署 |
-| 002 | [AI 出海变现五方向](projects/002-ai-overseas-revenue/README.md) | 用可操作的原型验证独立站、网页小游戏、数字商品、自动化服务和内容本地化。对我们最直接的积累是可复用的字幕质检、翻译审校和交付流程，可用一单检验客户付款、发布采用和交付工时。 | [引导图](#ai-出海变现引导图) | [总览页源码](projects/002-ai-overseas-revenue/index.html) · [本机运行](projects/002-ai-overseas-revenue/README.md#本机打开网页) |
+| 002 | [AI 出海变现五方向](projects/002-ai-overseas-revenue/README.md) | 用可操作的原型验证独立站、网页小游戏、数字商品、自动化服务和内容本地化。对我们最直接的积累是可复用的字幕质检、翻译审校和交付流程，可用一单检验客户付款、发布采用和交付工时。 | [引导图](#ai-出海变现引导图) | [在线总览与原型](https://yydshly.github.io/1123_codex_project/002-ai-overseas-revenue/) · [本机运行](projects/002-ai-overseas-revenue/README.md#本机打开网页) |
 
 ## Motion2MixamoRig 引导图
 
@@ -29,6 +31,6 @@
 
 ## Web 演示
 
-启用 GitHub Pages 后，各演示共用一个站点，通过不同子路径访问。静态产物放在 `docs/<编号>-<项目名>/`，例如 `docs/001-project-name/index.html`。
+各演示共用 GitHub Pages 站点，按编号划分子路径。首页维护在 `docs/index.html`。`python scripts/build_pages.py` 将 002 中可在线运行的页面和所需素材组装到 `_site/`。合并到 `main` 后，由 Pages 工作流发布。
 
-首个演示就绪后，在 `docs/index.html` 添加站点入口，在仓库的 **Settings → Pages** 选择 **Deploy from a branch**，发布 `main` 分支的 `/docs`。演示资源使用相对路径，或使用包含仓库名和项目目录的构建基路径。发布后将实际演示地址填入索引。 [GitHub Pages 发布文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+002 的音频对齐、广告周报计算和视频识别翻译在各自的 Python 服务上运行。线上总览附实测记录与本机启动说明。 [本机运行](projects/002-ai-overseas-revenue/README.md#本机打开网页) · [GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)

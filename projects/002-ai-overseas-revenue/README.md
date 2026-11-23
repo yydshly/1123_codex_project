@@ -2,7 +2,7 @@
 
 研究总库编号 **002**。 [返回项目索引](../../README.md#项目索引)
 
-[打开网页总览](index.html) · [查看研究总图](research-overview.png)
+[打开线上总览](https://yydshly.github.io/1123_codex_project/002-ai-overseas-revenue/) · [查看研究总图](research-overview.png)
 
 这轮研究用可操作的原型探索了五种 AI 出海变现方向。每项记录目标用户、实际交付、样例或原片实测，以及后续检验复玩、省时或付款的办法。我们积累了可复用的字幕质检、翻译审校和交付流程，也能据此决定哪些方向值得再投入。 [原帖](https://x.com/CryY666666/status/2123996319069151738)
 
