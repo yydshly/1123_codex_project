@@ -21,6 +21,7 @@
 | 011 | [用 AI 复盘项目的历史 bug](projects/011-ai-bug-history/README.md) | 从当前仓库的提交、旧修复和审查评论中找出反复出现的故障，验证它们是否有共同根因。把最值得修的共用逻辑改成可执行的约束，再用旧案例检验它能否拦住同类问题。 | [引导图](#ai-复盘历史-bug-引导图) | 未部署 |
 | 012 | [开源实时数字人研究](projects/012-realtime-avatar-research/README.md) | 对照 LiveTalking 的本地口型引擎、赛博小雅的 Vidu 互动舞台和 Gary AI 的直播间工作台，说明各自需要的素材、服务和可复用能力。再用三种本地单图模型判断口播、可控表情和指令动作分别适合哪条路线。 | [引导图](#开源实时数字人引导图) | 未部署 |
 | 013 | [AI 时代值得做的小团队 App](projects/013-paid-app-workflows/README.md) | 从 App Store 营收估算追到公开实收和客户原评，再拆解摄影师从 NAS、网盘发图到回找原片的流程。优先验证能减少返工的环节，尤其是定制订单中把客户确认的那一版准确交给生产。 | [引导图](#ai-时代小团队-app-研究引导图) | 未部署 |
+| 014 | [AI 出海案例研究](projects/014-ai-founder-case-studies/README.md) | 从公开产品、社区和搜索记录追到获客、收费与收入出处。十位实践者及九张图展示真实页面、用户路径和可查结果，帮助判断自己的项目该先验证什么、推广能否回本。 | [引导图](#ai-出海案例研究引导图) | [在线案例研究](https://yydshly.github.io/1123_codex_project/014-ai-founder-case-studies/) |
 
 ## Motion2MixamoRig 引导图
 
@@ -99,6 +100,12 @@
 [![小团队 App 研究引导图，汇总营收证据、摄影交付流程、值得试单的行业环节和验证方法](projects/013-paid-app-workflows/images/ai-app-research-map.png)](projects/013-paid-app-workflows/images/ai-app-research-map.png)
 
 从客户已经在做的事出发，比较哪一步能省工时、避免返工或推进成交。我们的首选是用真实定制订单验证客户确认稿与生产原件能否准确交接。 [研究详情](projects/013-paid-app-workflows/README.md) · [高清 PNG](projects/013-paid-app-workflows/images/ai-app-research-map.png)
+
+## AI 出海案例研究引导图
+
+[![ToolCenter 与 SparkVid 引导图，展示已披露 Google 数据、官网跳转、29 美元的权益与回本测算](projects/014-ai-founder-case-studies/web/sitin-toolcenter-sparkvid-map.png)](projects/014-ai-founder-case-studies/web/sitin-toolcenter-sparkvid-map.png)
+
+用真实的 SparkVid 收录页沿着曝光、进站、跳转官网看一遍，再根据每单收益和转化率计算回本所需的来访。图中标明站长披露的数据、实查页面和测算假设。 [在线引导案例](https://yydshly.github.io/1123_codex_project/014-ai-founder-case-studies/#case/sitin/toolcenter) · [研究详情](projects/014-ai-founder-case-studies/README.md)
 
 ## 收录约定
 

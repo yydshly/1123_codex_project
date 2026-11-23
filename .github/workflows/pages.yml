@@ -14,6 +14,7 @@ on:
       - 'projects/008-tanstarter-research/**'
       - 'projects/009-coastal-street-study/**'
       - 'projects/010-reddit-ops-research/**'
+      - 'projects/014-ai-founder-case-studies/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 

@@ -17,6 +17,7 @@ PETALWAKE = "007-petalwake"
 TANSTARTER_RESEARCH = "008-tanstarter-research"
 COASTAL_STUDY = "009-coastal-street-study"
 REDDIT_RESEARCH = "010-reddit-ops-research"
+FOUNDER_CASES = "014-ai-founder-case-studies"
 REPOSITORY = "https://github.com/yydshly/1123_codex_project"
 SOURCE = ROOT / "projects" / PROJECT
 STATIC_SUFFIXES = {
@@ -50,6 +51,8 @@ def public_html(text, path):
 
     if path.as_posix() == "index.html":
         text = text.replace("<body>", "<body data-pages>", 1)
+    if path.as_posix() == "07-founder-case-studies/index.html":
+        text = text.replace(f'../../{FOUNDER_CASES}/web/index.html', f'../../{FOUNDER_CASES}/', 1)
     if path.as_posix() == "01-independent-website/index.html":
         local_link = 'href="align.html" data-i18n="alignPage">Compare an SRT with audio'
         setup = github_document("01-independent-website/README.md", "#音频与字幕对齐")
@@ -87,6 +90,7 @@ def build(output):
     copy_static_site(coastal_source / "web", output / COASTAL_STUDY)
     copytree(coastal_dist, output / COASTAL_STUDY / "demo")
     copy_static_site(ROOT / "projects" / REDDIT_RESEARCH / "web", output / REDDIT_RESEARCH)
+    copy_static_site(ROOT / "projects" / FOUNDER_CASES / "web", output / FOUNDER_CASES)
 
 
 if __name__ == "__main__":

@@ -38,4 +38,4 @@ python -m http.server 8846 --bind 127.0.0.1
 
 **006 AI 产品雷达**收集付费 AI 产品及可查的营收与增长，为试单选题提供线索。 [在线网页](https://yydshly.github.io/1123_codex_project/006-ai-product-radar/) · [研究说明与引导图](../006-ai-product-radar/README.md)
 
-[07 AI 出海案例研究](07-founder-case-studies/index.html) 深入整理十位实践者的产品、获客和收费方式。
+**014 AI 出海案例研究**整理十位实践者的需求、交付、获客与收费，用真实产品页和收入出处比较推广与付费验证的方法。 [在线网页](https://yydshly.github.io/1123_codex_project/014-ai-founder-case-studies/) · [研究说明与引导图](../014-ai-founder-case-studies/README.md)

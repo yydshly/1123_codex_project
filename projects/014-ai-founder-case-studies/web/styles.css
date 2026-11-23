@@ -120,6 +120,16 @@ main:focus, h2[tabindex]:focus { outline: none; }
 .model-node span { display: block; color: #604a9f; font-size: .76rem; }
 .model-node strong { display: block; margin-top: 2px; color: #343048; font-size: .82rem; font-weight: 650; }
 
+.overview-summary, .overview-guide { margin-top: 19px; padding: clamp(16px, 2.7vw, 24px); border: 1px solid var(--line); border-radius: 13px; background: var(--surface); }
+.overview-summary h2, .overview-guide h2 { margin-bottom: 9px; font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.4; }
+.overview-summary dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+.overview-summary dl div { padding-top: 8px; border-top: 2px solid var(--accent-soft); }
+.overview-summary dt { color: var(--accent); font-size: .82rem; font-weight: 700; }
+.overview-summary dd, .overview-guide p { margin-top: 3px; color: var(--muted); font-size: .88rem; }
+.overview-guide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(110px, 190px); align-items: center; gap: 16px; }
+.overview-guide a:not(.overview-guide-image) { display: inline-block; margin-top: 10px; color: var(--accent); font-size: .85rem; font-weight: 650; text-underline-offset: 3px; }
+.overview-guide-image img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+
 .directory { margin-top: 31px; }
 .directory-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .directory h2 { font-size: 1.55rem; letter-spacing: -.035em; line-height: 1.4; }
@@ -248,6 +258,8 @@ main:focus, h2[tabindex]:focus { outline: none; }
   .model-node { padding: 6px 9px; }
   .overview-hero h1 { font-size: clamp(1.85rem, 9vw, 2.5rem); }
   .hero-description { font-size: .88rem; }
+  .overview-summary dl { grid-template-columns: 1fr; gap: 9px; }
+  .overview-guide { gap: 12px; }
   .directory { margin-top: 23px; }
   .directory-tools { flex-wrap: wrap; gap: 8px; }
   .search-field { width: 100%; }

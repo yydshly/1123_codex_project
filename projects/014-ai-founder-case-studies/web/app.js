@@ -72,7 +72,7 @@ function renderOverview() {
         <div class="overview-intro">
           <p class="hero-meta">${allCases.length} 个案例 <span aria-hidden="true">·</span> ${deepCount} 个深入分析</p>
           <h1 id="overview-title">AI 出海案例研究</h1>
-          <p class="hero-description">他们做了什么产品，用户怎么找到它，为什么愿意付钱。把公开资料和我们逐步追问得到的理解放在一起。</p>
+          <p class="hero-description">跟着十位实践者的具体产品，看他们怎样发现需求、把产品交给用户、找到客户并收费。每一步都有实例和可核对的出处。</p>
           <a class="primary-button" href="#case/yuwen/methods">查看需求发现方法 <span aria-hidden="true">→</span></a>
         </div>
         <div class="hero-model" aria-label="研究顺序：需求、产品、获客、收费">
@@ -81,6 +81,24 @@ function renderOverview() {
           <div class="model-node"><span>获客</span><strong>客户从哪里来</strong></div>
           <div class="model-node"><span>收费</span><strong>为什么愿意付钱</strong></div>
         </div>
+      </section>
+      <section class="overview-summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">研究摘要</h2>
+        <dl>
+          <div><dt>能力</dt><dd>用社区里的重复问题找需求，用搜索词和 AI 回答检验用户能否找到产品，再沿真实页面追到试用和付款。</dd></div>
+          <div><dt>效果</dt><dd>整理十位实践者、九张研究图和可回查来源。对照了实际产品、定价、搜索点击和付费记录，也标明自述及缺失的数据。</dd></div>
+          <div><dt>价值</dt><dd>选一项用户反复需要的交付，先验证有人使用、有人付费，再按每单留下的收益和转化率决定推广是否值得投入。</dd></div>
+        </dl>
+      </section>
+      <section class="overview-guide" aria-labelledby="guide-title">
+        <div>
+          <h2 id="guide-title">引导案例｜ToolCenter 与 SparkVid</h2>
+          <p>沿着真实的收录页看用户从哪儿来、怎样跳到官网，再对照 29 美元的套餐权益和回本条件。</p>
+          <a href="#case/sitin/toolcenter">打开案例与资料来源 <span aria-hidden="true">→</span></a>
+        </div>
+        <a class="overview-guide-image" href="sitin-toolcenter-sparkvid-map.png" target="_blank" rel="noopener noreferrer" aria-label="打开 ToolCenter 与 SparkVid 引导图原图">
+          <img src="sitin-toolcenter-sparkvid-map.png" width="1920" height="2598" alt="ToolCenter 与 SparkVid 引导图，记录搜索数据、官网跳转、收录权益与回本假设。" loading="lazy">
+        </a>
       </section>
       <section class="directory" aria-labelledby="directory-title">
         <div class="directory-heading"><h2 id="directory-title">案例目录</h2><p id="result-count" aria-live="polite"></p></div>
