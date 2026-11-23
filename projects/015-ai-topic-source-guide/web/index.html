@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="比较 10 个 AI 视频与工作流选题入口的内容筛选、热度排行和查源能力，整理 6 个有出处和测试步骤的选题，帮助创作者挑出可复现、可对照的内容。">
+  <title>AI 视频与工作流 · 选题指南</title>
+  <meta property="og:title" content="AI 视频与工作流选题指南">
+  <meta property="og:description" content="对照 10 个选题入口，查看 6 份有来源和具体步骤的实测方案。">
+  <meta property="og:image" content="https://yydshly.github.io/1123_codex_project/015-ai-topic-source-guide/ai-topic-entry-summary.png">
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #141a2b;
+      --subtle: #526076;
+      --paper: #f5f7fb;
+      --white: #fff;
+      --line: #dbe1ec;
+      --accent: #264bb6;
+      --navy: #14213a;
+      --lime: #d2f787;
+      --content-width: 73rem;
+      font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-synthesis: none;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-padding-top: 5.5rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.65; }
+    h1, h2, h3, p, dl, dd, ol { margin: 0; }
+    h1, h2, h3 { line-height: 1.22; }
+    h1, h2 { text-wrap: balance; }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 2px; }
+    .frame { width: min(var(--content-width), 100% - clamp(2rem, 8vw, 8rem)); margin-inline: auto; }
+
+    .skip {
+      position: fixed;
+      inset-block-start: .4rem;
+      inset-inline-start: 1rem;
+      z-index: 3;
+      padding: .5rem 1rem;
+      background: var(--white);
+      translate: 0 -160%;
+    }
+    .skip:focus { translate: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #fffffffa;
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: .75rem 1.5rem; padding-block: .85rem; }
+    .home-link { color: var(--ink); text-decoration: none; font-weight: 700; }
+    .home-link::before { content: ""; display: inline-block; width: .64rem; height: .64rem; margin-inline-end: .55rem; background: var(--accent); border-radius: 2px; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+    .topbar nav a { font-size: .9375rem; color: var(--subtle); text-decoration: none; }
+    .topbar nav a:hover { color: var(--accent); text-decoration: underline; }
+
+    .map-section {
+      background: var(--navy);
+      color: #f6f8ff;
+      padding-block: clamp(1.5rem, 5vw, 3.5rem);
+    }
+    .guide-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.24fr) minmax(0, .76fr);
+      align-items: start;
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+    }
+    .guide-figure { margin: 0; min-width: 0; }
+    .guide-figure img { display: block; width: 100%; height: auto; border-radius: .7rem; border: 1px solid #536680; }
+    .guide-figure figcaption { text-align: center; margin-top: .55rem; font-size: .9375rem; }
+    .guide-figure a { color: #d2e1ff; }
+    .guide-summary { min-width: 0; padding-block: clamp(.5rem, 4vw, 2.9rem); }
+    .guide-summary h1 { font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.045em; text-wrap: wrap; }
+    .guide-summary .lead { color: #cbd8ec; font-size: 1.1rem; margin-top: .9rem; }
+    .guide-summary dl { display: grid; gap: .85rem; margin-block: 1.35rem; }
+    .guide-summary dl > div { padding-top: .75rem; border-top: 1px solid #485c7b; }
+    .guide-summary dt { color: var(--lime); font-weight: 700; }
+    .guide-summary dd { color: #dce7f8; margin-top: .18rem; }
+    .guide-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1rem; }
+    .guide-actions a { color: #d2e1ff; }
+    .guide-actions .guide-primary { background: var(--lime); color: #192a2e; padding: .55rem .9rem; border-radius: .42rem; text-decoration: none; font-weight: 700; }
+    .guide-actions .guide-primary:hover { background: #e1fbb0; }
+
+    .body-section { padding-block: clamp(2.5rem, 6vw, 5rem); }
+    .section-head { display: grid; gap: .55rem; margin-bottom: 1.5rem; }
+    .section-head h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -.035em; }
+    .section-head p { color: var(--subtle); max-width: 52rem; }
+
+    .entry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .entry {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: start;
+      gap: .9rem;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      padding: clamp(1.15rem, 2.4vw, 1.7rem);
+    }
+    .entry-primary { border-top: 4px solid #4f741f; }
+    .entry header { display: grid; gap: .45rem; }
+    .entry h3 { font-size: 1.29rem; overflow-wrap: anywhere; }
+    .entry .use { color: var(--subtle); font-size: .875rem; }
+    .entry dl { display: grid; gap: .75rem; align-self: stretch; }
+    .entry dt { font-size: .875rem; font-weight: 700; color: var(--subtle); }
+    .entry dd { margin-top: .14rem; }
+    .entry-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      margin-top: auto;
+      padding: .38rem .75rem;
+      border: 1px solid #c5d2ed;
+      border-radius: .42rem;
+      background: #f4f7ff;
+      color: #23429a;
+      font-size: .9375rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .entry-link:hover { background: #e8efff; border-color: #96acdf; }
+    .entry-note { color: var(--subtle); font-size: .9375rem; }
+
+    .entry-group { margin-top: clamp(2rem, 4vw, 3.2rem); }
+    .entry-group h2 { margin-bottom: .85rem; font-size: 1.28rem; }
+    .entry-grid-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .topics-section { background: #edf2fb; border-bottom: 1px solid var(--line); }
+    .topic-group + .topic-group { margin-top: clamp(1.75rem, 4vw, 2.75rem); }
+    .topic-group-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1rem; margin-bottom: .85rem; }
+    .topic-group-header h3 { font-size: 1.28rem; }
+    .topic-group-header a { font-size: .9375rem; }
+    .topic-card h4 { margin: 0; font-size: 1.16rem; line-height: 1.4; }
+    .topic-card dd p + p { margin-top: .36rem; }
+    .topic-steps { padding-inline-start: 1.25em; }
+    .topic-steps li + li { margin-block-start: .32rem; }
+
+    .example-section { border-top: 1px solid var(--line); background: #eaf0fc; }
+    .example-steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    .example-steps li { border-top: 2px solid #7693d5; padding-top: .85rem; }
+    .example-steps h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+    .example-steps p { color: #364664; }
+    .signal-note { margin-top: 1.65rem; padding-top: .85rem; border-top: 1px solid #c0cee8; color: #364664; }
+    .footer { padding-block: 1.25rem; border-top: 1px solid var(--line); }
+    .footer a { color: var(--subtle); }
+
+    @media (max-width: 800px) {
+      .entry-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 710px) {
+      .guide-layout { grid-template-columns: minmax(0, 1fr); }
+      .guide-summary { padding-block: 0; }
+    }
+    @media (max-width: 600px) {
+      html { scroll-padding-top: 7rem; }
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar nav { gap: .45rem 1rem; }
+      .entry-grid, .example-steps { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#guide-map">跳到引导图</a>
+  <header class="topbar">
+    <div class="frame topbar-inner">
+      <a class="home-link" href="#guide-map">AI 选题手册</a>
+      <nav aria-label="页面导航">
+        <a href="#guide-map">引导图</a>
+        <a href="#topics">6 个选题</a>
+        <a href="#entries">入口详解</a>
+        <a href="#example">选题示例</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="guide-map" class="map-section" aria-labelledby="ai-topic-map-title">
+      <div class="frame guide-layout">
+        <figure id="ai-topic-source-map" class="guide-figure">
+          <img src="ai-topic-entry-summary.png" width="2160" height="3030" alt="AI 视频与工作流选题入口地图，比较 XFeed、TwKit 和 TL1，并汇总十个入口和六个实测方向。">
+          <figcaption><a href="ai-topic-entry-summary.png" target="_blank" rel="noopener noreferrer">查看高清引导图</a></figcaption>
+        </figure>
+        <div class="guide-summary">
+          <h1 id="ai-topic-map-title">AI 视频与工作流选题指南</h1>
+          <p class="lead">日常用 XFeed 找做法，选题难取舍时看 TwKit，研究小号爆帖时用 TL1。</p>
+          <dl>
+            <div><dt>能力</dt><dd>比较 10 个入口如何精选内容、按互动排序、筛历史样本和寻找原始证据。</dd></div>
+            <div><dt>效果</dt><dd>从 TwKit 和 XFeed 各整理出 3 个题目，每题都有来源、实测步骤和记录指标。</dd></div>
+            <div><dt>价值</dt><dd>把看到的热点缩成一个能动手验证的问题，保留出处与对照条件，下次选题还能复用。</dd></div>
+          </dl>
+          <nav class="guide-actions" aria-label="指南内容">
+            <a class="guide-primary" href="#topics">查看 6 个实测题</a>
+            <a href="#entries">比较 10 个入口</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics" class="body-section topics-section" aria-labelledby="topics-title">
+      <div class="frame">
+        <div class="section-head">
+          <h2 id="topics-title">6 个可以实测的选题</h2>
+          <p>TwKit 的书签数来自当时读到的榜单快照。每个选题都附了原始线索、测试步骤和记录指标。</p>
+        </div>
+
+        <section class="topic-group" aria-labelledby="twkit-topics-title">
+          <div class="topic-group-header">
+            <h3 id="twkit-topics-title">来自 TwKit</h3>
+            <a href="https://twkit.io/longform" target="_blank" rel="noopener noreferrer">查看 TwKit 长文榜</a>
+          </div>
+          <div class="entry-grid">
+            <article class="entry topic-card" aria-labelledby="topic-video-workflow">
+              <header><h4 id="topic-video-workflow">同一条 20 秒口播，一键生成和分步骤出片，哪种更省返工？</h4></header>
+              <dl>
+                <div>
+                  <dt>来源</dt>
+                  <dd>
+                    <p>Eian 的六步代码出片工作流。TwKit 快照中有 1,909 个书签。</p>
+                    <p><a href="https://haowenji.com/articles/x-2115731602273894400" target="_blank" rel="noopener noreferrer">Eian 长文存档</a></p>
+                  </dd>
+                </div>
+                <div><dt>为什么值得写</dt><dd>临时改一句台词、挪一行字幕需要多少时间、花多少钱，能帮创作者判断是否值得搭一套分步骤的工作流。</dd></div>
+                <div>
+                  <dt>怎么实测</dt>
+                  <dd><ol class="topic-steps">
+                    <li>准备一份 20 秒脚本和同一组素材，固定画幅与验收标准。</li>
+                    <li>分别一次提交整片需求，以及先定分镜、配音和字幕再合成。</li>
+                    <li>首版后给两组下达相同的台词和字幕修改，记录总耗时、重做的步骤和费用。</li>
+                  </ol></dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="entry topic-card" aria-labelledby="topic-design-skill">
+              <header><h4 id="topic-design-skill">给 Codex 装设计 Skill，交出来的网页真的更好改吗？</h4></header>
+              <dl>
+                <div>
+                  <dt>来源</dt>
+                  <dd>
+                    <p>花叔的 Huashu Design 3.0 发布帖。TwKit 快照中有 801 个书签。</p>
+                    <p><a href="https://www.huasheng.ai/insights/wechat-2247492594-1/" target="_blank" rel="noopener noreferrer">作者发布说明</a> · <a href="https://github.com/alchaincyf/huashu-design" target="_blank" rel="noopener noreferrer">项目仓库</a></p>
+                  </dd>
+                </div>
+                <div><dt>为什么值得写</dt><dd>用同一份需求做对照，能看出 Skill 对首版布局、移动端和后续修改分别有多大影响。读者也能据此判断常用任务是否值得加这一步。</dd></div>
+                <div>
+                  <dt>怎么实测</dt>
+                  <dd><ol class="topic-steps">
+                    <li>用同一个模型、同一份网页需求和素材开两个新会话，只给其中一个启用 Skill。记录版本。</li>
+                    <li>在桌面和手机宽度检查导航、文字换行和横向溢出。</li>
+                    <li>要求两组换配色并重排首屏，记录修改轮数、耗时和引入的布局问题。</li>
+                  </ol></dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="entry topic-card" aria-labelledby="topic-source-table">
+              <header><h4 id="topic-source-table">把评论、截图和视频喂给 AI，能不能做出一份可核对的选题表？</h4></header>
+              <dl>
+                <div>
+                  <dt>来源</dt>
+                  <dd>
+                    <p>TwKit 长文榜收录的 Miles Ma 多模态数据清洗案例，涉及文字、图片和视频证据的整理。</p>
+                    <p><a href="https://x.com/miles_mazy/status/2115006510979801566" target="_blank" rel="noopener noreferrer">Miles Ma 原帖</a> · <a href="https://nitter.cf/miles_mazy/article/2115006510979801566" target="_blank" rel="noopener noreferrer">长文存档</a></p>
+                  </dd>
+                </div>
+                <div><dt>为什么值得写</dt><dd>创作者经常先攒一堆素材，写稿时又得重新找证据。这个实验能说明带出处的选题表是否真的更容易核对和复用。</dd></div>
+                <div>
+                  <dt>怎么实测</dt>
+                  <dd><ol class="topic-steps">
+                    <li>挑同一主题的 20 条公开评论、5 张截图和 3 段短视频，保留来源和编号。</li>
+                    <li>用同一个模型给两组相同素材。一组直接总结，另一组在每条选题后附评论编号、截图位置或视频时间码。</li>
+                    <li>逐条抽查五个候选题，统计能回到证据的条数和人工核对耗时。</li>
+                  </ol></dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </section>
+
+        <section class="topic-group" aria-labelledby="xfeed-topics-title">
+          <div class="topic-group-header">
+            <h3 id="xfeed-topics-title">来自 XFeed</h3>
+            <a href="https://xfeed.ai/" target="_blank" rel="noopener noreferrer">查看 XFeed 精选</a>
+          </div>
+          <div class="entry-grid">
+            <article class="entry topic-card" aria-labelledby="topic-shot-reader">
+              <header><h4 id="topic-shot-reader">给 AI 一段视频，它能反推出可复拍的分镜吗？</h4></header>
+              <dl>
+                <div>
+                  <dt>来源</dt>
+                  <dd>
+                    <p>XFeed 收录的 Shot Reader。John Holliman 在北京时间 11 月 20 日分享了用模型识别机位、角度和运镜的做法。</p>
+                    <p><a href="https://x.com/j_h_h_3/status/2123532630645977367" target="_blank" rel="noopener noreferrer">作者原帖</a> · <a href="https://huggingface.co/voyager-so/shot-reader-8b" target="_blank" rel="noopener noreferrer">模型说明</a></p>
+                  </dd>
+                </div>
+                <div><dt>为什么值得写</dt><dd>机位和运动方向决定了一个镜头能否复现。对拍短片或做 Blender 分镜的人，把原片和复拍放在一起，就能判断这份镜头说明是否能指导制作。</dd></div>
+                <div>
+                  <dt>怎么实测</dt>
+                  <dd><ol class="topic-steps">
+                    <li>自己拍三段短片，分别用固定机位加人物走动、推近和环绕。提前记下机位、景别和运动方向。</li>
+                    <li>只把片段给 Shot Reader，用原始拍摄记录核对各项识别结果。</li>
+                    <li>挑一段按 AI 生成的说明复拍或在 Blender 重建，发布时并排展示原片和复拍。</li>
+                  </ol></dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="entry topic-card" aria-labelledby="topic-video-local-edit">
+              <header><h4 id="topic-video-local-edit">只给角色换件衣服，AI 能保住脸、光线和运镜吗？</h4></header>
+              <dl>
+                <div>
+                  <dt>来源</dt>
+                  <dd>
+                    <p>XFeed 收录的 Higgsfield Miracle 演示。官方展示的是视频局部编辑，产品页目前标为早期测试。</p>
+                    <p><a href="https://higgsfield.ai/miracle" target="_blank" rel="noopener noreferrer">Higgsfield 官方展示</a></p>
+                  </dd>
+                </div>
+                <div><dt>为什么值得写</dt><dd>视频改稿常常只需要动一处。前后对比能让读者看到局部编辑是否省下一次整镜重做，以及脸和光线有没有跟着变。</dd></div>
+                <div>
+                  <dt>怎么实测</dt>
+                  <dd><ol class="topic-steps">
+                    <li>选一段 5 到 8 秒的自有素材，保留脸、衣服和背景都清楚的画面。</li>
+                    <li>用手头可用的工具对比局部换衣与整镜重生成，使用相同改稿要求。获得 Miracle 测试权限后可用同一素材补测。</li>
+                    <li>比对首、中、尾三帧的脸、光线和背景，播放全片看运镜是否偏移，再记下各自的重试次数。</li>
+                  </ol></dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="entry topic-card" aria-labelledby="topic-nod-windows">
+              <header><h4 id="topic-nod-windows">n8n 的 Nod 在 Windows 上，能独立跑完一次选题搜集吗？</h4></header>
+              <dl>
+                <div>
+                  <dt>来源</dt>
+                  <dd>
+                    <p>XFeed 收录的 n8n Labs 桌面智能体。n8n 于 11 月 10 日发布研究预览。</p>
+                    <p><a href="https://blog.n8n.io/meet-nod/" target="_blank" rel="noopener noreferrer">n8n 发布说明</a> · <a href="https://github.com/n8n-io/nod" target="_blank" rel="noopener noreferrer">项目仓库</a></p>
+                  </dd>
+                </div>
+                <div><dt>为什么值得写</dt><dd>这个任务每天都可能重复，完成度也容易判断。把成功条数、人工接手和实际耗时摆出来，读者就能判断值不值得把选题初筛交给它。</dd></div>
+                <div>
+                  <dt>怎么实测</dt>
+                  <dd><ol class="topic-steps">
+                    <li>给 Nod 三个公开页面，要求找五个符合「AI 视频与工作流」的选题。每条附原链接和一句理由。</li>
+                    <li>从下达任务开始计时，记录页面加载失败和人工接手次数。</li>
+                    <li>逐条打开原链接，按主题相关、地址有效、理由有依据三项判断通过了几条。</li>
+                  </ol></dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="entries" class="body-section" aria-labelledby="entries-title">
+      <div class="frame">
+        <div class="section-head">
+          <h2 id="entries-title">入口详解</h2>
+          <p>先判断你手上缺的是案例、热度依据，还是能核对的出处，再去对应入口。</p>
+        </div>
+
+        <div class="entry-grid">
+          <article class="entry entry-primary" aria-labelledby="xfeed-title">
+            <header><p class="use">日常找案例</p><h3 id="xfeed-title">XFeed</h3></header>
+            <dl>
+              <div><dt>原理</dt><dd>从 X 上收录的 AI 创作者和官方动态里筛帖子，按工具、内容类型和专题归类，并保留原帖入口。</dd></div>
+              <div><dt>价值</dt><dd>从泛资讯里找到已经有人做过、你能复现的做法，例如局部改视频或用智能体串起多个步骤。</dd></div>
+              <div><dt>怎么用</dt><dd>平时看「视频」和「智能体」，遇到合适的案例就记下输入素材、关键步骤和可对比的结果。</dd></div>
+            </dl>
+            <a class="entry-link" href="https://xfeed.ai/" target="_blank" rel="noopener noreferrer">打开 XFeed</a>
+          </article>
+
+          <article class="entry" aria-labelledby="twkit-title">
+            <header><p class="use">比较同类帖</p><h3 id="twkit-title">TwKit</h3></header>
+            <dl>
+              <div><dt>原理</dt><dd>把收录帖子和账号的公开互动做成排行。长文榜可以按书签或曝光排序，推文榜也有按曝光增速看的入口。</dd></div>
+              <div><dt>价值</dt><dd>比较教程、案例和工作流拆解的收藏表现，帮助你在几个相近选题中选一个先做。</dd></div>
+              <div><dt>怎么用</dt><dd>长文榜选「AI 科技」和近 7 天，按书签排序，再对照题材、发布日期和作者体量。</dd></div>
+            </dl>
+            <a class="entry-link" href="https://twkit.io/longform" target="_blank" rel="noopener noreferrer">打开 TwKit 长文榜</a>
+          </article>
+
+          <article class="entry" aria-labelledby="tl1-title">
+            <header><p class="use">研究小号爆帖</p><h3 id="tl1-title">TL1 推楼1号</h3></header>
+            <dl>
+              <div><dt>原理</dt><dd>追踪收录的中文 X 账号和热帖。历史榜支持按作者、日期、粉丝上限筛选，再按曝光等指标排序。</dd></div>
+              <div><dt>价值</dt><dd>给小账号找体量可比的样本，观察高曝光帖子用了什么切口，评论区又在问什么。</dd></div>
+              <div><dt>怎么用</dt><dd>从首页进「历史热帖」，先试粉丝不超过 1 万，再挑同领域的帖子回到 X 看原文。</dd></div>
+            </dl>
+            <a class="entry-link" href="https://www.tl1.com/" target="_blank" rel="noopener noreferrer">打开 TL1</a>
+          </article>
+        </div>
+
+        <section class="entry-group" aria-labelledby="trends-title">
+          <h2 id="trends-title">跟进短期热度</h2>
+          <div class="entry-grid">
+            <article class="entry" aria-labelledby="xbangdan-title">
+              <header><h3 id="xbangdan-title">X 榜单</h3></header>
+              <dl>
+                <div><dt>原理</dt><dd>把相关的中文 X 帖子聚成话题，展示近期新增讨论，也列出部分低粉高曝光帖。</dd></div>
+                <div><dt>价值</dt><dd>分辨是某一条帖子拿到了曝光，还是同一个主题正在被多个人讨论。</dd></div>
+                <div><dt>怎么用</dt><dd>在话题页看近 6 小时增量，再点开几条原帖核对大家讨论的是不是同一个问题。</dd></div>
+              </dl>
+              <p class="entry-note">XFeed 使用 X 榜单的数据，两处出现同一条线索时按同一来源计。</p>
+              <a class="entry-link" href="https://xbangdan.com/words/" target="_blank" rel="noopener noreferrer">打开 X 榜单话题页</a>
+            </article>
+
+            <article class="entry" aria-labelledby="tophub-title">
+              <header><h3 id="tophub-title">今日热榜 · 知乎页</h3></header>
+              <dl>
+                <div><dt>原理</dt><dd>在第三方页面汇集知乎的热门问题，方便从榜单跳到问答讨论。</dd></div>
+                <div><dt>价值</dt><dd>看到大众用什么问题表达好奇、疑惑或争议，适合找解释型选题。</dd></div>
+                <div><dt>怎么用</dt><dd>先挑和创作方向相关的问题，再看现有回答里还有哪些疑问可以通过实测解答。</dd></div>
+              </dl>
+              <p class="entry-note">本次检查原入口返回 503，可以改看<a href="#uphotspot-title">上升热点的知乎榜</a>。</p>
+              <a class="entry-link" href="https://tophub.today/n/mproPpoq6O" target="_blank" rel="noopener noreferrer">打开今日热榜知乎页</a>
+            </article>
+
+            <article class="entry" aria-labelledby="uphotspot-title">
+              <header><h3 id="uphotspot-title">上升热点</h3></header>
+              <dl>
+                <div><dt>原理</dt><dd>聚合知乎、微博等平台的热榜，提供单个平台入口和跨平台总览。</dd></div>
+                <div><dt>价值</dt><dd>方便查看一个大众话题在哪些平台上出现，以及不同平台的讨论切口。</dd></div>
+                <div><dt>怎么用</dt><dd>从知乎榜找到具体问题，再到其他平台入口核对是否有独立的讨论。</dd></div>
+              </dl>
+              <a class="entry-link" href="https://www.uphotspot.com/n/zhihu" target="_blank" rel="noopener noreferrer">打开上升热点知乎榜</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="entry-group" aria-labelledby="research-title">
+          <h2 id="research-title">为选题补案例与出处</h2>
+          <div class="entry-grid entry-grid-pair">
+            <article class="entry" aria-labelledby="last30days-title">
+              <header><h3 id="last30days-title">last30days</h3></header>
+              <dl>
+                <div><dt>原理</dt><dd>这是给 AI 助手用的调研技能。它按主题搜索近期 X、YouTube、Reddit 等来源，合并重复讨论，再生成带引用的简报。具体来源取决于配置。</dd></div>
+                <div><dt>价值</dt><dd>定题后一次补齐多平台案例，找出有哪些不同做法和常见争议。</dd></div>
+                <div><dt>怎么用</dt><dd>给它一个具体问题，例如「两套角色一致性工作流各适合什么场景」，然后回原文核对关键说法。</dd></div>
+              </dl>
+              <a class="entry-link" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener noreferrer">打开 last30days 仓库</a>
+            </article>
+
+            <article class="entry" aria-labelledby="grok-title">
+              <header><h3 id="grok-title">Grok</h3></header>
+              <dl>
+                <div><dt>原理</dt><dd>在问答里调用公开 X 帖子和网页搜索，把检索到的内容整理成回答。</dd></div>
+                <div><dt>价值</dt><dd>手里有具体关键词或传闻时，可以快速追原帖、找产品公告和作者的后续说明。</dd></div>
+                <div><dt>怎么用</dt><dd>指定时间段，让它列出原作者、原帖和出处，再打开引用核对发布时间。</dd></div>
+              </dl>
+              <a class="entry-link" href="https://grok.com/" target="_blank" rel="noopener noreferrer">打开 Grok</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="entry-group" aria-labelledby="demand-title">
+          <h2 id="demand-title">找能持续写的教程题</h2>
+          <div class="entry-grid entry-grid-pair">
+            <article class="entry" aria-labelledby="demand-map-title">
+              <header><h3 id="demand-map-title">5118 需求图谱</h3></header>
+              <dl>
+                <div><dt>原理</dt><dd>把一个宽泛关键词展开成相关长尾词、高频需求和疑问词。</dd></div>
+                <div><dt>价值</dt><dd>把「AI 视频」这样的方向缩成一个读者会主动搜索、你能回答的问题。</dd></div>
+                <div><dt>怎么用</dt><dd>输入「AI 视频」或「角色一致性」，优先挑能用前后对照回答的具体问题。</dd></div>
+              </dl>
+              <a class="entry-link" href="https://www.5118.com/naotu" target="_blank" rel="noopener noreferrer">打开 5118 需求图谱</a>
+            </article>
+
+            <article class="entry" aria-labelledby="youtube-title">
+              <header><h3 id="youtube-title">YouTube Studio Research</h3></header>
+              <dl>
+                <div><dt>原理</dt><dd>按主题搜索站内视频，结合发布时间、订阅量和 Outlier Score 等条件筛样本。分数比较单条视频与频道过往同类视频的表现。</dd></div>
+                <div><dt>价值</dt><dd>找同赛道里表现明显高过作者平常水平的视频，研究它选了哪个具体问题。</dd></div>
+                <div><dt>怎么用</dt><dd>在 Research 搜同一主题，先按日期和频道体量缩小范围，再看高分样本的标题与演示结构。</dd></div>
+              </dl>
+              <a class="entry-link" href="https://support.google.com/youtube/answer/17232321" target="_blank" rel="noopener noreferrer">查看 Research 官方指南</a>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="example" class="body-section example-section" aria-labelledby="example-title">
+      <div class="frame">
+        <div class="section-head">
+          <h2 id="example-title">把「角色一致性」做成一条实测</h2>
+          <p>想回答的问题是「同一张角色参考图，哪种工作流更能保持三个镜头里的人物一致？」</p>
+        </div>
+        <ol class="example-steps">
+          <li><h3>找两种做法</h3><p>从 XFeed 找参考图和分镜控制的实操案例，保存原帖和实际用到的步骤。</p></li>
+          <li><h3>确认读者关心什么</h3><p>从 TwKit 的高收藏同类教程里找常见问题，再回评论区确认大家卡在身份、服装还是角度变化。</p></li>
+          <li><h3>给出可复查的结果</h3><p>两种做法使用同一份人物参考和分镜。发布时并排放成片，记录脸部变化、服装变化和返工次数。</p></li>
+        </ol>
+        <p class="signal-note">曝光和收藏用于筛选选题，成片对照用于说明方法效果，发布后的转化用于判断内容收益。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="frame"><a href="#guide-map">返回选题引导图</a></div></footer>
+</body>
+</html>

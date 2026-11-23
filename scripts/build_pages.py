@@ -18,6 +18,7 @@ TANSTARTER_RESEARCH = "008-tanstarter-research"
 COASTAL_STUDY = "009-coastal-street-study"
 REDDIT_RESEARCH = "010-reddit-ops-research"
 FOUNDER_CASES = "014-ai-founder-case-studies"
+TOPIC_SOURCE_GUIDE = "015-ai-topic-source-guide"
 REPOSITORY = "https://github.com/yydshly/1123_codex_project"
 SOURCE = ROOT / "projects" / PROJECT
 STATIC_SUFFIXES = {
@@ -91,6 +92,7 @@ def build(output):
     copytree(coastal_dist, output / COASTAL_STUDY / "demo")
     copy_static_site(ROOT / "projects" / REDDIT_RESEARCH / "web", output / REDDIT_RESEARCH)
     copy_static_site(ROOT / "projects" / FOUNDER_CASES / "web", output / FOUNDER_CASES)
+    copy_static_site(ROOT / "projects" / TOPIC_SOURCE_GUIDE / "web", output / TOPIC_SOURCE_GUIDE)
 
 
 if __name__ == "__main__":

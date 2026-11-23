@@ -15,6 +15,7 @@ on:
       - 'projects/009-coastal-street-study/**'
       - 'projects/010-reddit-ops-research/**'
       - 'projects/014-ai-founder-case-studies/**'
+      - 'projects/015-ai-topic-source-guide/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 

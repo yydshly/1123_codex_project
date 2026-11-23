@@ -22,6 +22,7 @@
 | 012 | [开源实时数字人研究](projects/012-realtime-avatar-research/README.md) | 对照 LiveTalking 的本地口型引擎、赛博小雅的 Vidu 互动舞台和 Gary AI 的直播间工作台，说明各自需要的素材、服务和可复用能力。再用三种本地单图模型判断口播、可控表情和指令动作分别适合哪条路线。 | [引导图](#开源实时数字人引导图) | 未部署 |
 | 013 | [AI 时代值得做的小团队 App](projects/013-paid-app-workflows/README.md) | 从 App Store 营收估算追到公开实收和客户原评，再拆解摄影师从 NAS、网盘发图到回找原片的流程。优先验证能减少返工的环节，尤其是定制订单中把客户确认的那一版准确交给生产。 | [引导图](#ai-时代小团队-app-研究引导图) | 未部署 |
 | 014 | [AI 出海案例研究](projects/014-ai-founder-case-studies/README.md) | 从公开产品、社区和搜索记录追到获客、收费与收入出处。十位实践者及九张图展示真实页面、用户路径和可查结果，帮助判断自己的项目该先验证什么、推广能否回本。 | [引导图](#ai-出海案例研究引导图) | [在线案例研究](https://yydshly.github.io/1123_codex_project/014-ai-founder-case-studies/) |
+| 015 | [AI 视频与工作流选题指南](projects/015-ai-topic-source-guide/README.md) | 对照 XFeed 的案例精选、TwKit 的互动排行和 TL1 的小号样本筛选，说明 10 个入口如何找题和查源。网页整理了 6 份有出处、步骤和记录指标的实测方案，帮助创作者把资讯缩成能复现、能比较的内容选题。 | [引导图](#ai-视频与工作流选题引导图) | [在线选题指南](https://yydshly.github.io/1123_codex_project/015-ai-topic-source-guide/) |
 
 ## Motion2MixamoRig 引导图
 
@@ -106,6 +107,12 @@
 [![ToolCenter 与 SparkVid 引导图，展示已披露 Google 数据、官网跳转、29 美元的权益与回本测算](projects/014-ai-founder-case-studies/web/sitin-toolcenter-sparkvid-map.png)](projects/014-ai-founder-case-studies/web/sitin-toolcenter-sparkvid-map.png)
 
 用真实的 SparkVid 收录页沿着曝光、进站、跳转官网看一遍，再根据每单收益和转化率计算回本所需的来访。图中标明站长披露的数据、实查页面和测算假设。 [在线引导案例](https://yydshly.github.io/1123_codex_project/014-ai-founder-case-studies/#case/sitin/toolcenter) · [研究详情](projects/014-ai-founder-case-studies/README.md)
+
+## AI 视频与工作流选题引导图
+
+[![AI 视频与工作流选题引导图，比较 XFeed、TwKit、TL1，列出十个入口和六个实测方向](projects/015-ai-topic-source-guide/web/ai-topic-entry-summary.png)](projects/015-ai-topic-source-guide/web/ai-topic-entry-summary.png)
+
+从 XFeed 找可复现的做法，按需要用 TwKit 核对同类帖的收藏表现，或用 TL1 找同体量的小号样本。选定题目后用同一份素材做对照，记录效果和返工次数。 [研究详情](projects/015-ai-topic-source-guide/README.md) · [在线指南](https://yydshly.github.io/1123_codex_project/015-ai-topic-source-guide/) · [六个实测选题](https://yydshly.github.io/1123_codex_project/015-ai-topic-source-guide/#topics)
 
 ## 收录约定
 
