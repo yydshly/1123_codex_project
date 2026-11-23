@@ -14,6 +14,7 @@
 | 004 | [七个工具的价值与实践成果](projects/004-ai-tool-entry-lab/README.md) | 覆盖资料研读、联网查源、在线课程、翻译与术语、图像编辑、数学可视化和视频试镜。用论文、角色素材和扫描动画展示怎样保存可查的出处、可改的素材与可复算的结果，附两套 Word 与 Excel 校对原型。 | [引导图](#七个工具研究引导图) | [在线手册与演示](https://yydshly.github.io/1123_codex_project/004-ai-tool-entry-lab/) |
 | 005 | [从 Next Token Skill 到 GEO](projects/005-geo-discovery-guide/README.md) | 从播客 RSS 和本地检索入手，用 AI 视频角色一致性实测练习跨站查证。再把方法用于 SEO 与 GEO，研究怎样发布可抓取、可引用的证据，让还不知道产品名的人也有机会按需求找到它，并用无品牌词问题验证效果。 | [引导图](#搜索seo-与-geo-引导图) | [在线指南](https://yydshly.github.io/1123_codex_project/005-geo-discovery-guide/) |
 | 006 | [AI 产品雷达](projects/006-ai-product-radar/README.md) | 从公开营收榜、产品转让市场和发布目录收集付费 AI 产品，记录客户、交付、定价和可查的营收与增长。用付费线索筛选我们能报价、能交付、值得试单的方向。 | [引导图](#ai-产品雷达引导图) | [在线网页](https://yydshly.github.io/1123_codex_project/006-ai-product-radar/) |
+| 007 | [Petalwake 实时尾流](projects/007-petalwake/README.md) | 原库用 Three.js、WebGL2 和 GLSL 模拟扫帚尾流，卷起花瓣、水雾，压弯草叶并留下掉瓣轨迹。对我们最有价值的是把参考视频的观感写成可调规则，用固定航线、截图和粒子指标验证改动。 | [引导图](#petalwake-实时尾流引导图) | [在线研究与原版试玩](https://yydshly.github.io/1123_codex_project/007-petalwake/) |
 
 ## Motion2MixamoRig 引导图
 
@@ -51,6 +52,12 @@
 
 首轮从 13 个公开入口整理 16 个产品样本。用口播后期示例说明如何核对付费线索、确定交付与报价，再用真实订单记录付款、采用和成本。 [研究详情](projects/006-ai-product-radar/README.md) · [在线网页](https://yydshly.github.io/1123_codex_project/006-ai-product-radar/)
 
+## Petalwake 实时尾流引导图
+
+[![Petalwake 引导图，展示原版花田与海面效果、参考视频到代码和试飞的过程、尾流原理与复用价值](projects/007-petalwake/web/assets/guide.png)](projects/007-petalwake/web/assets/guide.png)
+
+沿着原版截图看三种反馈，再看怎样把参考视频的观感转换成实时规则，使用脚本试飞和粒子指标验证调整。 [研究详情](projects/007-petalwake/README.md) · [在线研究与原版试玩](https://yydshly.github.io/1123_codex_project/007-petalwake/)
+
 ## 收录约定
 
 1. 按收录顺序从 `001` 开始编号，目录命名为 `projects/001-project-name/`。新增项目使用下一个编号，已分配的编号保留。
@@ -59,6 +66,6 @@
 
 ## Web 演示
 
-各演示共用 GitHub Pages 站点，按编号划分子路径。首页维护在 `docs/index.html`。`python scripts/build_pages.py` 将 002、004、005 和 006 的网页及所需素材组装到 `_site/`。提交到 `main` 后，由 Pages 工作流发布。
+各演示共用 GitHub Pages 站点，按编号划分子路径。首页维护在 `docs/index.html`。`python scripts/build_pages.py` 将 002、004、005、006 和 007 的网页及所需素材组装到 `_site/`。提交到 `main` 后，由 Pages 工作流发布。
 
 002 的音频对齐、广告周报计算和视频识别翻译在各自的 Python 服务上运行。线上总览附实测记录与本机启动说明。 [本机运行](projects/002-ai-overseas-revenue/README.md#本机打开网页) · [GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)

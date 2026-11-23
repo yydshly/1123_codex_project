@@ -13,6 +13,7 @@ PROJECT = "002-ai-overseas-revenue"
 TOOL_LAB = "004-ai-tool-entry-lab"
 GEO_GUIDE = "005-geo-discovery-guide"
 AI_PRODUCT_RADAR = "006-ai-product-radar"
+PETALWAKE = "007-petalwake"
 REPOSITORY = "https://github.com/yydshly/1123_codex_project"
 SOURCE = ROOT / "projects" / PROJECT
 STATIC_SUFFIXES = {
@@ -74,6 +75,7 @@ def build(output):
     copy_static_site(ROOT / "projects" / TOOL_LAB / "web", output / TOOL_LAB)
     copy_static_site(ROOT / "projects" / GEO_GUIDE / "web", output / GEO_GUIDE)
     copy_static_site(ROOT / "projects" / AI_PRODUCT_RADAR, output / AI_PRODUCT_RADAR)
+    copy_static_site(ROOT / "projects" / PETALWAKE / "web", output / PETALWAKE)
 
 
 if __name__ == "__main__":
