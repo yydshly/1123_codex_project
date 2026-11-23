@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light;
+  font: 1rem/1.65 "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: #f4f3eb;
+  color: #193034;
+  --sea: #112d34;
+  --accent: #a3dfce;
+  --muted: #435d5c;
+  --line: #c8d3ca;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3, p, figure { margin: 0; }
+a { color: #205f57; text-underline-offset: .2em; }
+a:focus-visible { outline: 2px solid #6ab5a3; outline-offset: 4px; }
+img { display: block; width: 100%; height: auto; }
+section, #guide { scroll-margin-top: 1rem; }
+.wrap { width: min(100% - 2.5rem, 71rem); margin-inline: auto; }
+.skip { position: absolute; inset: 0 auto auto 1rem; transform: translateY(-110%); background: #fff; padding: .5rem 1rem; }
+.skip:focus { transform: translateY(0); }
+.masthead, .hero, .closing { background: var(--sea); color: #f3f5ee; }
+.nav-row { display: flex; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; flex-wrap: wrap; padding-block: .85rem; border-bottom: 1px solid #3a555a; }
+.nav-row nav { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; }
+.masthead a, .closing a, .guide a { color: var(--accent); }
+.hero { padding: clamp(2.2rem, 5vw, 4.7rem) 0; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+.section-tag { color: #21645d; font-size: .9rem; font-weight: 650; }
+.hero .section-tag { color: var(--accent); }
+h1 { margin: .65rem 0 1.15rem; font: 700 clamp(2.7rem, 6.1vw, 5.4rem)/1.15 "Noto Serif CJK SC", "Songti SC", SimSun, serif; }
+.lead { max-width: 35rem; color: #d7e7e2; font-size: clamp(1rem, 1.7vw, 1.2rem); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.7rem; }
+.primary, .secondary { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border-radius: .4rem; padding: .5rem 1.15rem; text-decoration: none; font-weight: 650; }
+.primary { color: #112d34; background: #a3dfce; border: 1px solid #a3dfce; }
+.primary:hover { background: #bdebdc; }
+.secondary { border: 1px solid #7da39b; color: #edf5ef; }
+.secondary:hover { background: #203e45; }
+.guide { justify-self: center; max-width: 26rem; }
+.guide img { border-radius: .5rem; }
+.guide figcaption { color: #c7d9d3; font-size: .82rem; margin-top: .65rem; }
+.section { padding-block: clamp(2.1rem, 5vw, 3.6rem); border-bottom: 1px solid var(--line); }
+h2 { margin-bottom: 1.15rem; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.25; }
+h3 { font-size: 1.15rem; line-height: 1.4; }
+.columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
+.columns article { border-top: 3px solid #84b3a7; padding-top: .8rem; }
+.columns article p { margin: .5rem 0 .65rem; color: var(--muted); }
+.columns article a { display: inline-block; margin-right: .75rem; }
+.questions { display: grid; gap: .9rem; margin: 0; }
+.questions div { display: grid; grid-template-columns: minmax(6.5rem, 1fr) 7fr; gap: .65rem 1.2rem; }
+.questions dt { font-weight: 700; color: #22645e; }
+.questions dd { margin: 0; }
+blockquote { margin: .85rem 0 0; background: #e3ece4; border-inline-start: 4px solid #3e8276; padding: 1.15rem clamp(1rem, 3vw, 2rem); }
+blockquote p + p { margin-top: .55rem; }
+.result-lead { margin-bottom: 1.2rem; color: var(--muted); }
+.captures img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: .4rem; }
+.captures figcaption { margin-top: .6rem; font-size: .95rem; }
+.route { display: flex; flex-wrap: wrap; gap: .45rem 1rem; background: #e3ece4; margin: 1.5rem 0; padding: .9rem 1.1rem; list-style: none; }
+.route li:not(:last-child)::after { content: "→"; color: #22645e; margin-inline-start: 1rem; }
+.play-note { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.1rem; }
+.play-note p { color: var(--muted); }
+kbd { font: inherit; font-size: .9em; padding: .08em .27em; border: 1px solid #a6bab0; border-radius: .2rem; }
+.closing { padding-block: clamp(2rem, 5vw, 3.5rem); }
+.closing p { max-width: 52rem; color: #d7e7e2; margin-bottom: .8rem; }
+
+@media (max-width: 50rem) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .guide { justify-self: start; }
+  .columns { gap: 1.1rem; }
+}
+
+@media (max-width: 37rem) {
+  .columns, .questions div { grid-template-columns: minmax(0, 1fr); }
+  .questions div { gap: .1rem; }
+  .wrap { width: min(100% - 1.5rem, 71rem); }
+}

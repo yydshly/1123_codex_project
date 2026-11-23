@@ -1,0 +1,131 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #f8f7ef;
+  background: #26373a;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+#stage { position: fixed; inset: 0; overflow: hidden; isolation: isolate; }
+#view { width: 100%; height: 100%; display: block; outline: 0; cursor: grab; touch-action: none; }
+#view:active { cursor: grabbing; }
+
+.hud { position: absolute; inset: 0; pointer-events: none; }
+.hud[hidden], .loading[hidden] { display: none; }
+.hud::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 150px;
+  background: linear-gradient(#15262966, transparent);
+  z-index: -1;
+}
+
+.title-panel { position: absolute; top: 23px; left: 27px; text-shadow: 0 1px 8px #17282d; }
+h1 { margin: 0; font: 600 27px/1.25 "Noto Serif CJK SC", "Songti SC", SimSun, serif; letter-spacing: .12em; }
+.title-panel p { margin: 7px 0 0; color: #edf1e9; font-size: 12px; letter-spacing: .08em; }
+.route-guide { display: block; width: fit-content; margin-top: 9px; padding: 5px 9px; border-radius: 5px; color: #f8f7ef; background: #233035e6; font-size: 12px; }
+.route-guide:empty, .route-guide[hidden] { display: none; }
+.tools { position: absolute; top: 23px; right: 25px; display: flex; gap: 6px; align-items: start; }
+
+button, summary, .controls, .status, .speed {
+  font: inherit;
+  font-size: 12px;
+  color: inherit;
+  border: 1px solid #f1f4e750;
+  background: #233035e6;
+  box-shadow: 0 2px 12px #18242526;
+  border-radius: 7px;
+  backdrop-filter: blur(10px);
+}
+
+button, summary { min-height: 37px; padding: 8px 12px; pointer-events: auto; cursor: pointer; }
+button:hover, summary:hover, button[aria-pressed="true"] { background: #4b5959f0; }
+button:focus-visible, summary:focus-visible { outline: 2px solid #d8e4ce; outline-offset: 3px; }
+button:disabled { opacity: .55; cursor: default; }
+.views { position: relative; }
+.views summary { list-style: none; }
+.views summary::-webkit-details-marker { display: none; }
+.views summary::after { content: " ▾"; margin-left: 2px; color: #cfd8cd; }
+.view-list { position: absolute; right: 0; min-width: 120px; top: calc(100% + 5px); display: grid; gap: 4px; }
+.view-list button { white-space: nowrap; text-align: left; }
+
+.controls { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); margin: 0; padding: 8px 12px; white-space: nowrap; }
+.controls span { display: inline-block; margin: 0 8px; height: 12px; width: 1px; vertical-align: -2px; background: #e1ebe057; }
+kbd { display: inline-block; min-width: 18px; text-align: center; font: 600 10px/17px system-ui, sans-serif; border: 1px solid #e1ebe075; border-radius: 3px; margin-right: 3px; }
+.record { position: absolute; right: 25px; bottom: 20px; }
+.sound { position: absolute; left: 25px; bottom: 20px; }
+.interaction { position: absolute; bottom: 68px; left: 50%; transform: translateX(-50%); padding-inline: 14px; }
+.speed { position: absolute; right: 25px; bottom: 20px; padding: 7px 11px; font-size: 20px; font-variant-numeric: tabular-nums; }
+.speed small { color: #d0d9d5; font-size: 11px; }
+.status { position: absolute; bottom: 116px; left: 50%; transform: translateX(-50%); padding: 7px 11px; max-width: 90vw; text-align: center; }
+.status:empty { display: none; }
+.telescope-overlay { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; opacity: 0; }
+.telescope-overlay[hidden], .telescope-controls[hidden] { display: none; }
+.telescope-lens {
+  width: min(84vh, 90vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid #71808087;
+  background: radial-gradient(circle, transparent 61%, #18282e26 85%, #111b21c9);
+  box-shadow: 0 0 0 150vmax #0b1318, inset 0 0 22px #141f27a6;
+}
+.viewing-through-telescope .title-panel, .viewing-through-telescope .tools { visibility: hidden; }
+.telescope-exit { position: absolute; top: 23px; right: 25px; }
+.telescope-zoom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 12px;
+  padding: 4px 5px 4px 12px;
+  border: 1px solid #f1f4e736;
+  border-radius: 7px;
+  background: #233035e6;
+}
+.telescope-zoom button { min-width: 34px; min-height: 32px; padding: 0; font-size: 18px; }
+.telescope-zoom output { min-width: 3.4em; text-align: center; font-variant-numeric: tabular-nums; }
+.loading { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 24px; background: #293b3e; font-size: 15px; letter-spacing: .14em; text-align: center; }
+
+.archive {
+  width: min(670px, calc(100vw - 32px));
+  max-height: calc(100% - 32px);
+  padding: clamp(14px, 3vw, 24px);
+  border: 1px solid #beb29b;
+  border-radius: 8px;
+  background: #e5ddcd;
+  color: #303a34;
+  box-shadow: 0 16px 60px #131c1a80;
+}
+.archive::backdrop { background: #192522ad; }
+.archive header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.archive h2 { margin: 0; font: 600 22px/1.2 "Noto Serif CJK SC", "Songti SC", SimSun, serif; }
+.archive header button { color: #fff9e9; background: #37483e; }
+.archive header button:hover { background: #495e4e; }
+.archive header button:focus-visible { outline-color: #46554b; }
+.archive figure { margin: 14px 0 0; }
+.archive img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; filter: grayscale(.95) sepia(.46) contrast(.94); background: #b3ae9e; }
+.archive figcaption { margin-top: 12px; font-size: 14px; line-height: 1.5; }
+
+@media (max-width: 670px) {
+  .title-panel { top: 15px; left: 15px; }
+  h1 { font-size: 20px; }
+  .title-panel p { font-size: 10px; }
+  .tools { top: 13px; right: 10px; gap: 4px; }
+  button, summary { padding-inline: 8px; }
+  .controls { bottom: 13px; left: 10px; transform: none; }
+  .record, .speed { right: 10px; bottom: 58px; }
+  .sound { left: 10px; bottom: 58px; }
+}
+@media (max-width: 425px) {
+  .tools { top: 67px; left: 10px; right: 10px; flex-wrap: wrap; }
+  .controls { padding-inline: 7px; font-size: 11px; }
+  .controls span { margin-inline: 3px; }
+  .controls kbd { min-width: 15px; margin-right: 2px; }
+}

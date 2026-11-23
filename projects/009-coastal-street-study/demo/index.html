@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="一条约 130 米长、可步行和试驾的海滨街道。">
+    <meta name="theme-color" content="#253438">
+    <title>海堤街景 · 滨海步行与试驾</title>
+  </head>
+  <body>
+    <main id="stage" aria-label="海堤街景三维预览">
+      <canvas id="view" tabindex="0" aria-label="海滨街景，使用 WASD 移动，按 C 切换步行视角，按 E 上下车"></canvas>
+      <div class="telescope-overlay" id="telescope-overlay" aria-hidden="true" hidden>
+        <div class="telescope-lens"></div>
+      </div>
+      <div class="hud" id="hud">
+        <header class="title-panel">
+          <h1>海堤街景</h1>
+          <p>约 130 米海滨街道</p>
+          <output id="route-guide" class="route-guide" hidden></output>
+        </header>
+        <nav class="tools" aria-label="预览控制">
+          <button id="perspective" type="button" title="按 C 切换视角" aria-keyshortcuts="C" aria-pressed="true">第三人称</button>
+          <button id="reset" type="button">回到起点</button>
+          <details class="views" id="views">
+            <summary>观察机位</summary>
+            <div class="view-list">
+              <button type="button" data-view="street">街道全景</button>
+              <button type="button" data-view="curb">车轮与路缘</button>
+              <button type="button" data-view="cabin">车内结构</button>
+              <button type="button" data-view="shore">海堤与步道</button>
+              <button type="button" data-view="archive">港务办公室</button>
+              <button type="button" data-view="lookout">观景台海景</button>
+              <button type="button" data-view="lookout-visitor">观景台行人</button>
+            </div>
+          </details>
+          <details class="views" id="lighting">
+            <summary title="切换光线">薄云午后</summary>
+            <div class="view-list">
+              <button type="button" data-light="afternoon" aria-pressed="true">薄云午后</button>
+              <button type="button" data-light="overcast" aria-pressed="false">冷灰阴天</button>
+            </div>
+          </details>
+          <button id="walkthrough" type="button" aria-pressed="false">自动走一遍</button>
+        </nav>
+        <p class="controls" id="walk-controls"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移动 <span></span> 拖动转向 <span></span> <kbd>C</kbd> 视角 <span></span> <kbd>E</kbd> 上车</p>
+        <p class="controls" id="drive-controls" hidden><kbd>W</kbd> 加速 <span></span> <kbd>S</kbd> 倒车 <span></span> <kbd>A</kbd><kbd>D</kbd> 转向 <span></span> <kbd>Space</kbd> 刹车</p>
+        <button class="interaction" id="vehicle-interaction" type="button" aria-keyshortcuts="E" hidden><kbd>E</kbd> <span>上车</span></button>
+        <button class="interaction" id="bench-action" type="button" aria-keyshortcuts="F" hidden><kbd>F</kbd> <span>坐下看海</span></button>
+        <button class="interaction" id="archive-action" type="button" aria-keyshortcuts="G" hidden><kbd>G</kbd> <span>查看海湾旧照</span></button>
+        <button class="interaction" id="telescope-action" type="button" aria-keyshortcuts="T" hidden><kbd>T</kbd> <span>使用望远镜</span></button>
+        <div class="telescope-controls" id="telescope-controls" role="group" aria-label="望远镜控制" hidden>
+          <button class="telescope-exit" id="telescope-exit" type="button" aria-keyshortcuts="Escape"><kbd>Esc</kbd> 退出望远镜</button>
+          <div class="telescope-zoom">
+            <span>拖动转向 · 滚轮缩放</span>
+            <button id="telescope-wider" type="button" aria-label="缩小倍率">−</button>
+            <output id="telescope-zoom" aria-label="倍率" aria-live="off">2.0×</output>
+            <button id="telescope-closer" type="button" aria-label="放大倍率">+</button>
+          </div>
+        </div>
+        <output class="speed" id="speed" aria-label="车速" aria-live="off" hidden>0 <small>km/h</small></output>
+        <output class="status" id="status" aria-live="polite"></output>
+        <button class="sound" id="sound" type="button" aria-label="场景声音" aria-pressed="false">开启声音</button>
+        <button class="record" id="record" type="button" title="录制并下载 20 秒步行预览">录制步行</button>
+      </div>
+      <dialog class="archive" id="archive" aria-labelledby="archive-title">
+        <header>
+          <h2 id="archive-title">海湾旧照</h2>
+          <form method="dialog"><button type="submit" autofocus>关闭</button></form>
+        </header>
+        <figure>
+          <img id="archive-photo" alt="从海堤观景台望向岬角，白色航标立在近海低礁上。">
+          <figcaption>沿海侧支路到观景台，朝岬角看。低礁上的白色航标还在。</figcaption>
+        </figure>
+      </dialog>
+      <div id="loading" class="loading" role="status">正在加载海堤街景</div>
+      <noscript><p class="loading">启用 JavaScript 后即可查看街景。</p></noscript>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

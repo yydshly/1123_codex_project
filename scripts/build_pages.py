@@ -15,6 +15,7 @@ GEO_GUIDE = "005-geo-discovery-guide"
 AI_PRODUCT_RADAR = "006-ai-product-radar"
 PETALWAKE = "007-petalwake"
 TANSTARTER_RESEARCH = "008-tanstarter-research"
+COASTAL_STUDY = "009-coastal-street-study"
 REPOSITORY = "https://github.com/yydshly/1123_codex_project"
 SOURCE = ROOT / "projects" / PROJECT
 STATIC_SUFFIXES = {
@@ -71,6 +72,10 @@ def copy_static_site(source_root, destination_root, *, excluded=(), transform_ht
 
 
 def build(output):
+    coastal_source = ROOT / "projects" / COASTAL_STUDY
+    coastal_dist = coastal_source / "demo" / "dist"
+    if not (coastal_dist / "index.html").is_file():
+        raise FileNotFoundError(f"Build {COASTAL_STUDY}/demo with npm run build before assembling Pages")
     copytree(ROOT / "docs", output)
     copy_static_site(SOURCE, output / PROJECT, excluded=LOCAL_ONLY_PAGES, transform_html=public_html)
     copy_static_site(ROOT / "projects" / TOOL_LAB / "web", output / TOOL_LAB)
@@ -78,6 +83,8 @@ def build(output):
     copy_static_site(ROOT / "projects" / AI_PRODUCT_RADAR, output / AI_PRODUCT_RADAR)
     copy_static_site(ROOT / "projects" / PETALWAKE / "web", output / PETALWAKE)
     copy_static_site(ROOT / "projects" / TANSTARTER_RESEARCH / "web", output / TANSTARTER_RESEARCH)
+    copy_static_site(coastal_source / "web", output / COASTAL_STUDY)
+    copytree(coastal_dist, output / COASTAL_STUDY / "demo")
 
 
 if __name__ == "__main__":

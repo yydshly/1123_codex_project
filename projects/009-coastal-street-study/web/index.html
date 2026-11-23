@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112d34">
+  <meta name="description" content="从《潮线失序》观察海滨驾驶和路线引导，对照《镜海》原库，以 Sidmouth 实拍验证 30 米街景，交付约 130 米可步行、试驾和观景的海堤环线。附引导图、提示词和实机试玩。">
+  <meta property="og:title" content="海堤街景研究｜从参考游戏到可玩的海堤">
+  <meta property="og:description" content="潮线失序试玩观察、镜海原库对照、Sidmouth 实拍校准。用一张引导图串起研究、提示词和可玩的海堤。">
+  <meta property="og:image" content="https://yydshly.github.io/1123_codex_project/009-coastal-street-study/assets/coastal-street-research-summary.png">
+  <title>海堤街景研究｜从参考游戏到可玩的海堤</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="masthead">
+    <div class="wrap nav-row">
+      <a href="../">研究总库</a>
+      <nav aria-label="页内导航">
+        <a href="#sources">原库与参考</a>
+        <a href="#prompt">提示词</a>
+        <a href="#result">实机效果</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="section-tag">009 · 海滨街区研究</p>
+          <h1 id="title">从参考游戏到<br>可玩的海堤</h1>
+          <p class="lead">我们从《潮线失序》拆解临海街道、驾驶与引导，对照《镜海》原仓库，用 Sidmouth 实拍校准比例和光线。30 米样段验证后，扩成约 130 米的原创街区，可以步行、开车、停车看海，再绕回主街。</p>
+          <div class="actions">
+            <a class="primary" href="demo/">在线试玩</a>
+            <a class="secondary" href="assets/coastal-street-research-summary.png">看高清引导图</a>
+          </div>
+        </div>
+        <figure id="guide" class="guide">
+          <a href="assets/coastal-street-research-summary.png">
+            <img src="assets/coastal-street-research-summary.png" width="1600" height="2310" fetchpriority="high" alt="研究引导图，汇总潮线失序与镜海的参考入口、环境和玩法拆解、提示词、海堤动线及实机效果">
+          </a>
+          <figcaption>Sidmouth 实拍由 Steve Daniels 摄影。<a href="https://www.geograph.org.uk/photo/6901306">原图</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="wrap section" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">原库与参考</h2>
+      <div class="columns">
+        <article>
+          <h3>潮线失序 · 体验参考</h3>
+          <p>从公开试玩观察海滨驾驶、地标、接单和到达反馈。研究依据是浏览器实玩与游戏内资料。</p>
+          <a href="https://dzyai.online/games/tideline/">原版试玩</a>
+          <a href="https://github.com/yydshly/1123_codex_project/blob/main/projects/009-coastal-street-study/reference-notes.md">实玩拆解与截图</a>
+        </article>
+        <article>
+          <h3>镜海 · 原库对照</h3>
+          <p>以已有海滨世界、地图、载具和探索入口为对照，研究玩家从哪开始、怎么找到下一处互动。</p>
+          <a href="https://github.com/yydshly/mirror-coast-web">镜海原仓库</a>
+          <a href="https://yydshly.github.io/mirror-coast-web/">镜海试玩</a>
+        </article>
+        <article>
+          <h3>Sidmouth · 实拍校准</h3>
+          <p>用实拍确定建筑、道路、步道与岸线的尺度关系，再校准石材、沥青和阴天柔光。</p>
+          <a href="https://commons.wikimedia.org/wiki/File:The_Esplanade_in_Sidmouth_-_geograph.org.uk_-_6901306.jpg">实拍资料与署名</a>
+        </article>
+      </div>
+    </section>
+    <section class="wrap section" id="research" aria-labelledby="research-title">
+      <h2 id="research-title">我们探索了什么</h2>
+      <dl class="questions">
+        <div><dt>环境</dt><dd>先让道路、步道和岸线接得上，用总图核对分岔、过街、停车与开门空间。</dd></div>
+        <div><dt>素材与人物</dt><dd>统一人车和街具的尺度与材质，给行人安排出发、停留和返回的路线。</dd></div>
+        <div><dt>玩法与反馈</dt><dd>用标线、地标和操作反馈串起不同状态。开车有重量感，上下车有动作和声音，停车后有互动。</dd></div>
+      </dl>
+    </section>
+    <section class="wrap section" id="prompt" aria-labelledby="prompt-title">
+      <h2 id="prompt-title">怎么写提示词</h2>
+      <p class="section-tag">参考图 ＋ 范围和尺度 ＋ 材质和光线 ＋ 交互阶段 ＋ 实机验收</p>
+      <blockquote>
+        <p>参考 Sidmouth 实拍，从零做约 30 米原创海边街景。先定建筑、车道、步道和海堤的相对尺寸，用沥青、石材和阴天柔光统一观感。</p>
+        <p>在桌面浏览器里走一遍，检查脚底贴地、坡道和路缘、材质尺度与海天接缝。画面验收后，再实现第三人称驾驶、停车下车和观景互动。</p>
+        <p>检查停车时的开门空间、进出视角的过渡和动作声音。交付能打开的试玩页面和实机截图。</p>
+      </blockquote>
+    </section>
+    <section class="wrap section" id="result" aria-labelledby="result-title">
+      <h2 id="result-title">实机效果</h2>
+      <p class="result-lead">约 130 米海堤街区，实机走过驶入支路、停车下车、使用望远镜和返回步行的路线。</p>
+      <div class="columns captures">
+        <figure><img src="assets/street-study.jpg" width="819" height="881" loading="lazy" alt="阴天海滨主街，左侧临街房屋，右侧海堤步道"><figcaption>街景样段 · 比例、材质和阴天光线</figcaption></figure>
+        <figure><img src="assets/branch-driving.jpg" width="1280" height="720" loading="lazy" alt="车后视角沿箭头标线驶向海滨停车带"><figcaption>海滨支路 · 导向标线和停车带</figcaption></figure>
+        <figure><img src="assets/telescope-view.jpg" width="1280" height="720" loading="lazy" alt="望远镜中可见渔船、礁石和飞行的海鸥"><figcaption>观景台 · 可转向、变焦的望远镜</figcaption></figure>
+      </div>
+      <ol class="route" aria-label="玩家动线">
+        <li>街口找车</li><li>沿标线进支路</li><li>停车下车</li><li>坐下或用望远镜</li><li>汇回主街</li>
+      </ol>
+      <div class="play-note">
+        <a class="primary" href="demo/">进入海堤街景</a>
+        <p>用桌面键盘和鼠标。<kbd>WASD</kbd> 移动或驾驶，<kbd>E</kbd> 上下车，靠近望远镜按 <kbd>T</kbd> 使用，<kbd>Esc</kbd> 退出。</p>
+      </div>
+    </section>
+    <section class="closing" id="value" aria-labelledby="value-title">
+      <div class="wrap">
+        <h2 id="value-title">可以复用什么</h2>
+        <p>先定一条能走通的路线，再按场景尺度、自然动作和现场反馈写约束。把原型放进浏览器，用同一条路线检查每次改动。玩家能否仅凭现场线索走完这条路线，待首次试玩验证。</p>
+        <a href="https://github.com/yydshly/1123_codex_project/tree/main/projects/009-coastal-street-study">研究记录、源码与素材署名</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

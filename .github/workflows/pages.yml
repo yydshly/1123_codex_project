@@ -12,6 +12,7 @@ on:
       - 'projects/006-ai-product-radar/**'
       - 'projects/007-petalwake/**'
       - 'projects/008-tanstarter-research/**'
+      - 'projects/009-coastal-street-study/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 
@@ -28,6 +29,16 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: projects/009-coastal-street-study/demo/package-lock.json
+      - name: Build coastal street demo
+        working-directory: projects/009-coastal-street-study/demo
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
       - name: Build static research pages
         run: python3 scripts/build_pages.py
       - uses: actions/upload-pages-artifact@v4

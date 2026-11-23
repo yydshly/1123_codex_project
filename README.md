@@ -16,6 +16,7 @@
 | 006 | [AI 产品雷达](projects/006-ai-product-radar/README.md) | 从公开营收榜、产品转让市场和发布目录收集付费 AI 产品，记录客户、交付、定价和可查的营收与增长。用付费线索筛选我们能报价、能交付、值得试单的方向。 | [引导图](#ai-产品雷达引导图) | [在线网页](https://yydshly.github.io/1123_codex_project/006-ai-product-radar/) |
 | 007 | [Petalwake 实时尾流](projects/007-petalwake/README.md) | 原库用 Three.js、WebGL2 和 GLSL 模拟扫帚尾流，卷起花瓣、水雾，压弯草叶并留下掉瓣轨迹。对我们最有价值的是把参考视频的观感写成可调规则，用固定航线、截图和粒子指标验证改动。 | [引导图](#petalwake-实时尾流引导图) | [在线研究与原版试玩](https://yydshly.github.io/1123_codex_project/007-petalwake/) |
 | 008 | [TanStarter 源码模板研究](projects/008-tanstarter-research/README.md) | TanStarter 接好账号、收款和运营后台，MkImage 在同一底座上实现积分生图、异步任务和作品库。对照七款模板，判断哪些工作值得复用，以及现有 AI 入口该先验证什么。 | [引导图](#tanstarter-源码模板引导图) | [在线研究网页](https://yydshly.github.io/1123_codex_project/008-tanstarter-research/) |
+| 009 | [海堤街景研究](projects/009-coastal-street-study/README.md) | 从《潮线失序》公开试玩拆解海滨氛围、驾驶和路线引导，对照 [《镜海》原库](https://github.com/yydshly/mirror-coast-web)，用 Sidmouth 实拍校准 30 米样段。做成约 130 米的原创街区，可步行上车、沿支路停车下车、使用望远镜并汇回主街。 | [引导图](#海堤街景研究引导图) | [在线研究](https://yydshly.github.io/1123_codex_project/009-coastal-street-study/) · [3D 试玩](https://yydshly.github.io/1123_codex_project/009-coastal-street-study/demo/) |
 
 ## Motion2MixamoRig 引导图
 
@@ -65,6 +66,12 @@
 
 模板的价值来自已经接好的源码和流程。图中对照开发者、创作者和运营团队分别为什么付费，并记录我们可以先用现有入口验证可发布素材包。 [研究详情](projects/008-tanstarter-research/README.md) · [在线研究网页](https://yydshly.github.io/1123_codex_project/008-tanstarter-research/)
 
+## 海堤街景研究引导图
+
+[![海堤街景研究引导图，从《潮线失序》和《镜海》拆解环境与玩法，展示提示词、实机动线和可复用价值](projects/009-coastal-street-study/web/assets/coastal-street-research-summary.png)](projects/009-coastal-street-study/web/assets/coastal-street-research-summary.png)
+
+从参考游戏和街景实拍提取能执行的尺度、材质、交互与验收约束，再沿同一路线实机检查驾驶、停靠和观景。 [研究详情](projects/009-coastal-street-study/README.md) · [在线试玩](https://yydshly.github.io/1123_codex_project/009-coastal-street-study/demo/)
+
 ## 收录约定
 
 1. 按收录顺序从 `001` 开始编号，目录命名为 `projects/001-project-name/`。新增项目使用下一个编号，已分配的编号保留。
@@ -73,6 +80,14 @@
 
 ## Web 演示
 
-各演示共用 GitHub Pages 站点，按编号划分子路径。首页维护在 `docs/index.html`。`python scripts/build_pages.py` 将 002、004、005、006、007 和 008 的网页及所需素材组装到 `_site/`。提交到 `main` 后，由 Pages 工作流发布。
+各演示共用 GitHub Pages 站点，按编号划分子路径。首页维护在 `docs/index.html`。组装站点时使用 009 的 Vite 构建产物。提交到 `main` 后，Pages 工作流会自动构建并发布。
+
+在本机用 Node.js 22.12 或以上版本构建到一个尚未创建的输出目录。
+
+```sh
+npm --prefix projects/009-coastal-street-study/demo ci
+npm --prefix projects/009-coastal-street-study/demo run build
+python scripts/build_pages.py _site/preview
+```
 
 002 的音频对齐、广告周报计算和视频识别翻译在各自的 Python 服务上运行。线上总览附实测记录与本机启动说明。 [本机运行](projects/002-ai-overseas-revenue/README.md#本机打开网页) · [GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
