@@ -14,6 +14,8 @@
 | 004 | [七个工具的价值与实践成果](projects/004-ai-tool-entry-lab/README.md) | 覆盖资料研读、联网查源、在线课程、翻译与术语、图像编辑、数学可视化和视频试镜。用论文、角色素材和扫描动画展示怎样保存可查的出处、可改的素材与可复算的结果，附两套 Word 与 Excel 校对原型。 | [引导图](#七个工具研究引导图) | [在线手册与演示](https://yydshly.github.io/1123_codex_project/004-ai-tool-entry-lab/) |
 | 005 | [从 Next Token Skill 到 GEO](projects/005-geo-discovery-guide/README.md) | 从播客 RSS 和本地检索入手，用 AI 视频角色一致性实测练习跨站查证。再把方法用于 SEO 与 GEO，研究怎样发布可抓取、可引用的证据，让还不知道产品名的人也有机会按需求找到它，并用无品牌词问题验证效果。 | [引导图](#搜索seo-与-geo-引导图) | [在线指南](https://yydshly.github.io/1123_codex_project/005-geo-discovery-guide/) |
 
+002 下的 **06 AI 产品雷达**从公开营收榜、产品转让市场和发布目录收集付费 AI 产品，核对定价及公开营收与增长，帮助筛选值得试单的方向。 [研究说明与引导图](projects/002-ai-overseas-revenue/06-ai-product-radar/README.md) · [在线网页](https://yydshly.github.io/1123_codex_project/002-ai-overseas-revenue/06-ai-product-radar/)
+
 ## Motion2MixamoRig 引导图
 
 ![Motion2MixamoRig 引导图，比较全身照片、真人视频与直接生成视频，说明骨骼动画的处理流程、用法和适用场景](projects/001-motion2mixamorig/images/motion2mixamorig-guide.png)

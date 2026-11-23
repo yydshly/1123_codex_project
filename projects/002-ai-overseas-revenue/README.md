@@ -36,6 +36,6 @@ python -m http.server 8846 --bind 127.0.0.1
 
 ## 市场研究子项目
 
-[06 AI 产品雷达](06-ai-product-radar/index.html) 汇总营收和增长数据入口，记录公开 AI 产品样本，并给出口播后期、电商素材与视频教学的验证方向。
+**06 AI 产品雷达**从公开营收榜、产品转让市场和发布目录收集付费 AI 产品，记录客户、交付、定价及可查的营收与增长，用这些线索筛选值得试单的方向。 [在线网页](https://yydshly.github.io/1123_codex_project/002-ai-overseas-revenue/06-ai-product-radar/) · [研究说明与引导图](06-ai-product-radar/README.md)
 
 [07 AI 出海案例研究](07-founder-case-studies/index.html) 深入整理十位实践者的产品、获客和收费方式。
