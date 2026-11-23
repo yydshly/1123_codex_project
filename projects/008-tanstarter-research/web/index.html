@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TanStarter 是一套可自行部署的 SaaS 源码模板。研究它实现的建站能力、MkImage 的积分生图流程，以及采用模板能省下的工作。">
+  <title>TanStarter 源码模板实现了什么</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span> AI 工具入口研究</a>
+      <nav aria-label="页内导航">
+        <a href="#templates">模板清单</a>
+        <a href="#capabilities">能力对照</a>
+        <a href="#comparison">上线成本</a>
+        <a href="#engineering">程序员视角</a>
+        <a href="#market">市场对照</a>
+        <a href="#entry">我们的入口</a>
+        <a href="#summary">一图总览</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">源码选型 · 2026 年 11 月 22 日核对</p>
+          <h1 id="hero-title">TanStarter<br><span>源码模板实现了什么</span></h1>
+          <p class="hero-intro">它卖给开发者的是两套可修改、可自行部署的源码。TanStarter 接好了账号、支付和运营后台，MkImage 用同一底座实现了积分生图站。价值在于少做一遍这些集成。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#templates">看两套模板</a>
+            <a class="button quiet" href="#entry">看对我们的价值</a>
+          </div>
+        </div>
+        <a class="hero-guide" href="#summary">
+          <img src="assets/tanstarter-value-map.png" width="1800" height="1980" alt="">
+          <span>查看完整引导图</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section shell" id="templates" aria-labelledby="templates-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">购买范围</p><h2 id="templates-title">套餐里有什么</h2></div>
+        <p>官方列出两套私有 GitHub 源码，支持终身更新和不限数量的项目。11 月 22 日核对的黑五价为 $99，活动页标注 11 月 30 日截止。<a class="source" href="https://docs.tanstarter.dev/codebase/">官方源码清单</a><a class="source" href="https://tanstarter.dev/#pricing">官网报价</a></p>
+      </div>
+      <div class="template-grid">
+        <article class="template template-base">
+          <p class="template-label">通用 SaaS 模板</p>
+          <h3>TanStarter</h3>
+          <p>适合从自己的工具流程开始做。复用账号、支付、站点页面和后台，按需要加生图、语音或其他工具。</p>
+          <ul class="tags" aria-label="技术栈"><li>TanStack Start</li><li>Cloudflare Workers</li><li>D1 / R2 / KV</li></ul>
+          <div class="template-links"><a href="https://demo.tanstarter.dev/">打开演示</a><a href="https://tanstarter.dev/blog/features">功能说明</a></div>
+        </article>
+        <article class="template template-image">
+          <p class="template-label">垂直产品模板</p>
+          <h3>MkImage</h3>
+          <p>适合直接做积分制生图站。入口、生成页、提示词图库、买积分和作品历史已经连成一套产品流程。</p>
+          <ul class="tags" aria-label="技术栈"><li>TanStarter</li><li>Cloudflare Workflows</li><li>fal.ai / APIMart / KIE</li></ul>
+          <div class="template-links"><a href="https://demo.mkimage.ai/">打开演示</a><a href="https://docs.tanstarter.dev/mkimage/">部署文档</a></div>
+        </article>
+      </div>
+
+      <div class="related">
+        <h3>同一作者的独立项目</h3>
+        <div class="related-grid">
+          <article><h4>MkSaaS</h4><p>独立销售的 Next.js 套餐。文档列了通用 SaaS、博客、目录示例、AI 试衣，以及仍在开发的 AI 工具合集。</p><a href="https://mksaas.com/docs/codebase">源码清单</a></article>
+          <article><h4>MkExt</h4><p>开源浏览器扩展模板，带弹窗、侧栏和选项页。可接 TanStarter 账号，扩展使用同一套登录。</p><a href="https://docs.tanstarter.dev/mkext/">扩展接入文档</a></article>
+          <article><h4>Mkdirs</h4><p>开源目录站模板，适合工具导航和资源库。支持提交、付费收录和内容管理。</p><a href="https://mkdirs.com/">目录站模板</a></article>
+        </div>
+        <p class="note">官方 Showcase 收录了 AI 网关、工具导航等应用，可用来了解底座能做出什么。<a class="source" href="https://tanstarter.dev/showcase">查看应用案例</a></p>
+      </div>
+    </section>
+
+    <section class="section section-tone" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">能力对照</p><h2 id="capabilities-title">从登录到交付</h2></div>
+          <p>通用模板提供建站模块。MkImage 沿用这些模块，已经接上生图任务、积分和作品页。</p>
+        </div>
+        <table class="matrix">
+          <caption class="visually-hidden">TanStarter 和 MkImage 各项能力对照</caption>
+          <thead><tr><th scope="col">环节</th><th scope="col">TanStarter 通用模板</th><th scope="col">MkImage 生图模板</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">账号和入口</th><td data-label="TanStarter">邮箱、Google 登录，找回密码，用户与管理员角色。</td><td data-label="MkImage">生图工具入口、套餐页、历史与收藏页，沿用通用账号体系。</td></tr>
+            <tr><th scope="row">付费和积分</th><td data-label="TanStarter">Stripe、Creem、Waffo 支付，支持订阅和一次性购买。</td><td data-label="MkImage">积分包、余额、生成扣点和失败退点。公开站用 Stripe 收款。</td></tr>
+            <tr><th scope="row">模型与交互</th><td data-label="TanStarter">对话、摘要、翻译、文字转语音、生图等示例。按自己的工具需求组织完整产品。</td><td data-label="MkImage">文生图、上传参考图、模型及尺寸选择。公开站按模型和规格扣点。</td></tr>
+            <tr><th scope="row">任务与作品</th><td data-label="TanStarter">R2 文件存储。任务状态、交付和历史按业务实现。</td><td data-label="MkImage">后台生成任务、作品历史、收藏、公开作品和可导入的提示词图库。</td></tr>
+            <tr><th scope="row">运营与部署</th><td data-label="TanStarter">营销页、博客、多语言 SEO、用户管理、邮件、Cloudflare 部署。</td><td data-label="MkImage">沿用底座。还要配自己的模型密钥、存储、积分价格及支付账号。</td></tr>
+          </tbody>
+        </table>
+        <p class="implementation-summary"><strong>MkImage 接好的用户流程</strong><span>注册登录 → 买积分 → 选模型或上传参考图 → 后台生成并扣积分 → 取回作品。生成失败时退回积分。</span></p>
+        <p class="note">自己上线时，用自己的模型账号、Cloudflare 和支付商户。模型调用、托管和支付手续费分别由服务商计费。<a class="source" href="https://docs.tanstarter.dev/mkimage/">MkImage 配置</a><a class="source" href="https://developers.cloudflare.com/workers/platform/pricing/">Cloudflare 计费</a></p>
+        <p class="note">能力依据 <a href="https://tanstarter.dev/blog/features">TanStarter 功能页</a>、<a href="https://tanstarter.dev/templates">MkImage 模板页</a>、<a href="https://mkimage.ai/models">公开站模型规格</a>及 <a href="https://mkimage.ai/changelog">公开站更新记录</a>。</p>
+      </div>
+    </section>
+
+    <section class="section shell" id="comparison" aria-labelledby="comparison-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">免费版对照</p><h2 id="comparison-title">$99 能省多少活</h2></div>
+        <p>以一个能真实收款的首版来算，范围是单模型文生图、一档积分包、Stripe 卡支付、生成历史和下载。</p>
+      </div>
+      <div class="comparison-grid">
+        <figure class="time-card">
+          <figcaption>首版上线估算 <span>人时</span></figcaption>
+          <div class="time-chart" role="img" aria-label="免费 ai-saas-starter 约 18 到 30 小时，MkImage 约 12 到 20 小时">
+            <div class="time-row"><div><span>免费 ai-saas-starter</span><strong>18–30 h</strong></div><div class="track"><span class="range free-range"></span></div></div>
+            <div class="time-row"><div><span>MkImage</span><strong>12–20 h</strong></div><div class="track"><span class="range paid-range"></span></div></div>
+            <div class="ticks" aria-hidden="true"><span>0</span><span>10</span><span>20</span><span>30</span></div>
+          </div>
+          <p class="time-delta">预计少做 <strong>6–10 小时</strong></p>
+          <p class="time-foot">按一名熟悉两套栈的开发者、Stripe 商户已开通估算。包含部署联调，商户审核等待另计。</p>
+        </figure>
+        <div class="work-list">
+          <article><h3>免费版已有的东西</h3><p>已有一次性积分包、Stripe 结账、积分账本、防重复入账、同步生图和异常退积分。</p><a href="https://github.com/nikandr-surkov/ai-saas-starter">查看免费仓库</a></article>
+          <article><h3>免费版上线前多做的活</h3><p>收款确认、到账反馈、超时补退和下载入口。首版只卖积分时，还要收起默认订阅及对应配置。</p><a href="https://github.com/nikandr-surkov/ai-saas-starter/blob/d8e51ddb4f641995097c25dc2fc1749149149e1b/src/lib/billing/webhook.ts">查看充值回调</a></article>
+          <article><h3>首发需要更多生图能力时</h3><p>如果同时要参考图、多模型按规格扣点、后台任务和公开图库，估计免费版多花 2–4 个工作日。</p><a href="https://tanstarter.dev/templates">查看 MkImage 已有功能</a></article>
+        </div>
+      </div>
+      <p class="note">上线工时来自本次方案估算。免费版核对了公开源码，MkImage 核对了文档与公开演示。私有源码、正式部署和真实收款仍待实测。</p>
+    </section>
+
+    <section class="section engineering" id="engineering" aria-labelledby="engineering-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">工程成本</p><h2 id="engineering-title">程序员买它值吗</h2></div>
+          <p>如果你已有顺手的脚手架，就看它能省下多少集成、联调和交付工作。改动大量模板代码时，也要计入适配和后续合并的时间。</p>
+        </div>
+        <table class="matrix">
+          <caption class="visually-hidden">额外的工程能力及其对已有项目的价值</caption>
+          <thead><tr><th scope="col">工程环节</th><th scope="col">模板提供的实现</th><th scope="col">什么情况下有价值</th></tr></thead>
+          <tbody>
+            <tr>
+              <th scope="row">支付联调</th>
+              <td data-label="模板提供的实现">TanStarter 文档列出了 Stripe、Creem、Waffo 的沙箱端到端测试。测试会走托管结账、接收真实测试回调，并验证本地 D1 记录。<a class="source" href="https://docs.tanstarter.dev/test/">测试范围</a></td>
+              <td data-label="什么情况下有价值">需要新接 Creem 或 Waffo 时，现成流程更有价值。已有稳定的 Stripe 路径，可以保留现有实现。Creem 的退款和争议仍要人工处理或补代码。<a class="source" href="https://docs.tanstarter.dev/payment/creem/">Creem 文档</a></td>
+            </tr>
+            <tr>
+              <th scope="row">快速开站</th>
+              <td data-label="模板提供的实现">CLI 能建立 GitHub 仓库、创建 D1 / R2 / KV、配置变量并部署 Workers。它只自动配置 Waffo 沙箱，Stripe 和 Creem 需要手动设置。<a class="source" href="https://docs.tanstarter.dev/cli/">CLI 文档</a></td>
+              <td data-label="什么情况下有价值">打算在 Cloudflare 上连续做几个新项目时，可以重复使用。现有项目用 Next.js 和 PostgreSQL，就把切栈与迁移成本也算进去。</td>
+            </tr>
+            <tr>
+              <th scope="row">给工具提供 API</th>
+              <td data-label="模板提供的实现">现成的 API Key 创建、撤销和校验。独立的 MkExt 可作为浏览器侧栏或弹窗，共用 TanStarter 账号。<a class="source" href="https://docs.tanstarter.dev/apikeys-management/">API Key</a><a class="source" href="https://docs.tanstarter.dev/mkext/">扩展接入</a></td>
+              <td data-label="什么情况下有价值">如果我们的入口要扩展到浏览器插件或允许用户从别处调用，这两块有复用空间。具体业务 API、用量规则和工具交互仍要实现。</td>
+            </tr>
+            <tr>
+              <th scope="row">升级与回归</th>
+              <td data-label="模板提供的实现">文档提供本地生产构建检查，也说明如何从上游合并模板更新。<a class="source" href="https://docs.tanstarter.dev/updates/">更新文档</a></td>
+              <td data-label="什么情况下有价值">保留较多模板模块时更容易吸收修复。自行改动越多，合并冲突、数据库迁移和回归测试的成本也越高。</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="engineer-verdict">
+          <h3>一个实用的购买判断</h3>
+          <p>如果首版只做单模型、Stripe 和积分包，我会先用免费版。它已经有积分账本、并发扣费和重复回调测试。按每小时 25 美元举例，模板只要比你的现有路线<strong>净省约 4 小时</strong>就能抵购买价。首发需要 MkImage 的完整生图工作流，或准备重复使用 Cloudflare 开站与多支付配置时，再考虑买。<a class="source" href="https://github.com/nikandr-surkov/ai-saas-starter#testing">免费版测试</a></p>
+        </div>
+        <p class="note">付费版的工程能力依据公开文档。私有源码的可维护性和自定义后的回归工作量仍待实测。</p>
+      </div>
+    </section>
+
+    <section class="section shell" id="market" aria-labelledby="market-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">源码模板市场</p><h2 id="market-title">同类产品各自值在哪</h2></div>
+        <p>这类产品把账户、收费、部署和任务流程一起交付。对开发者，价值是沿用现成代码后，从开始搭建到第一次真实收款能净省多少工作。</p>
+      </div>
+      <table class="matrix">
+        <caption class="visually-hidden">TanStarter 与市场上同类源码模板对照</caption>
+        <thead><tr><th scope="col">产品</th><th scope="col">已经接好的工作</th><th scope="col">最有价值的场景</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row">TanStarter + MkImage</th>
+            <td data-label="已经接好的工作">TanStack Start + Cloudflare 通用底座，以及带积分包、后台生成、参考图、图库和作品历史的生图站。<a class="source" href="https://tanstarter.dev/templates">模板</a></td>
+            <td data-label="最有价值的场景">要做生图站，尤其想要提示词图库、收藏、公开作品和现成生图页面。官网黑五价 $99。<a class="source" href="https://tanstarter.dev/#pricing">官网报价</a></td>
+          </tr>
+          <tr>
+            <th scope="row">ShipStart</th>
+            <td data-label="已经接好的工作">同样是 TanStack Start + Cloudflare。带对话、图片和视频生成，以及 Stripe / Creem、订阅、一次性积分包和任务记录。<a class="source" href="https://shipstart.dev/docs/integration/ai">生成文档</a><a class="source" href="https://shipstart.dev/docs/integration/credit">积分文档</a></td>
+            <td data-label="最有价值的场景">首发想接多种 AI 模态，或者做一个按积分收费的综合工具站。官网首发价 $69。<a class="source" href="https://shipstart.dev/">官网报价</a></td>
+          </tr>
+          <tr>
+            <th scope="row">ShipAny</th>
+            <td data-label="已经接好的工作">有 Next.js、TanStack 等底座，也有生图、生视频、语音 Agent、目录站等垂直模板。底座复用账号、支付和积分。<a class="source" href="https://shipany.ai/templates">模板目录</a></td>
+            <td data-label="最有价值的场景">想按品类挑接近成品的网站，或打算做多种垂直站。会员资格与具体模板价格要一起看。<a class="source" href="https://shipany.ai/pricing">会员与模板价格</a></td>
+          </tr>
+          <tr>
+            <th scope="row">PageZERO</th>
+            <td data-label="已经接好的工作">MIT 开源的 TanStack Start + Cloudflare 底座，有账号、D1、邮件、权限和 Polar 付费。<a class="source" href="https://github.com/pagezero-dev/pagezero">开源仓库</a><a class="source" href="https://pagezero.dev/">功能</a></td>
+            <td data-label="最有价值的场景">想保留同一技术栈、接受 Polar，然后自己实现 AI 和积分流程。</td>
+          </tr>
+          <tr>
+            <th scope="row">ai-saas-starter</th>
+            <td data-label="已经接好的工作">MIT 开源的 Next.js + PostgreSQL 生图底座，已有 Stripe、一次性积分包、账本、防重复入账和单模型生图。<a class="source" href="https://github.com/nikandr-surkov/ai-saas-starter">开源仓库</a></td>
+            <td data-label="最有价值的场景">先验证单模型收费工具，或现有项目已经围绕 Next.js 和 PostgreSQL 开发。</td>
+          </tr>
+          <tr>
+            <th scope="row">ShipFast</th>
+            <td data-label="已经接好的工作">Next.js 通用模板，内置登录、支付、邮件、落地页、博客和 SEO。<a class="source" href="https://shipfa.st/">功能与报价</a></td>
+            <td data-label="最有价值的场景">独立开发者想快速发布一个带营销页和支付的产品，业务流程由自己实现。</td>
+          </tr>
+          <tr>
+            <th scope="row">MakerKit</th>
+            <td data-label="已经接好的工作">以 Next.js + Supabase 版为例，预建个人和团队账号、成员邀请、角色、订阅和管理后台。<a class="source" href="https://makerkit.dev/docs/next-supabase-turbo/installation/introduction">技术文档</a></td>
+            <td data-label="最有价值的场景">给企业团队做 SaaS，需要多个组织独立管理成员、权限和账单。</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="related">
+        <h3>放回我们的入口</h3>
+        <div class="related-grid">
+          <article><h4>先验证一个收费工具</h4><p>用免费版把「买积分、调用模型、拿到结果」跑通。通用账号和支付已有时，也可以沿用现有项目。</p></article>
+          <article><h4>选最接近的产品流程</h4><p>主做生图，重点看 MkImage 的提示词和作品体验。图片、视频和对话都要做，优先对照 ShipStart 或 ShipAny 的对应模板。</p></article>
+          <article><h4>把时间留给核心交付</h4><p>用同一条用户任务比较需要改多少代码、多久能完成真实测试收款。把省下的时间投入用户能感知的结果，例如商品图的稳定性和批量交付。</p></article>
+        </div>
+      </div>
+      <p class="note">对照依据各产品公开文档、官网和开源仓库，价格是 2026 年 11 月 22 日官网显示的报价。各付费仓库、生产收款和长期维护成本仍待实测。</p>
+    </section>
+
+    <section class="section section-tone" id="entry" aria-labelledby="entry-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">产品判断</p><h2 id="entry-title">我们的入口怎么用</h2></div>
+          <p>这里把「我们的入口」理解为我们自己的首页或工具页。按现有入口的完成度，选择要复用的部分。</p>
+        </div>
+        <div class="decision" data-decision>
+          <div class="scenario-tabs" aria-label="选择产品场景">
+            <button type="button" id="tab-single" data-scenario="single">先上线一个小工具</button>
+            <button type="button" id="tab-image" data-scenario="image">直接做完整生图站</button>
+            <button type="button" id="tab-existing" data-scenario="existing">已经有自己的入口</button>
+          </div>
+          <div class="scenario-results">
+            <article id="panel-single" data-panel="single"><h3>从免费版验证需求</h3><p>如果交付就是「买积分、用一个模型生图、下载」，免费版的核心流程够用。优先把到账、失败退点和下载跑通，再看付费和复用情况。</p></article>
+            <article id="panel-image" data-panel="image"><h3>用 MkImage 起步</h3><p>如果参考图、多个模型、后台生成和作品历史都是首发需求，MkImage 的现成流程能省开发。上线前用自己的模型、商户和长任务走一遍真实测试。</p></article>
+            <article id="panel-existing" data-panel="existing"><h3>按缺项复用</h3><p>已有账号、支付和积分时，主要看生图工作流是否值得借鉴。已有用户入口、还缺收款和任务交付时，可以保留交互，评估把入口接到模板后台的工作量。</p></article>
+          </div>
+        </div>
+        <div class="related">
+          <h3>这三类产品各自卖什么</h3>
+          <div class="related-grid">
+            <article><h4>源码模板卖给开发者</h4><p>TanStarter 和 ShipStart 把账号、收款、积分和部署接到一起。开发者买的是更快搭出一个能收费的站。</p></article>
+            <article><h4>生图工具卖给创作者和商家</h4><p>用 MkImage 做出来的站，用户为更快拿到可用的图片付钱。作品可以留在历史记录里，也能在站内公开分享。</p></article>
+            <article><h4>发布工具卖给创作者和运营团队</h4><p>用户把一份原图变成目标渠道可用的尺寸、封面、配文和素材包。需要站外直接发布时，再实现平台接入和授权。</p></article>
+          </div>
+        </div>
+        <div class="product-example">
+          <div><p class="eyebrow">假设案例</p><h3>给电商卖家做商品图</h3><p>面向已经有商品原图的卖家。把普通生图收敛成「保留商品外观，一次交付多个渠道的广告素材」。</p></div>
+          <ol class="product-flow" aria-label="从获客到交付的三步">
+            <li><strong>让目标用户找到入口</strong><span>把商品图案例放到卖家会找方案的页面或渠道。</span></li>
+            <li><strong>完成一项具体任务</strong><span>上传商品图，按电商渠道输出所需比例和规格。</span></li>
+            <li><strong>用模板接好付费和交付</strong><span>复用买积分、扣点、生图、失败退点与作品历史。</span></li>
+          </ol>
+        </div>
+        <div class="takeaway">
+          <h3>先验证有人愿意为素材包付钱</h3>
+          <p>对我们的发布方向，先用现有入口交付一份能直接使用的素材包，观察用户愿不愿意付费、之后会不会回来用。等积分、收款或任务管理成为实际卡点，再看模板能省下多少活。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="summary" aria-labelledby="summary-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">能力、效果与价值</p><h2 id="summary-title">一图总览</h2></div>
+        <p>三类产品各自解决什么问题，七款源码模板能省哪些工作，以及我们可以先验证哪一步。</p>
+      </div>
+      <figure class="summary-figure">
+        <a class="summary-image" href="assets/tanstarter-value-map.png" aria-label="查看 TanStarter 与同类模板总览原图">
+          <img src="assets/tanstarter-value-map.png" width="1800" height="1980" alt="源码模板、AI 生图和发布交付的能力、效果与价值，七款模板的对照，以及先用现有入口验证发布交付的判断。" decoding="async">
+        </a>
+        <figcaption class="summary-actions">
+          <a class="button summary-download" href="assets/tanstarter-value-map.png" download="tanstarter-value-map.png">下载 PNG</a>
+          <span>点击图可查看原尺寸。文字和出处见上方<a class="source" href="#market">市场对照</a>。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="section shell sources" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">核对来源</h2>
+      <ul>
+        <li><a href="https://x.com/indie_maker_fox/status/2123967409145147707">原始推广帖</a></li>
+        <li><a href="https://tanstarter.dev/#pricing">TanStarter 官方售价</a></li>
+        <li><a href="https://docs.tanstarter.dev/codebase/">套餐源码清单</a></li>
+        <li><a href="https://tanstarter.dev/templates">MkImage 模板能力</a></li>
+        <li><a href="https://github.com/nikandr-surkov/ai-saas-starter/tree/d8e51ddb4f641995097c25dc2fc1749149149e1b">免费版核对的源码版本</a></li>
+        <li><a href="https://docs.stripe.com/checkout/fulfillment">Stripe 官方到账规范</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell"><span>TanStarter 模板研究 · 2026 年 11 月</span><a href="#top">返回顶部</a></div></footer>
+</body>
+</html>

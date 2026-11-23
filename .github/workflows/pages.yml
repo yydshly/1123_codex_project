@@ -11,6 +11,7 @@ on:
       - 'projects/005-geo-discovery-guide/**'
       - 'projects/006-ai-product-radar/**'
       - 'projects/007-petalwake/**'
+      - 'projects/008-tanstarter-research/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 
