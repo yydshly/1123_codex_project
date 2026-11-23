@@ -1,0 +1,134 @@
+[
+  {
+    "blender": "4.5.3 LTS",
+    "stage": "layout-draft",
+    "palette": "mint",
+    "mesh": {
+      "mesh_parts": 65,
+      "triangles": 3724,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "loose_vertices": 0,
+      "nonpositive_volume_parts": 0
+    },
+    "mesh_defects": 0,
+    "layout": {
+      "dial_y_mm": -26,
+      "front_dial_clearance_mm": -8.5,
+      "minimum_clearance_mm": 6,
+      "passes": false
+    },
+    "render_seconds": 3.08
+  },
+  {
+    "blender": "4.5.3 LTS",
+    "stage": "layout",
+    "palette": "mint",
+    "mesh": {
+      "mesh_parts": 65,
+      "triangles": 3724,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "loose_vertices": 0,
+      "nonpositive_volume_parts": 0
+    },
+    "mesh_defects": 0,
+    "layout": {
+      "dial_y_mm": -4,
+      "front_dial_clearance_mm": 13.5,
+      "minimum_clearance_mm": 6,
+      "passes": true
+    },
+    "render_seconds": 3.61
+  },
+  {
+    "blender": "4.5.3 LTS",
+    "stage": "edges",
+    "palette": "mint",
+    "mesh": {
+      "mesh_parts": 65,
+      "triangles": 32428,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "loose_vertices": 0,
+      "nonpositive_volume_parts": 0
+    },
+    "mesh_defects": 0,
+    "layout": {
+      "dial_y_mm": -4,
+      "front_dial_clearance_mm": 13.5,
+      "minimum_clearance_mm": 6,
+      "passes": true
+    },
+    "render_seconds": 3.92
+  },
+  {
+    "blender": "4.5.3 LTS",
+    "stage": "materials",
+    "palette": "mint",
+    "mesh": {
+      "mesh_parts": 65,
+      "triangles": 32428,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "loose_vertices": 0,
+      "nonpositive_volume_parts": 0
+    },
+    "mesh_defects": 0,
+    "layout": {
+      "dial_y_mm": -4,
+      "front_dial_clearance_mm": 13.5,
+      "minimum_clearance_mm": 6,
+      "passes": true
+    },
+    "render_seconds": 3.9
+  },
+  {
+    "blender": "4.5.3 LTS",
+    "stage": "final",
+    "palette": "mint",
+    "mesh": {
+      "mesh_parts": 65,
+      "triangles": 32428,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "loose_vertices": 0,
+      "nonpositive_volume_parts": 0
+    },
+    "mesh_defects": 0,
+    "layout": {
+      "dial_y_mm": -4,
+      "front_dial_clearance_mm": 13.5,
+      "minimum_clearance_mm": 6,
+      "passes": true
+    },
+    "render_seconds": 18.23
+  },
+  {
+    "blender": "4.5.3 LTS",
+    "stage": "variant",
+    "palette": "copper",
+    "mesh": {
+      "mesh_parts": 65,
+      "triangles": 32428,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "loose_vertices": 0,
+      "nonpositive_volume_parts": 0
+    },
+    "mesh_defects": 0,
+    "layout": {
+      "dial_y_mm": -4,
+      "front_dial_clearance_mm": 13.5,
+      "minimum_clearance_mm": 6,
+      "passes": true
+    },
+    "render_seconds": 18.33
+  }
+]

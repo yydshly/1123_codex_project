@@ -10,6 +10,7 @@
 | --- | --- | --- | --- | --- |
 | 001 | [Motion2MixamoRig](projects/001-motion2mixamorig/README.md) | 从单人视频提取动作，或从全身照片估计姿势，再将动作或姿势迁移到可更换的已绑定 3D 角色。一次提取可让多个角色复用同一段表演，便于短片换机位、跨镜头衔接和制作可编辑的动画初稿。 | [引导图](#motion2mixamorig-引导图) | 未部署 |
 | 002 | [AI 出海变现五方向](projects/002-ai-overseas-revenue/README.md) | 用可操作的原型验证独立站、网页小游戏、数字商品、自动化服务和内容本地化。对我们最直接的积累是可复用的字幕质检、翻译审校和交付流程，可用一单检验客户付款、发布采用和交付工时。 | [引导图](#ai-出海变现引导图) | [在线总览与原型](https://yydshly.github.io/1123_codex_project/002-ai-overseas-revenue/) · [本机运行](projects/002-ai-overseas-revenue/README.md#本机打开网页) |
+| 003 | [AI 控制 Blender 的四轮建模工作流](projects/003-blender-workflow/README.md) | 让 AI 通过 Python 控制 Blender，按灰模、倒角、材质、灯光四轮逼近建模目标。每轮用同机位预览和检查数值定位偏差，定点修改并重渲复验，还能复用场景批量出变体。 | [引导图](#blender-四轮建模引导图) | 未部署 |
 
 ## Motion2MixamoRig 引导图
 
@@ -22,6 +23,12 @@
 [![五个 AI 出海变现方向的研究问题、原型、实测和价值](projects/002-ai-overseas-revenue/research-overview.png)](projects/002-ai-overseas-revenue/research-overview.png)
 
 逐项对照五个方向的研究问题、原型实测和用户价值。优先用内容本地化做一笔真实试单，记录客户是否付款、字幕是否用于发布及交付总工时。 [子项目详情](projects/002-ai-overseas-revenue/README.md) · [高清 PNG](projects/002-ai-overseas-revenue/research-overview.png)
+
+## Blender 四轮建模引导图
+
+[![桌面剪辑控制器的六张实跑图与可复用的 Blender 操作指令](projects/003-blender-workflow/images/blender-workflow-skill-card.png)](projects/003-blender-workflow/images/blender-workflow-skill-card.png)
+
+左侧用原创桌面剪辑控制器展示灰模修正、倒角、材质、终稿与配色变体，右侧整理了可直接交给 AI 的执行和验收规则。 [研究详情](projects/003-blender-workflow/README.md) · [高清 PNG](projects/003-blender-workflow/images/blender-workflow-skill-card.png)
 
 ## 收录约定
 
