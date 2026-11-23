@@ -1,6 +1,6 @@
-# AI 产品雷达
+# 006 AI 产品雷达
 
-[返回 002 AI 出海变现](../README.md) · [打开在线网页](https://yydshly.github.io/1123_codex_project/002-ai-overseas-revenue/06-ai-product-radar/) · [查看研究导图原图](ai-research-value.png)
+[返回研究总库](../../README.md#项目索引) · [打开在线网页](https://yydshly.github.io/1123_codex_project/006-ai-product-radar/) · [查看研究导图原图](ai-research-value.png)
 
 AI 产品雷达的核心能力是**发现和收集已有付费线索的 AI 产品**。首轮从 13 个公开营收榜、产品转让市场和发布目录整理出 16 个产品样本，记录目标客户、交付内容、收费方式，以及能查到的营收、增长、数据日期和来源。
 

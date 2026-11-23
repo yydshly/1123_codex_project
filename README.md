@@ -13,8 +13,7 @@
 | 003 | [AI 控制 Blender 的四轮建模工作流](projects/003-blender-workflow/README.md) | 让 AI 通过 Python 控制 Blender，按灰模、倒角、材质、灯光四轮逼近建模目标。每轮用同机位预览和检查数值定位偏差，定点修改并重渲复验，还能复用场景批量出变体。 | [引导图](#blender-四轮建模引导图) | 未部署 |
 | 004 | [七个工具的价值与实践成果](projects/004-ai-tool-entry-lab/README.md) | 覆盖资料研读、联网查源、在线课程、翻译与术语、图像编辑、数学可视化和视频试镜。用论文、角色素材和扫描动画展示怎样保存可查的出处、可改的素材与可复算的结果，附两套 Word 与 Excel 校对原型。 | [引导图](#七个工具研究引导图) | [在线手册与演示](https://yydshly.github.io/1123_codex_project/004-ai-tool-entry-lab/) |
 | 005 | [从 Next Token Skill 到 GEO](projects/005-geo-discovery-guide/README.md) | 从播客 RSS 和本地检索入手，用 AI 视频角色一致性实测练习跨站查证。再把方法用于 SEO 与 GEO，研究怎样发布可抓取、可引用的证据，让还不知道产品名的人也有机会按需求找到它，并用无品牌词问题验证效果。 | [引导图](#搜索seo-与-geo-引导图) | [在线指南](https://yydshly.github.io/1123_codex_project/005-geo-discovery-guide/) |
-
-002 下的 **06 AI 产品雷达**从公开营收榜、产品转让市场和发布目录收集付费 AI 产品，核对定价及公开营收与增长，帮助筛选值得试单的方向。 [研究说明与引导图](projects/002-ai-overseas-revenue/06-ai-product-radar/README.md) · [在线网页](https://yydshly.github.io/1123_codex_project/002-ai-overseas-revenue/06-ai-product-radar/)
+| 006 | [AI 产品雷达](projects/006-ai-product-radar/README.md) | 从公开营收榜、产品转让市场和发布目录收集付费 AI 产品，记录客户、交付、定价和可查的营收与增长。用付费线索筛选我们能报价、能交付、值得试单的方向。 | [引导图](#ai-产品雷达引导图) | [在线网页](https://yydshly.github.io/1123_codex_project/006-ai-product-radar/) |
 
 ## Motion2MixamoRig 引导图
 
@@ -46,6 +45,12 @@
 
 从查找现有实测到发布自己的证据，沿同一个角色一致性问题看清 SEO 和 GEO 各自的作用。图中也标出 Skill 或能力对应的产品扩展。 [研究详情](projects/005-geo-discovery-guide/README.md) · [在线指南](https://yydshly.github.io/1123_codex_project/005-geo-discovery-guide/) · [高清 PNG](projects/005-geo-discovery-guide/web/seo-geo-overview.png)
 
+## AI 产品雷达引导图
+
+[![AI 产品雷达引导图，展示公开入口、可查信息、研究价值与口播后期试单](projects/006-ai-product-radar/ai-research-value.png)](projects/006-ai-product-radar/ai-research-value.png)
+
+首轮从 13 个公开入口整理 16 个产品样本。用口播后期示例说明如何核对付费线索、确定交付与报价，再用真实订单记录付款、采用和成本。 [研究详情](projects/006-ai-product-radar/README.md) · [在线网页](https://yydshly.github.io/1123_codex_project/006-ai-product-radar/)
+
 ## 收录约定
 
 1. 按收录顺序从 `001` 开始编号，目录命名为 `projects/001-project-name/`。新增项目使用下一个编号，已分配的编号保留。
@@ -54,6 +59,6 @@
 
 ## Web 演示
 
-各演示共用 GitHub Pages 站点，按编号划分子路径。首页维护在 `docs/index.html`。`python scripts/build_pages.py` 将 002、004 和 005 的网页及所需素材组装到 `_site/`。提交到 `main` 后，由 Pages 工作流发布。
+各演示共用 GitHub Pages 站点，按编号划分子路径。首页维护在 `docs/index.html`。`python scripts/build_pages.py` 将 002、004、005 和 006 的网页及所需素材组装到 `_site/`。提交到 `main` 后，由 Pages 工作流发布。
 
 002 的音频对齐、广告周报计算和视频识别翻译在各自的 Python 服务上运行。线上总览附实测记录与本机启动说明。 [本机运行](projects/002-ai-overseas-revenue/README.md#本机打开网页) · [GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)

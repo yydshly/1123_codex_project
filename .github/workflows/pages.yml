@@ -9,6 +9,7 @@ on:
       - 'projects/002-ai-overseas-revenue/**'
       - 'projects/004-ai-tool-entry-lab/**'
       - 'projects/005-geo-discovery-guide/**'
+      - 'projects/006-ai-product-radar/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 
