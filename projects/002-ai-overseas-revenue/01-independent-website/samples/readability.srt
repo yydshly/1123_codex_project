@@ -1,0 +1,12 @@
+1
+00:00:01,000 --> 00:00:01,400
+This subtitle is deliberately longer than forty-two characters.
+
+2
+00:00:03,000 --> 00:00:11,000
+Leave it open.
+
+3
+00:00:12,000 --> 00:00:14,500
+<i>Open the workspace.</i>
+打开工作区 👋

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sort parcels into three bays before the 45-second shift ends.">
+  <title>Cargo Switch</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="playtest.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game" aria-labelledby="title">
+    <header>
+      <h1 id="title">Cargo Switch</h1>
+      <p>Match each parcel to its bay. Sort in a row to build a streak.</p>
+    </header>
+
+    <div class="warehouse">
+      <div class="scoreboard">
+        <dl>
+          <div><dt>Time</dt><dd id="time">45s</dd></div>
+          <div><dt>Score</dt><dd id="score">0</dd></div>
+          <div><dt>Streak</dt><dd id="streak">0</dd></div>
+        </dl>
+        <button class="pause" id="pause" type="button" aria-keyshortcuts="Escape" disabled>Pause</button>
+      </div>
+
+      <div id="conveyor" class="conveyor" aria-label="Parcel conveyor" tabindex="-1">
+        <div id="parcel" class="parcel" data-shape="circle" hidden>
+          <span class="mark" aria-hidden="true"></span>
+          <span id="parcel-label">Circle</span>
+        </div>
+        <div id="ready" class="round-panel">
+          <button class="primary" id="start" type="button">Start shift</button>
+        </div>
+        <div id="paused" class="round-panel" hidden>
+          <h2>Shift paused</h2>
+          <button class="primary" id="resume" type="button">Resume</button>
+        </div>
+        <div id="finished" class="round-panel" hidden>
+          <h2>Shift complete</h2>
+          <p id="round-result"></p>
+          <button class="primary" id="replay" type="button">Play again</button>
+        </div>
+      </div>
+
+      <p id="feedback" class="feedback" role="status">Tap a bay, swipe left/down/right on the belt, or use the arrow keys.</p>
+
+      <div class="bays" role="group" aria-label="Sorting bays">
+        <button class="bay" data-shape="circle" data-bay="0" type="button" aria-keyshortcuts="ArrowLeft" disabled>
+          <span class="mark" aria-hidden="true"></span><span>Circle</span><kbd aria-hidden="true">←</kbd>
+        </button>
+        <button class="bay" data-shape="square" data-bay="1" type="button" aria-keyshortcuts="ArrowDown" disabled>
+          <span class="mark" aria-hidden="true"></span><span>Square</span><kbd aria-hidden="true">↓</kbd>
+        </button>
+        <button class="bay" data-shape="diamond" data-bay="2" type="button" aria-keyshortcuts="ArrowRight" disabled>
+          <span class="mark" aria-hidden="true"></span><span>Diamond</span><kbd aria-hidden="true">→</kbd>
+        </button>
+      </div>
+    </div>
+
+    <details class="playtest" id="playtest-log">
+      <summary>Playtest log</summary>
+      <p class="playtest-note">Hand over the game after choosing Record next player. Records stay in this browser.</p>
+      <div class="playtest-actions">
+        <button id="record-next" type="button">Record next player</button>
+        <button id="record-end" type="button" disabled>End recording</button>
+        <button id="export-log" type="button" disabled>Export CSV</button>
+      </div>
+      <p id="recording-status" class="playtest-note" role="status">Practice mode.</p>
+      <p id="storage-notice" class="playtest-note" hidden>Browser storage is unavailable. Export the records before closing this page.</p>
+
+      <dl class="playtest-stats">
+        <div><dt>Players started</dt><dd id="players-started">0</dd></div>
+        <div><dt>First correct, median</dt><dd id="median-first">—</dd></div>
+        <div><dt>Finished first round</dt><dd id="players-finished">0</dd></div>
+        <div><dt>Played again</dt><dd id="players-replayed">0</dd></div>
+        <div><dt>60s of active play</dt><dd id="players-60s">0</dd></div>
+      </dl>
+
+      <p id="empty-log" class="playtest-note">No playtest records yet.</p>
+      <div class="playtest-table" tabindex="0" role="region" aria-label="Individual playtest records" id="table-wrap" hidden>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Player</th>
+              <th scope="col">Started</th>
+              <th scope="col">First correct</th>
+              <th scope="col">First round finished</th>
+              <th scope="col">Played again</th>
+              <th scope="col">Active time</th>
+              <th scope="col">Reached 60s</th>
+            </tr>
+          </thead>
+          <tbody id="playtest-rows"></tbody>
+        </table>
+      </div>
+    </details>
+  </main>
+</body>
+</html>

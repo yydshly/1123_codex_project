@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在 Alder Board 的英文演示中对照 AI 初译与简中审校定稿，下载客户交付文件。">
+  <title>Alder Board · 简中字幕交付样例</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="preview.css">
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="shell bar-inner">
+      <a class="brand" href="#top"><span aria-hidden="true" class="brand-dot"></span>Alder Board</a>
+      <a class="bar-link" href="#delivery">查看交付文件 <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+  <main class="shell" id="top">
+    <div class="intro">
+      <h1>英文教程的简中字幕交付</h1>
+      <p>在同一段 60 秒录屏里对比 AI 初译和对照画面审校的定稿。</p>
+    </div>
+    <p id="error" role="alert" hidden></p>
+    <section class="review" id="review" aria-label="播放和对照字幕">
+      <div class="player-card">
+        <div class="player-top">
+          <h2>原始英文演示</h2>
+          <div class="modes" role="group" aria-label="视频显示哪版字幕">
+            <button type="button" data-mode="ai" aria-pressed="false" disabled>AI 初译</button>
+            <button type="button" data-mode="final" aria-pressed="true" disabled>审校定稿</button>
+            <button type="button" data-mode="off" aria-pressed="false" disabled>隐藏字幕</button>
+          </div>
+        </div>
+        <video id="video" poster="sample/source/alder-board-preview.jpg" controls preload="auto" playsinline aria-label="Alder Board 原始英文演示"></video>
+      </div>
+      <aside class="compare" aria-labelledby="compare-title">
+        <div class="compare-top">
+          <h2 id="compare-title">同一时间点</h2>
+          <span id="playhead" class="playhead" aria-label="当前时间">00:00.000</span>
+        </div>
+        <div class="cue ai">
+          <h3>AI 自动翻译</h3>
+          <p id="ai-cue">正在读取字幕…</p>
+        </div>
+        <div class="cue final">
+          <h3>对照画面审校</h3>
+          <p id="final-cue">正在读取字幕…</p>
+        </div>
+        <div class="reason">
+          <h3>为什么改</h3>
+          <p id="reason"></p>
+        </div>
+        <div class="jump-area">
+          <div class="jump-heading">
+            <h3>点击时间点看修改</h3>
+            <button class="plain" type="button" id="restart" disabled>从头播放</button>
+          </div>
+          <div class="jumps" id="jumps"></div>
+        </div>
+      </aside>
+    </section>
+    <details class="transcript" id="transcript">
+      <summary>查看全部 10 段字幕对照</summary>
+      <div class="transcript-grid" id="all-cues"></div>
+      <a class="text-link" href="sample/comparison/alder-board_v1.zh-CN.ai.srt" download>下载本次 AI 初译 SRT</a>
+    </details>
+    <section class="delivery" id="delivery" aria-labelledby="delivery-title">
+      <div class="delivery-top">
+        <div>
+          <h2 id="delivery-title">客户收到的文件</h2>
+          <p>将定稿 SRT 上传到已有英文视频，添加一条可开关的简体中文字幕。</p>
+        </div>
+        <a class="download" href="sample/alder-board_v1.zh-CN.zip" download>下载完整交付包 <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="delivery-grid">
+        <a class="file" href="sample/delivery/alder-board_v1.zh-CN.srt" download>
+          <span><strong>简中定稿字幕</strong><small>UTF-8 SRT · 13 条</small></span><b aria-hidden="true">↓</b>
+        </a>
+        <a class="file" href="sample/delivery/交付说明与术语.txt" download>
+          <span><strong>交付说明与术语</strong><small>素材版本、导入步骤、英文按钮对照</small></span><b aria-hidden="true">↓</b>
+        </a>
+      </div>
+    </section>
+    <footer><p>第 05 项 · 模拟交付 · 初译使用本地 Argos English → Chinese 1.9，仅输入英文字幕。</p></footer>
+  </main>
+</body>
+</html>

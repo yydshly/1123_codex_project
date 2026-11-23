@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从英文视频识别语音，或导入英文 SRT，生成简中字幕初稿并对照画面审校后导出。">
+  <title>英文教程字幕工作台</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="workbench.css">
+  <script src="srt-core.js" defer></script>
+  <script src="workbench.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell bar-content"><a class="brand" href="/">字幕工作台</a><a href="index.html">查看审校对比样例</a></div>
+  </header>
+  <main class="shell">
+    <header class="intro">
+      <div><h1>英文视频配简中字幕</h1><p>从视频识别英文，或直接导入英文 SRT。生成中文初稿后，边看边改再导出。</p></div>
+      <div class="sample-actions">
+        <button type="button" class="secondary" id="load-video-sample">载入仅视频样例</button>
+        <button type="button" class="secondary" id="load-sample">载入带 SRT 样例</button>
+      </div>
+    </header>
+    <section class="inputs" aria-label="素材和翻译">
+      <div class="asset-fields">
+        <label class="file-picker" for="video-file"><span class="file-title">英文视频</span><span class="file-action">选择视频</span>
+          <input id="video-file" type="file" accept="video/*,.mp4,.webm" aria-label="选择英文视频" aria-describedby="video-status">
+          <span class="file-status" id="video-status">待导入 · MP4、WebM 等浏览器可播放格式</span>
+        </label>
+        <label class="file-picker" for="srt-file"><span class="file-title">英文字幕（可选）</span><span class="file-action">选择 SRT</span>
+          <input id="srt-file" type="file" accept=".srt" aria-label="选择英文 SRT" aria-describedby="source-status">
+          <span class="file-status" id="source-status">可选 · 没有 SRT 时从视频识别</span>
+        </label>
+        <div class="generate"><button type="button" class="primary" id="translate" disabled>识别英文并翻译</button></div>
+      </div>
+      <p id="work-status" class="work-status" role="status">识别和翻译均在本机处理。已配英文 SRT 的视频可直接翻译。</p>
+      <section id="track-offset" class="track-offset" aria-labelledby="offset-title" hidden>
+        <div class="offset-head">
+          <div><h2 id="offset-title">整轨校正</h2><p id="offset-status" role="status"></p></div>
+          <button type="button" class="secondary compact" id="estimate-offset">估算时间偏差</button>
+        </div>
+        <div id="offset-samples" class="offset-samples" aria-label="整轨校正回听点" hidden></div>
+        <div class="offset-actions" id="offset-actions" hidden>
+          <button type="button" class="primary compact" id="apply-offset">一键应用校正</button>
+          <button type="button" class="plain" id="undo-offset" hidden>撤销校正</button>
+        </div>
+      </section>
+    </section>
+    <section class="workspace" aria-label="视频与字幕审校">
+      <div class="viewer panel">
+        <div class="panel-head"><h2>视频预览</h2><span id="timecode" class="timecode" aria-label="当前播放位置">00:00:00,000</span></div>
+        <div class="video-wrap">
+          <p id="video-placeholder">选择视频后在这里播放</p>
+          <video id="video" controls preload="auto" playsinline aria-label="导入的视频" hidden></video>
+        </div>
+        <div class="viewer-foot"><button type="button" class="plain" id="locate" disabled>定位当前字幕</button><p id="playing-cue">生成初稿后可预览中文字幕</p></div>
+      </div>
+      <div class="editor panel">
+        <div class="panel-head">
+          <h2>审校字幕 <span class="cue-number" id="cue-number"></span></h2>
+          <button type="button" class="secondary compact" id="play-cue" disabled>回放本条</button>
+        </div>
+        <div class="editor-body">
+          <div><h3 id="source-label">英文原文</h3><p id="source-text" class="source-text">生成初稿后，从字幕列表中选一条开始审校。</p></div>
+          <label>中文字幕<textarea id="caption" rows="3" placeholder="在这里改中文初稿" disabled></textarea></label>
+          <div class="time-fields">
+            <label>开始时间<input id="start" type="text" placeholder="00:00:00,000" spellcheck="false" disabled></label>
+            <label>结束时间<input id="end" type="text" placeholder="00:00:00,000" spellcheck="false" disabled></label>
+            <button type="button" id="set-start" class="plain" disabled>用播放点设开始</button>
+            <button type="button" id="set-end" class="plain" disabled>用播放点设结束</button>
+          </div>
+          <p class="row-status" id="row-status" role="status" hidden></p>
+        </div>
+      </div>
+    </section>
+    <section class="timeline panel" aria-labelledby="timeline-title">
+      <div class="panel-head"><div><h2 id="timeline-title">字幕时间轴</h2><p id="timeline-status">生成初稿后可按条跳转。</p></div>
+        <button type="button" class="primary" id="export" disabled>导出中文 SRT</button>
+      </div>
+      <div class="cue-list" id="cue-list" aria-label="中文字幕列表" hidden></div>
+    </section>
+  </main>
+</body>
+</html>

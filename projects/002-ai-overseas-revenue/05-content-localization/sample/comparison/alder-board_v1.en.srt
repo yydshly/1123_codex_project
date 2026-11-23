@@ -1,0 +1,49 @@
+1
+00:00:00,900 --> 00:00:05,600
+Welcome to Alder Board.
+Let's set up a launch board for your team.
+
+2
+00:00:06,150 --> 00:00:10,390
+From the workspace, select New board
+to start with an empty board.
+
+3
+00:00:12,050 --> 00:00:15,790
+Name the board Product Launch,
+then choose Create board.
+
+4
+00:00:17,300 --> 00:00:22,120
+Your board opens with three columns.
+Add a card to the To do column.
+
+5
+00:00:23,700 --> 00:00:28,580
+Type Review landing page.
+Then move the card into In progress.
+
+6
+00:00:29,250 --> 00:00:33,570
+To bring in a teammate, open
+Invite members at the top of the board.
+
+7
+00:00:35,100 --> 00:00:39,180
+Enter their email address and
+choose Editor so they can update cards.
+
+8
+00:00:41,300 --> 00:00:43,900
+Review the role before
+you send the invite.
+
+9
+00:00:45,650 --> 00:00:49,370
+Open Share board to copy
+the board link for your launch notes.
+
+10
+00:00:51,650 --> 00:00:57,330
+Your launch board is ready. You can return
+here to track the team's next steps.

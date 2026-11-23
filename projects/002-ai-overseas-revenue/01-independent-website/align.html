@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频与字幕对齐</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="align.css">
+  <script src="srt.js" defer></script>
+  <script src="align.js" defer></script>
+</head>
+<body>
+  <main class="alignment">
+    <header class="intro">
+      <a href="index.html" data-text="checker">SRT 格式检查</a>
+      <div class="intro-heading">
+        <h1 data-text="title">音频与字幕对齐</h1>
+        <div class="language-switch" role="group" aria-label="界面语言" id="interface-language">
+          <button type="button" lang="zh-CN" data-locale="zh" aria-pressed="true">中文</button>
+          <button type="button" lang="en" data-locale="en" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <p class="lead" data-text="lead">按音频里实际说话的时间，检查每句字幕早了还是晚了。</p>
+      <p data-text="guide">选择与成片使用同一时间起点的音频和同语 SRT。完成后点音频时间戳回听。</p>
+    </header>
+
+    <section id="local-service" class="setup attach-panel" hidden aria-labelledby="setup-heading">
+      <h2 id="setup-heading" data-text="setup">启动本地对齐服务</h2>
+      <p data-text="setupHelp">在项目目录运行下面的命令，然后打开本地对齐页。</p>
+      <p><code>python alignment_server.py</code></p>
+      <a href="http://127.0.0.1:43722/align.html" data-text="openLocal">打开本地对齐页</a>
+    </section>
+
+    <details class="attach-panel acceptance" open>
+      <summary data-text="standard">怎么判定字幕对齐</summary>
+      <ol>
+        <li data-text="standardInput">音频和 SRT 来自同一版成片，时间都从成片 00:00 算起。音频应保留片头静音，字幕语言与原声一致。</li>
+        <li data-text="standardMatch">逐句按文字和顺序匹配语音。句首、句末都找到对应，且至少匹配 70% 的汉字或英文词，才给出估计的语音区间。其余标为待复核。</li>
+        <li data-text="standardTiming">用 SRT 时间减去音频估计时间。负数是提前，正数是延后。开始或结束有一端相差超过 0.350 秒，就标记偏差。</li>
+      </ol>
+      <p data-text="standardNote">0.350 秒是本工具的复核阈值。最终是否需要调整，可点时间戳回听确认。</p>
+    </details>
+
+    <form id="align-form" class="attach-panel">
+      <fieldset id="align-inputs">
+        <legend data-text="files">选择音频和字幕</legend>
+        <div class="file-fields">
+          <label>
+            <span data-text="audioFile">原声音频</span>
+            <input id="audio-file" type="file" accept=".wav,.mp3,.m4a,audio/wav,audio/mpeg,audio/mp4" required>
+          </label>
+          <label>
+            <span data-text="subtitleFile">SRT 字幕</span>
+            <input id="subtitle-file" type="file" accept=".srt" required>
+          </label>
+          <label>
+            <span data-text="spokenLanguage">音频和字幕的语言</span>
+            <select id="spoken-language">
+              <option value="zh" lang="zh-CN">中文</option>
+              <option value="en" lang="en">English</option>
+            </select>
+          </label>
+        </div>
+        <p class="input-help" data-text="limits">支持 WAV、MP3、M4A，最长 2 分钟、最大 25 MB。音频由本机进程识别。</p>
+        <button class="primary" type="submit" data-text="analyze">检查对齐</button>
+        <section class="alignment-demos" aria-labelledby="demos-title">
+          <h2 id="demos-title" data-text="demos">直接跑样例</h2>
+          <p data-text="demosHelp">使用上方选定的语言，从三种已知结果的样例中任选一个，无需准备文件。</p>
+          <div class="demo-actions">
+            <button type="button" data-demo="normal" data-text="demoNormal">正常对齐</button>
+            <button type="button" data-demo="shifted" data-text="demoShifted">整轨偏移</button>
+            <button type="button" data-demo="local" data-text="demoLocal">单句错位</button>
+          </div>
+        </section>
+      </fieldset>
+    </form>
+    <p class="file-status" id="align-status" role="status"></p>
+
+    <section class="attach-panel" id="alignment-results" aria-labelledby="alignment-heading" tabindex="-1" hidden>
+      <div class="align-result-header">
+        <div>
+          <h2 id="alignment-heading" data-text="results">对齐结果</h2>
+          <p id="alignment-files" class="filename"></p>
+          <p id="result-summary"></p>
+        </div>
+        <audio id="listen" controls preload="metadata" aria-label="回听原声音频"></audio>
+      </div>
+      <p id="demo-reference" class="demo-reference" hidden></p>
+      <p id="track-offset" class="offset" hidden></p>
+      <ol id="alignment-rows" class="align-rows"></ol>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从公开营收榜和挂牌项目查找 AI 产品，用真实数据判断哪些方向值得验证。">
+  <title>AI 产品雷达｜营收证据与机会</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="research-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到研究内容</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>AI 产品雷达</a>
+      <nav aria-label="研究导航">
+        <a href="#products">产品样本</a>
+        <a href="#analysis">数据对照</a>
+        <a href="#sources">数据入口</a>
+        <a href="#opportunities">机会分析</a>
+        <a href="#method">统计口径</a>
+      </nav>
+      <span class="snapshot" id="top-date">数据快照</span>
+    </div>
+  </header>
+
+  <main class="shell" id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">AI 出海变现 · 公开市场调研</p>
+        <h1 id="hero-title">哪些 AI 产品<br>已经有人付费<span>？</span></h1>
+        <p class="hero-summary">从营收榜、应用目录和转让市场找样本，核对数字从哪里来，再选一个具体交付去验证。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#products">查看产品样本</a>
+          <a class="button secondary" href="#opportunities">看优先机会</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-labelledby="focus-title">
+        <p class="eyebrow">本轮判断</p>
+        <h2 id="focus-title">先测试口播后期，<br>其次是电商素材包。</h2>
+        <p>两者都能用已有流程交付一个真实订单，并记录修订和生成成本。</p>
+        <div class="hero-panel-rule"></div>
+        <a href="#opportunities">看依据和试单设计</a>
+      </aside>
+    </section>
+
+    <section class="stats" id="stats" aria-label="样本概况"></section>
+
+    <section class="section" id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <div><h2 id="products-title">产品样本</h2><p>打开案例可查看客户、收费方式、营收来源和可验证的切入点。</p></div>
+      </div>
+      <div class="product-layout">
+        <div class="panel explorer">
+          <form class="filters" id="filters" aria-label="筛选产品">
+            <label class="search-label">搜索<input id="search" type="search" placeholder="产品名、场景或来源" autocomplete="off"></label>
+            <label>方向<select id="category"><option value="all">全部方向</option></select></label>
+            <label>来源<select id="source"><option value="all">全部来源</option></select></label>
+            <label>证据<select id="evidence"><option value="all">全部证据</option></select></label>
+            <label>排序<select id="sort"><option value="priority">研究顺序</option><option value="mrr">美元 MRR 从高到低</option><option value="name">产品名称</option></select></label>
+          </form>
+          <div class="results-head">
+            <p id="result-count" role="status"></p>
+            <div class="result-actions"><button type="button" class="text-button" id="reset">重置筛选</button><button type="button" class="button quiet small" id="export">导出 CSV</button></div>
+          </div>
+          <p class="compare-notice" id="compare-notice" role="status"></p>
+          <div class="compare-bar" id="compare-bar" hidden>
+            <p id="compare-label"></p>
+            <div><button type="button" id="clear-compare" class="text-button">清空</button><button type="button" id="show-compare" class="button primary small" disabled>比较样本</button></div>
+          </div>
+          <div id="product-list" class="product-list"></div>
+        </div>
+
+        <aside class="product-sidebar" aria-label="样本数据分析">
+          <section class="panel chart-panel" aria-labelledby="chart-title">
+            <div class="chart-heading">
+              <h3 id="chart-title">营收与增长</h3>
+              <label class="sr-only" for="chart-metric">图表指标</label>
+              <select id="chart-metric"><option value="mrr">已验证 MRR</option><option value="netGrowth">30 天净营收增长</option><option value="mrrGrowth">30 天 MRR 变化</option></select>
+            </div>
+            <p class="chart-caption" id="chart-caption"></p>
+            <div class="chart" id="chart"></div>
+          </section>
+          <section class="panel readout" aria-labelledby="readout-title">
+            <h3 id="readout-title">样本怎么读</h3>
+            <div id="readout"></div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="analysis" aria-labelledby="analysis-title">
+      <div class="section-heading">
+        <div><h2 id="analysis-title">数据对照</h2><p>对照相近的客户任务、相同的收入窗口，以及重复采集的增长值。</p></div>
+      </div>
+      <div id="analysis-grid" class="analysis-grid"></div>
+      <section class="panel coverage" aria-labelledby="coverage-title">
+        <div><h3 id="coverage-title">样本覆盖</h3><p>计数仅针对本站样本。点来源名可以筛选对应项目。</p></div>
+        <div id="coverage" class="coverage-list"></div>
+      </section>
+    </section>
+
+    <section class="section" id="sources" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div><h2 id="sources-title">数据入口</h2><p>看清每个网站能发现什么项目，以及数据能验证到哪一步。</p></div>
+      </div>
+      <div class="source-filters" id="source-filters" role="group" aria-label="筛选入口类型"></div>
+      <div class="source-grid" id="source-grid"></div>
+    </section>
+
+    <section class="section opportunity-section" id="opportunities" aria-labelledby="opportunity-title">
+      <div class="section-heading">
+        <div><h2 id="opportunity-title">哪些方向值得验证</h2><p>优先选择能交出一个成品、能报价、能核算成本的方向。</p></div>
+      </div>
+      <div class="opportunity-grid" id="opportunity-grid"></div>
+    </section>
+
+    <section class="section" id="method" aria-labelledby="method-title">
+      <div class="panel method-panel">
+        <h2 id="method-title">统计口径</h2>
+        <div class="method-grid">
+          <div><h3>数据来源</h3><p>支付平台直连指金额或增长来自平台已连接的支付或订阅数据。挂牌披露指交易页公开的金额，单独标注审核方式。发布热度只作为发现线索。</p></div>
+          <div><h3>时间与金额</h3><p>以各条记录的来源日期或查阅日为准。MRR 衡量月度订阅收入，近 28 天、近 30 天和过去 12 个月的收入各自保留原口径。缺失值显示「未公开」。</p></div>
+          <div><h3>样本与判断</h3><p>样本从公开榜单和挂牌中定向抽取，偏向已公开收入的创作者工具。它能提供付费线索；做决策仍需要核对我们能触达的客户、实际交付成本和试单反馈。</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer"><span>AI 产品雷达 · AI 出海变现研究</span><a href="#top">返回页首</a></footer>
+
+  <dialog id="detail-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-frame">
+      <div class="dialog-header"><h2 id="dialog-title"></h2><form method="dialog"><button class="button quiet small">关闭</button></form></div>
+      <div id="dialog-content"></div>
+    </div>
+  </dialog>
+  <noscript><p class="shell">请启用 JavaScript 以加载研究样本与筛选功能。</p></noscript>
+</body>
+</html>

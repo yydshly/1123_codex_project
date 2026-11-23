@@ -1,0 +1,15 @@
+1
+00:00:00,450 --> 00:00:05,936
+Open Cedar Notes and click Export notes in the top right.
+
+2
+00:00:06,950 --> 00:00:11,407
+In the Format menu, select Markdown.
+
+3
+00:00:12,450 --> 00:00:17,643
+Turn on Include attachments, then click Download.
+
+4
+00:00:18,700 --> 00:00:24,378
+Open the downloaded ZIP file to see the notes and attachments.

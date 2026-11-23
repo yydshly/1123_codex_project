@@ -1,0 +1,15 @@
+1
+00:00:03,200 --> 00:00:05,291
+Welcome to the subtitle timing checker.
+
+2
+00:00:06,691 --> 00:00:08,665
+Today we will review a short recording.
+
+3
+00:00:10,065 --> 00:00:12,478
+Match each subtitle to the spoken words.
+
+4
+00:00:13,878 --> 00:00:15,806
+Click the timestamp to listen again.

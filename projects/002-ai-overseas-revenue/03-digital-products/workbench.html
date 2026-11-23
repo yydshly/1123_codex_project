@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在本地审校英语和简中字幕，按项目导出给客户的交付包。">
+  <title>双语字幕交付工作台</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="workbench.css">
+  <script src="workbench-core.js" defer></script>
+  <script src="workbench.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="brand" href="workbench.html"><span class="mark" aria-hidden="true">CC</span> 双语字幕交付</a>
+      <nav><a href="preview.html">案例与模板</a></nav>
+    </div>
+  </header>
+  <main class="workspace">
+    <header class="workspace-header">
+      <div>
+        <h1>字幕交付工作台</h1>
+        <p>导入你这一单的素材，核对字幕，然后打包交片。</p>
+      </div>
+      <div class="project-actions">
+        <label for="project-switch">本机项目</label>
+        <select id="project-switch" aria-label="本机项目"></select>
+        <button type="button" class="primary" id="new-project">新建项目</button>
+        <div class="backup-actions">
+          <button type="button" class="quiet-button" id="save-backup">保存项目备份</button>
+          <label class="quiet-button backup-open">
+            从备份打开
+            <input type="file" id="open-backup" accept=".json,application/json" aria-label="从备份打开">
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <section class="panel setup" aria-labelledby="setup-title">
+      <div class="section-title">
+        <h2 id="setup-title">项目素材</h2>
+        <button type="button" class="quiet-button" id="load-sample">载入案例</button>
+      </div>
+      <div class="meta-fields">
+        <label>项目名称<input id="project-name" type="text" placeholder="例如 产品演示" maxlength="120"></label>
+        <label>素材版本<input id="project-version" type="text" placeholder="v1" maxlength="30"></label>
+        <label>交付平台或审核人<input id="project-reviewer" type="text" placeholder="例如 YouTube 或客户审核" maxlength="160"></label>
+      </div>
+      <div class="uploads">
+        <label class="upload">
+          <strong>参考视频或音频</strong>
+          <span id="media-file-name">选择客户定稿素材</span>
+          <input id="media-file" type="file" accept="video/*,audio/*,.mp4,.mov,.webm,.mp3,.wav,.m4a" aria-label="选择参考视频或音频">
+        </label>
+        <label class="upload">
+          <strong>英文 SRT</strong>
+          <span id="en-file-name">选择已有的英文字幕</span>
+          <input id="en-file" type="file" accept=".srt,text/plain" aria-label="导入英文 SRT">
+        </label>
+        <label class="upload">
+          <strong>简中 SRT</strong>
+          <span id="zh-file-name">选择已有的简中字幕</span>
+          <input id="zh-file" type="file" accept=".srt,text/plain" aria-label="导入简中 SRT">
+        </label>
+      </div>
+      <p class="section-note"><button type="button" class="text-button" id="make-translation">用英文时间轴建简中底稿</button><span id="save-note">本机自动保存。换设备时可用 JSON 备份带走进度。</span></p>
+      <p class="message" id="import-message" role="status" hidden></p>
+    </section>
+
+    <section class="panel review" aria-labelledby="review-title">
+      <div class="section-title">
+        <div><h2 id="review-title">逐条回放和审校</h2><p id="track-counts">导入字幕后开始核对。</p></div>
+        <div class="track-toggle" role="group" aria-label="字幕编辑轨">
+          <button type="button" data-edit-track="en" aria-pressed="false">英文</button>
+          <button type="button" data-edit-track="zh-CN" aria-pressed="true">简中</button>
+        </div>
+      </div>
+      <div class="review-grid">
+        <div class="monitor">
+          <div class="screen">
+            <video id="media-player" controls playsinline hidden></video>
+            <div class="screen-empty" id="media-empty">导入参考素材后在这里回放</div>
+            <p class="caption" id="caption-overlay" hidden></p>
+          </div>
+          <p class="monitor-note" id="media-note">素材在浏览器里播放。重新打开页面后可以重新选取文件。</p>
+        </div>
+        <div class="cue-area">
+          <div class="cue-nav">
+            <label for="cue-list">字幕条目</label>
+            <select id="cue-list" size="7"></select>
+            <button type="button" class="quiet-button" id="add-cue">新增一条</button>
+          </div>
+          <div id="cue-editor" class="cue-editor" hidden>
+            <p class="cue-reference" id="source-reference" hidden></p>
+            <div class="times">
+              <label>开始时间<input id="cue-start" type="text" spellcheck="false" placeholder="00:00:00,000"></label>
+              <label>结束时间<input id="cue-end" type="text" spellcheck="false" placeholder="00:00:02,000"></label>
+            </div>
+            <label>字幕文字<textarea id="cue-text" rows="3"></textarea></label>
+            <p class="cue-warning" id="cue-warning" hidden></p>
+            <div class="cue-actions">
+              <button type="button" class="quiet-button" id="play-cue">回放这一条</button>
+              <button type="button" class="text-button" id="remove-cue">删除这一条</button>
+            </div>
+          </div>
+          <div class="edit-empty" id="editor-empty">选一条字幕来修改时间码和文字。</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="delivery-grid">
+      <section class="panel terms" aria-labelledby="terms-title">
+        <div class="section-title"><h2 id="terms-title">项目术语</h2></div>
+        <form class="term-form" id="term-form">
+          <label>英文原词<input id="term-source" type="text" placeholder="例如 Invite members" required></label>
+          <label>确认的简中词<input id="term-target" type="text" placeholder="例如 邀请成员" required></label>
+          <button type="submit" class="quiet-button">加入</button>
+        </form>
+        <ul class="terms-list" id="term-list"></ul>
+        <p class="section-note">逐条审校时会提示对应英文原词的已确认译法。</p>
+      </section>
+      <section class="panel delivery" aria-labelledby="delivery-title">
+        <div class="section-title"><h2 id="delivery-title">检查与导出</h2></div>
+        <label>交付备注<textarea id="delivery-note" rows="2" placeholder="例如 修改了第 5 条时间码，待客户确认。"></textarea></label>
+        <p id="export-summary" class="export-summary" aria-live="polite"></p>
+        <details id="check-details" hidden>
+          <summary>查看待检查条目</summary>
+          <ul id="check-list"></ul>
+        </details>
+        <div class="export-actions">
+          <button type="button" class="primary" id="export-project">导出客户交付 ZIP</button>
+          <p>英文 SRT、简中 SRT 和一份交付说明。</p>
+        </div>
+        <p class="message" id="export-message" role="status" hidden></p>
+      </section>
+    </div>
+  </main>
+  <dialog id="replace-subtitles" aria-labelledby="replace-title" aria-describedby="replace-summary">
+    <form method="dialog">
+      <h2 id="replace-title">替换当前字幕轨</h2>
+      <p id="replace-summary"></p>
+      <div class="replace-actions">
+        <button type="submit" class="quiet-button" value="cancel" autofocus>保留现有字幕</button>
+        <button type="submit" class="primary" value="replace">确认替换</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

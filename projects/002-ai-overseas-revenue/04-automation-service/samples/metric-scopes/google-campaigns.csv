@@ -1,0 +1,7 @@
+Campaign report
+November 9, 2026 - November 15, 2026
+Day,Campaign,Campaign ID,Customer ID,Currency code,Impr.,Clicks,Cost,Conversions,All conv. (by conv. time)
+2026-11-09,Brand Search,101001,123-456-7890,USD,"3,120",128,184.72,5.50,9.30
+2026-11-10,Nonbrand Search,101002,123-456-7890,USD,"1,980",78,126.18,4.00,7.00
+2026-11-13,Brand Search,101001,123-456-7890,USD,"3,900",132,198.10,7.00,12.00
+Total: Campaigns,,,,USD,"9,000",338,509.00,16.50,28.30

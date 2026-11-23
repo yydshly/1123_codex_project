@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="给接英文视频简中字幕单的剪辑师。下载 ZIP 获取 PDF 指南、可编辑 Excel 模板、演示 MP4 和两份 SRT。">
+  <title>双语字幕交付模板包｜本地预览</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="preview.css">
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span>双语字幕交付模板包</span>
+    </a>
+    <nav aria-label="预览导航">
+      <a href="workbench.html">打开工作台</a>
+      <a href="#review">返工示例</a>
+      <a href="#files">包内文件</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="handoff-title">
+      <div class="intro">
+        <p class="eyebrow">英文视频 · 简中字幕交付</p>
+        <h1 id="handoff-title">双语字幕<br>交付模板包</h1>
+        <p class="description">给接英文视频简中字幕单的自由剪辑师和小型视频团队。复制工作簿，照着样例确认术语、检查时间码，再把文件交给客户。</p>
+        <ul class="kit-summary" aria-label="下载包内包含">
+          <li><strong>PDF</strong><span>一页快速指南和客户邮件模板</span></li>
+          <li><strong>Excel</strong><span>可编辑工作簿，空白版和填好版</span></li>
+          <li><strong>MP4 + SRT</strong><span>60 秒演示，英文和简中两条字幕</span></li>
+        </ul>
+        <div class="product-actions">
+          <a class="primary" href="workbench.html">打开字幕交付工作台 <span aria-hidden="true">↗</span></a>
+          <a class="secondary" href="subtitle-handoff-kit.zip" download>下载案例和模板（ZIP）</a>
+        </div>
+      </div>
+
+      <figure class="player" id="demo">
+        <div class="video-frame">
+          <video id="sample-video" controls playsinline preload="none" poster="preview-poster.webp" aria-label="Alder Board 英文操作演示">
+            <source src="kit/example/product-demo_v1.mp4" type="video/mp4">
+            <a href="kit/example/product-demo_v1.mp4">下载演示视频</a>
+          </video>
+        </div>
+        <figcaption>
+          <div>
+            <strong>Alder Board</strong>
+            <span id="playing-version">交付样例 · 60 秒</span>
+          </div>
+          <div class="track-picker" id="track-picker" role="group" aria-label="字幕语言">
+            <button type="button" data-track="en" aria-pressed="false" disabled>英文</button>
+            <button type="button" data-track="zh-CN" aria-pressed="true" disabled>简中</button>
+            <button type="button" data-track="off" aria-pressed="false" disabled>关闭</button>
+          </div>
+        </figcaption>
+        <p class="track-notice" id="track-error" role="status" hidden>字幕暂时无法加载，可以下载 SRT 配合视频查看。</p>
+      </figure>
+    </section>
+
+    <section class="details">
+      <article class="review" id="review" aria-labelledby="review-heading">
+        <div class="section-heading"><h2 id="review-heading">送审前修掉 0.8 秒错位</h2></div>
+        <p class="review-note">样例第 5 条「检查落地页」在旁白前就显示了。草稿通过了 SRT 格式检查，按工作簿的验收步骤回放才发现。把起止时间都后移 800 毫秒，字幕就跟上了旁白。</p>
+        <div class="comparison" role="group" aria-label="比较第 5 条字幕的修改前后">
+          <button type="button" data-review="draft" aria-pressed="false" disabled>
+            <span>播放错位草稿</span><span>字幕从 00:22.900 开始</span>
+          </button>
+          <button type="button" data-review="zh-CN" aria-pressed="false" disabled>
+            <span>播放修正定稿</span><span>字幕从 00:23.700 开始</span>
+          </button>
+        </div>
+        <p class="review-note outcome"><strong>省下的返工</strong>是客户发现字幕和旁白对不上后，退回修改、重新导出再交片的那一轮。</p>
+      </article>
+
+      <section class="files" id="files" aria-labelledby="files-heading">
+        <div class="section-heading"><h2 id="files-heading">包内文件</h2></div>
+        <p class="review-note">先看指南和填好版，再复制空白工作簿到你自己的项目。</p>
+        <ul class="file-list">
+          <li><a href="kit/quick-start.pdf"><span>一页快速指南</span><small>PDF</small></a></li>
+          <li><a href="kit/subtitle-handoff-blank.xlsx" download><span>可编辑工作簿 · 空白版</span><small>XLSX</small></a></li>
+          <li><a href="kit/subtitle-handoff-example.xlsx" download><span>可编辑工作簿 · 填好版</span><small>XLSX</small></a></li>
+          <li class="track-downloads">
+            <a href="kit/example/product-demo_v1.en.srt" download>英文 SRT</a>
+            <a href="kit/example/product-demo_v1.zh-CN.srt" download>简中 SRT</a>
+            <a href="kit/example/product-demo_v1.mp4" download>演示 MP4</a>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer"><span>本地预览</span><a href="RESULTS.md">交付实测记录</a></footer>
+</body>
+</html>

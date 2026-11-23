@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="听动物名字或叫声，从真实照片里找猫狗鸭和农场里的鸡、羊、牛。">
+  <title>动物在哪里？</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="animals.css">
+  <script src="animals-themes.js" defer></script>
+  <script src="animals-playtest.js" defer></script>
+  <script src="animals.js" defer></script>
+</head>
+<body>
+  <main class="animal-game">
+    <header class="game-title">
+      <h1>动物在哪里？</h1>
+      <p>听一听，点出你听到的动物。</p>
+    </header>
+
+    <section class="welcome" id="welcome" aria-label="开始游戏">
+      <div class="theme-actions" role="group" aria-label="选主题">
+        <button type="button" data-theme="classic" aria-pressed="true">猫狗鸭</button>
+        <button type="button" data-theme="farm" aria-pressed="false">农场</button>
+      </div>
+      <div class="welcome-photos" id="theme-photos">
+        <img src="animals-assets/cat-1.webp" alt="小猫" width="480" height="360">
+        <img src="animals-assets/dog-1.webp" alt="小狗" width="480" height="360">
+        <img src="animals-assets/duck-1.webp" alt="小鸭" width="480" height="360">
+      </div>
+      <div class="mode-actions">
+        <button class="primary" id="animal-start" data-mode="name" type="button"><span aria-hidden="true">💬</span> 听名字找动物</button>
+        <button class="primary" data-mode="call" type="button"><span aria-hidden="true">🔊</span> 听叫声找动物</button>
+      </div>
+    </section>
+
+    <section class="quiz" id="quiz" aria-label="听声音找动物" hidden>
+      <div class="quiz-top">
+        <p class="counter" id="counter">第 1 题 / 共 6 题</p>
+        <ol class="round-progress" id="round-progress" aria-label="答题进度">
+          <li></li><li></li><li></li><li></li><li></li><li></li>
+        </ol>
+        <button type="button" class="listen" id="listen-again">
+          <span aria-hidden="true">🔊</span> <span id="listen-label">再听题目</span>
+        </button>
+      </div>
+      <p class="visually-hidden" id="prompt-text"></p>
+      <div class="photo-options" id="photo-options" role="group" aria-label="选择动物照片" aria-describedby="prompt-text">
+        <button class="photo-option" data-option="0" type="button">
+          <img alt="" width="480" height="360">
+        </button>
+        <button class="photo-option" data-option="1" type="button">
+          <img alt="" width="480" height="360">
+        </button>
+      </div>
+      <div class="quiz-footer">
+        <div class="messages">
+          <p id="animal-feedback" class="feedback" role="status">听完后，点一张照片。</p>
+          <p id="audio-notice" role="status" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="finish" id="finish" aria-labelledby="finish-title" hidden>
+      <h2 id="finish-title">全都找到了！</h2>
+      <div class="welcome-photos" id="found-photos" aria-label="找到的动物"></div>
+      <div class="mode-actions">
+        <button type="button" class="primary" id="animal-replay"><span aria-hidden="true">↻</span> 再来一轮</button>
+        <button type="button" class="primary alternate" id="animal-switch">换个玩法</button>
+        <button type="button" class="primary alternate" id="animal-theme-switch">换主题</button>
+      </div>
+    </section>
+
+    <audio id="animal-sound" preload="auto"></audio>
+    <details class="playtest" id="animal-playtest">
+      <summary>给大人 · 试玩记录</summary>
+      <p>开始记录后把设备交给孩子。可以在结束前标注有没有给过提示或帮忙点选。</p>
+      <div class="record-actions">
+        <button type="button" id="animal-record">开始记录下一位</button>
+        <button type="button" id="animal-record-end" disabled>结束记录</button>
+        <button type="button" id="animal-record-export" disabled>导出 CSV</button>
+      </div>
+      <p id="animal-record-status" role="status"></p>
+      <p id="animal-storage-notice" role="status" hidden>当前浏览器无法保存记录，关闭前可导出 CSV。</p>
+      <div class="observations" id="animal-observations" hidden>
+        <label>首轮 6 题
+          <select id="observe-completion" disabled>
+            <option value="">未确认</option>
+            <option value="independent">自己玩完</option>
+            <option value="help">有提示或代点</option>
+          </select>
+        </label>
+        <label>换图题
+          <select id="observe-recognition" disabled>
+            <option value="">未确认</option>
+            <option value="independent">自己选图</option>
+            <option value="help">有提示或代点</option>
+          </select>
+        </label>
+        <label>开启下一轮
+          <select id="observe-replay" disabled>
+            <option value="">未确认</option>
+            <option value="independent">孩子主动点</option>
+            <option value="help">有提示或代点</option>
+          </select>
+        </label>
+      </div>
+      <p>从首题出现到第一次选对计时，选错也计时。换图题看第一次点选。首轮和下一轮分别记录主题与玩法。</p>
+      <p id="animal-record-summary"></p>
+      <div class="record-table" id="animal-record-table" tabindex="0" role="region" aria-label="逐位试玩记录" hidden>
+        <table>
+          <thead><tr><th scope="col">试玩</th><th scope="col">首轮主题</th><th scope="col">首轮玩法</th><th scope="col">首次选对</th><th scope="col">首轮</th><th scope="col">换图首选</th><th scope="col">再玩</th></tr></thead>
+          <tbody id="animal-record-rows"></tbody>
+        </table>
+      </div>
+    </details>
+    <footer><a href="animals-assets/CREDITS.html" target="_blank" rel="noopener">照片与声音来源</a></footer>
+  </main>
+</body>
+</html>

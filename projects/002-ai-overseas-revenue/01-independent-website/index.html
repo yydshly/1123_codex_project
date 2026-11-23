@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check Chinese, English or bilingual SRT files for timing, formatting and readability. Files stay on your device.">
+  <title>SRT Subtitle Checker</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="srt.js" defer></script>
+  <script src="i18n.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <div class="intro-heading">
+        <h1 data-i18n="title">SRT Subtitle Checker</h1>
+        <div class="language-switch" role="group" aria-label="Interface language" data-i18n-label="language">
+          <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+          <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+        </div>
+      </div>
+      <p class="lead" data-i18n="lead">Check Chinese, English or bilingual subtitles before you publish or hand them off.</p>
+      <p data-i18n="srtExplanation">An SRT is a text file that tells a player what to display and when. Because the subtitles are separate from the video, you can edit them or add another language without exporting the video again.</p>
+      <p><a href="align.html" data-i18n="alignPage">Compare an SRT with audio</a></p>
+    </header>
+
+    <section id="drop-zone" class="drop-zone" aria-label="Open an SRT file" data-i18n-label="openFile">
+      <span class="file-symbol" aria-hidden="true">.srt</span>
+      <h2 data-i18n="dropHere">Drop an SRT file here</h2>
+      <p data-i18n="fileHelp">UTF-8 SRT up to 5 MB. Files stay on your device.</p>
+      <div class="actions">
+        <button id="choose-file" class="primary" type="button" data-i18n="chooseFile">Choose SRT file</button>
+        <button id="try-example" type="button" data-i18n="tryExample">Try a bilingual example</button>
+      </div>
+      <input id="file-input" type="file" accept=".srt" aria-label="SRT file" data-i18n-label="fileLabel" hidden>
+    </section>
+
+    <details class="settings">
+      <summary>
+        <span data-i18n="readabilityRules">Readability rules</span>
+        <span class="active-rule-limits" id="active-rule-limits">20/s · 42/line</span>
+      </summary>
+      <form id="rules-form">
+        <p class="rules-help" data-i18n="rulesHelp">Choose limits for the subtitle text. The interface language is a separate setting. For bilingual files, use the limits your project calls for.</p>
+        <div class="presets" role="group" aria-label="Readability presets" data-i18n-label="presets">
+          <button type="button" data-preset="zh" data-i18n="chinesePreset">Chinese preset</button>
+          <button type="button" data-preset="en" data-i18n="englishPreset">English preset</button>
+        </div>
+        <div class="rule-fields">
+          <label><span data-i18n="maxCps">Max. characters per second</span>
+            <input name="maxCharactersPerSecond" type="number" value="20" min="1" max="100" required>
+          </label>
+          <label><span data-i18n="maxLine">Max. characters per line</span>
+            <input name="maxLineLength" type="number" value="42" min="1" max="200" required>
+          </label>
+          <label><span data-i18n="minDuration">Min. cue duration (seconds)</span>
+            <input name="minDuration" type="number" value="0.8" min="0" max="60" step="0.1" required>
+          </label>
+          <label><span data-i18n="maxDuration">Max. cue duration (seconds)</span>
+            <input name="maxDuration" type="number" value="7" min="0.1" max="180" step="0.1" required>
+          </label>
+        </div>
+        <button type="submit" data-i18n="applyRules">Apply rules</button>
+        <p id="rules-status" class="message" role="status"></p>
+      </form>
+    </details>
+
+    <p id="file-status" class="file-status" role="status"></p>
+
+    <section id="results" aria-labelledby="results-heading" hidden>
+      <header class="report-header">
+        <div>
+          <h2 id="results-heading" data-i18n="results">Check results</h2>
+          <p id="filename" class="filename"></p>
+        </div>
+        <button id="copy-report" type="button" data-i18n="copyReport">Copy report</button>
+      </header>
+      <dl class="counts">
+        <div><dt data-i18n="blocks">Caption blocks</dt><dd id="block-count">0</dd></div>
+        <div class="errors"><dt data-i18n="errors">Errors</dt><dd id="error-count">0</dd></div>
+        <div class="warnings"><dt data-i18n="warnings">Warnings</dt><dd id="warning-count">0</dd></div>
+      </dl>
+      <p id="copy-status" class="message" role="status"></p>
+      <div id="manual-copy" class="manual-copy" hidden>
+        <label for="report-text" data-i18n="reportText">Report text</label>
+        <textarea id="report-text" rows="6" readonly></textarea>
+      </div>
+      <p id="report-note" class="report-note" hidden></p>
+      <ul id="issue-list" class="issues"></ul>
+    </section>
+
+    <section class="check-scope" aria-labelledby="scope-heading">
+      <h2 id="scope-heading" data-i18n="checks">What this tool checks</h2>
+      <dl>
+        <div><dt data-i18n="timingTitle">Timing</dt><dd data-i18n="timingHelp">Find overlapping cues, reversed times and cues with zero duration.</dd></div>
+        <div><dt data-i18n="formatTitle">File structure</dt><dd data-i18n="formatHelp">Find malformed timecodes, missing cue numbers, missing separators and empty cues.</dd></div>
+        <div><dt data-i18n="readingTitle">Readability</dt><dd data-i18n="readingHelp">Flag long lines, fast reading speeds and cues that appear too briefly or too long.</dd></div>
+      </dl>
+      <p data-i18n="workflow">Use the cue number and source line to fix issues in your subtitle editor. Review the video separately to confirm that the words match the audio and picture.</p>
+    </section>
+  </main>
+</body>
+</html>
