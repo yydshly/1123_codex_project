@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用 Reddit 为 AI 视频角色工具找需求和首批用户。整理 13 位创作者的 37 条运营资料，从 3 个版块的 12 条原帖提炼 5 类痛点，并给出首轮对照测试，帮助决定先做选型库还是镜头验收工具。">
+  <meta name="theme-color" content="#f6f4ef">
+  <link rel="canonical" href="https://yydshly.github.io/1123_codex_project/010-reddit-ops-research/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Reddit 运营实战 · AI 视频角色工具研究">
+  <meta property="og:description" content="梳理 Reddit 的用法和四类用户价值，用 3 个版块、12 条原帖和 5 类痛点，设计双人对话镜头的首轮验证。">
+  <meta property="og:url" content="https://yydshly.github.io/1123_codex_project/010-reddit-ops-research/">
+  <meta property="og:image" content="https://yydshly.github.io/1123_codex_project/010-reddit-ops-research/reddit-overview.png">
+  <meta property="og:image:width" content="3200">
+  <meta property="og:image:height" content="2442">
+  <meta property="og:image:alt" content="Reddit 的四步用法、四类用户的价值，以及 AI 视频角色工具的验证路径">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Reddit 运营实战 · 出海研究笔记</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="sources.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>出海研究笔记</a>
+      <nav aria-label="网页目录">
+        <a href="#overview">一图总览</a>
+        <a href="#field-research">AI 视频实地调研</a>
+        <a href="#takeaways">研究结论</a>
+        <a href="#library">人物与原帖</a>
+        <a href="#pilot">两周试点</a>
+        <a href="#rules">规则与出处</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> 社区调研与产品冷启动</p>
+        <h1 id="hero-title"><span class="hero-word">Reddit</span> 运营<br><em>实战研究</em></h1>
+        <p class="hero-intro">从中文创作者的运营案例提炼找人、找需求和小规模验证的方法，再用 3 个版块的 12 条原帖定位 AI 视频角色的反复痛点，判断该先帮创作者选工具，还是帮他们找出要重做的镜头。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#overview">先看总览图</a>
+          <a class="button button-secondary" href="#library">查阅全部原帖</a>
+        </div>
+      </div>
+      <aside class="hero-brief" aria-labelledby="brief-title">
+        <p class="brief-kicker"><span aria-hidden="true"></span> 我们的判断</p>
+        <h2 id="brief-title">先找真实需求，<br>再试社区获客。</h2>
+        <dl class="brief-list">
+          <div><dt>优先做</dt><dd>找反复出现、有人尝试解决的问题</dd></div>
+          <div><dt>小规模试</dt><dd>在规则允许的社区贡献实测和经验</dd></div>
+          <div><dt>单独观察</dt><dd>站外访问、激活和搜索引用的变化</dd></div>
+        </dl>
+      </aside>
+      <dl class="study-stats" aria-label="资料范围">
+        <div><dt id="creator-total">13</dt><dd>位创作者</dd></div>
+        <div><dt id="article-total">37</dt><dd>条创作者资料</dd></div>
+        <div><dt id="topic-total">6</dt><dd>个研究主题</dd></div>
+        <div class="stat-date"><dt><time datetime="2026-11-22">11.22</time></dt><dd>资料核对 · 2026</dd></div>
+      </dl>
+    </section>
+
+    <section class="shell chapter overview" id="overview" aria-labelledby="overview-title">
+      <div class="section-head">
+        <div><h2 id="overview-title">一图看懂 Reddit</h2></div>
+        <p>从主题社群找到人，再用他们遇到的具体问题决定我们要验证什么。</p>
+      </div>
+      <figure class="overview-figure">
+        <a class="overview-image" href="reddit-overview.png" target="_blank" rel="noopener noreferrer" aria-label="打开 Reddit 研究总览高清图">
+          <img src="reddit-overview.png" width="3200" height="2442" decoding="async" alt="Reddit 研究总览。展示四步使用流程、四类值得关注的用户，以及 AI 视频角色工具首轮试点的判断依据。">
+        </a>
+        <figcaption class="overview-caption">点图查看高清版。也可以展开下方的文字版。</figcaption>
+      </figure>
+      <details class="overview-text">
+        <summary>阅读总览文字版</summary>
+        <div class="overview-reading">
+          <article>
+            <h3>怎么用</h3>
+            <ol>
+              <li><strong>按社群找人。</strong> 选相关版块，读版规和置顶帖。</li>
+              <li><strong>从原帖找需求。</strong> 记下任务、失败现象、替代方案，找多人反复提到的问题。</li>
+              <li><strong>用样片验证。</strong> 同时展示成功和失败样片，请创作者做一次实际判断。</li>
+              <li><strong>跟踪使用。</strong> 按版规分享结果，记录引荐访问、试用、复用和付费。</li>
+            </ol>
+          </article>
+          <article>
+            <h3>哪些用户值得关注</h3>
+            <dl>
+              <dt>带失败样片求助的创作者</dt><dd>帮助还原真实任务，定位是哪一镜跑偏、为什么重做。</dd>
+              <dt>公开参数和工作流的实践者</dt><dd>给我们可复现的对照方案，帮助设计实测。</dd>
+              <dt>有交付期限和预算的小团队</dt><dd>帮助估算重试成本、交付约束和工具需要节省的工时。</dd>
+              <dt>愿意用自有素材再试的人</dt><dd>帮助判断工具能否进入真实工作流程，也可能成为首批用户。</dd>
+            </dl>
+          </article>
+          <article>
+            <h3>对我们的 AI 视频角色工具有什么价值</h3>
+            <p>在 <a href="#field-communities">三个版块</a> 中分别看双人对白与剪辑、跨工具选型与成本、本地工作流与复现。</p>
+            <p>用同组角色和素材比较两套流程。每套流程的 4 个镜头各生成 3 次，共 24 次。记录串脸、说话人、视线、站位、道具和返工成本，请 5 位创作者用同一套样片判断。</p>
+            <p>如果创作者反复回来查模型和场景，先做实测选型库。如果他们带素材回来判断哪一镜要重做，优先做角色一致性验收工具。</p>
+            <a href="#field-checklist">查看首轮验证清单</a>
+          </article>
+        </div>
+        <p class="overview-reference">运营参考 · 左海、宓宓（入门） · Niko、Yanhua（选区找帖） · 生姜 Iris、Yangyi（发布复盘）<a href="#library">查看人物与原帖</a></p>
+      </details>
+    </section>
+
+    <section class="shell chapter field-research" id="field-research" aria-labelledby="field-title">
+      <div class="section-head">
+        <div><p class="eyebrow">AI 视频角色工具 · Reddit 实地调研</p><h2 id="field-title">角色一样，镜头能接上吗？</h2></div>
+        <p>调研以制作英文短片、短剧或系列视频的创作者为主。选了 3 个版块，核对了 12 条讨论，其中 11 条是问题或求助，1 条是成片后的制作复盘。<time datetime="2026-11-22">2026 年 11 月 22 日</time>核对。</p>
+      </div>
+      <div class="field-callout">
+        <div>
+          <h3>优先验证双人对话的镜头验收</h3>
+          <p>最值得先测的任务是用两位固定角色做出能接在一起的正反打，让创作者判断脸、声线、视线、站位和道具在哪一镜出错。先用对照样片检验验收清单有没有用，再决定做可复用的选型库还是做镜头验收工具。</p>
+        </div>
+        <a class="button button-primary" href="#field-checklist">打开验证清单</a>
+      </div>
+      <nav class="field-nav" aria-label="实地调研目录">
+        <a href="#field-communities">版块与规则</a>
+        <a href="#field-patterns">反复出现的痛点</a>
+        <a href="#field-posts">12 条原帖</a>
+        <a href="#field-checklist">首轮验证</a>
+      </nav>
+
+      <div class="field-block" id="field-communities">
+        <h3>三个版块，各用来查什么</h3>
+        <div class="field-communities">
+          <article class="field-card">
+            <h4><a href="https://www.reddit.com/r/aifilmmaking/" target="_blank" rel="noopener noreferrer">r/aifilmmaking</a></h4>
+            <p class="field-role">首选 · 叙事短片与对话场景</p>
+            <p>能看到创作者从出镜素材到成片的失败点，适合确认哪些问题会导致镜头弃用或重做。</p>
+            <dl>
+              <dt>已核对规则</dt>
+              <dd>项目帖须以叙事或电影创作为主、可直接在 Reddit 观看，并符合素材授权与 AI 披露要求。工具营销、商业演示和招揽受限。非商业个人频道自荐走 Call Sheet 置顶帖。</dd>
+              <dt>本轮用法</dt>
+              <dd>先看 Question、Feedback Request 和 Tips &amp; Tutorials。真实问题可用短测试片段作补充，由版主按内容指南判断。</dd>
+            </dl>
+            <div class="inline-sources"><a href="https://www.reddit.com/r/aifilmmaking/wiki/index/rules/" target="_blank" rel="noopener noreferrer">完整规则</a><a href="https://www.reddit.com/r/aifilmmaking/wiki/index/aifilmmaking_content_guidelines/" target="_blank" rel="noopener noreferrer">内容指南</a><a href="https://www.reddit.com/r/aifilmmaking/wiki/index/ai_filmmaking_code_of_ethics/" target="_blank" rel="noopener noreferrer">AI 披露与授权</a></div>
+          </article>
+          <article class="field-card">
+            <h4><a href="https://www.reddit.com/r/aivideomaking/" target="_blank" rel="noopener noreferrer">r/aivideomaking</a></h4>
+            <p class="field-role">对照 · 多工具、长视频与小团队</p>
+            <p>能看不同生成工具面临的相同问题，也能看到预算、重试和交付时间如何影响选型。</p>
+            <dl>
+              <dt>公开规则核对</dt>
+              <dd>公开规则页未显示条款，社区 Wiki 已停用。当前没有查到公开的自荐、外链或招募许可，Reddit 站规仍适用。</dd>
+              <dt>本轮用法</dt>
+              <dd>先观察和回答具体问题。发布产品链接、访谈招募或问卷前，先确认版主要求。</dd>
+            </dl>
+            <div class="inline-sources"><a href="https://www.reddit.com/r/aivideomaking/about/rules/" target="_blank" rel="noopener noreferrer">规则页</a><a href="https://www.reddit.com/r/aivideomaking/wiki/index/" target="_blank" rel="noopener noreferrer">Wiki 状态</a><a href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">站规 · Spam</a></div>
+          </article>
+          <article class="field-card">
+            <h4><a href="https://www.reddit.com/r/comfyui/" target="_blank" rel="noopener noreferrer">r/comfyui</a></h4>
+            <p class="field-role">技术验证 · 本地工作流与可复现失败</p>
+            <p>帖子常给模型、显存、参考图或节点信息。适合补齐测试记录字段，区分输入、模型和硬件的影响。</p>
+            <dl>
+              <dt>公开规则核对</dt>
+              <dd>公开规则页未显示条款。社区有 Help Needed、Workflow Included 等标签，这些是发帖分类，推广限制仍需向版主核实。</dd>
+              <dt>本轮用法</dt>
+              <dd>读求助和工作流对照。如分享技术结果，给出可复现参数和失败样片。有商业关联或招募需求时先确认版主要求。</dd>
+            </dl>
+            <div class="inline-sources"><a href="https://www.reddit.com/r/comfyui/about/rules/" target="_blank" rel="noopener noreferrer">规则页</a><a href="https://www.reddit.com/r/comfyui/" target="_blank" rel="noopener noreferrer">社区标签</a><a href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">站规 · Spam</a></div>
+          </article>
+        </div>
+        <p class="field-note">筛选对照也看了 r/aivideo 和 r/VEO3。前者更适合按规定提交完成的作品，后者对 Veo 与 Flow 有参考价值，推广工具需先联系版主。首轮选的三个版块能同时覆盖叙事剪辑、通用工具选型和本地工作流。<a href="https://www.reddit.com/r/aivideo/wiki/rules/" target="_blank" rel="noopener noreferrer">r/aivideo 规则</a> · <a href="https://www.reddit.com/r/VEO3/" target="_blank" rel="noopener noreferrer">r/VEO3 规则栏</a></p>
+      </div>
+
+      <div class="field-block" id="field-patterns">
+        <h3>反复出现的五个痛点</h3>
+        <table class="evidence-table field-patterns">
+          <thead><tr><th scope="col">痛点</th><th scope="col">用户遇到的具体失败</th><th scope="col">对我们意味着什么</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">同一角色变脸</th><td>参考图和角色描述保持一致，切镜、转头或换景之后，脸型、衣着或远景中的细节仍会变。</td><td>逐镜验收身份，用首帧、中间帧与末帧查看。<a href="#thread-long-face">转头变脸</a> · <a href="#thread-campaign">跨片段漂移</a> · <a href="#thread-refgpu">参考图与本地参数</a></td></tr>
+            <tr><th scope="row">双人对话不连贯</th><td>两人同框时互相借脸，切反打时眼神对不上，声音忽然变成另一种。原生音视频有时改一句就需要重生整镜。</td><td>分别验收 A／B 身份、发声者、声线和视线，另算改一句台词的代价。<a href="#thread-eyelines">双人同框与改台词</a> · <a href="#thread-dialogue">反打与声线求助</a></td></tr>
+            <tr><th scope="row">场景和动作掉线</th><td>同一人物在房间里的位置跳变，背景、人物比例或道具状态在换机位后对不上。</td><td>参考图之外保留站位、道具和动作状态。剪辑时核对相邻镜头能否接上。<a href="#thread-position">位置跳变</a> · <a href="#thread-blocking">四角色走位</a> · <a href="#thread-location">角色与布景共存</a></td></tr>
+            <tr><th scope="row">长镜头和拼接退化</th><td>有人在连续转头时出现脸部变形，有人把长镜拆成短片后发现接缝可见。</td><td>保留一项较长的测试镜头，并单独检查末段和拼接处。<a href="#thread-long-face">连续转头</a> · <a href="#thread-stitch">长镜伪影与接缝</a></td></tr>
+            <tr><th scope="row">返工、积分和工时</th><td>小团队要兼顾生成速度、订阅与非技术剪辑师上手，失败镜头仍然消耗额度和编辑时间。</td><td>优先比较每个可用镜头的总支出与工时。保留所有失败样本。<a href="#thread-campaign">广告团队的交付约束</a> · <a href="#thread-cost">积分耗尽</a> · <a href="#thread-short-film">先用便宜的静帧找构图</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="field-block" id="field-posts">
+        <h3>12 条原帖与证据</h3>
+        <p class="field-note">用 character consistency、two-character dialogue、eyelines、face drift、blocking、re-render 和 credits 等英文词，逐版块查找公开讨论。只收原文可读、有具体任务或失败现象的样本。帖子作者与回复者的自述用于找假设，取样足以设计测试，尚不足以估算发生率或付费意愿。</p>
+        <div class="thread-groups">
+          <article class="thread-group">
+            <h4>r/aifilmmaking</h4>
+            <ul>
+              <li id="thread-eyelines"><p class="thread-meta"><time datetime="2026-11-19">11 月 19 日</time> · 双人对话求助</p><a href="https://www.reddit.com/r/aifilmmaking/comments/1y0eeln/how_do_you_keep_eyelines_and_continuity_in/" target="_blank" rel="noopener noreferrer">双人短片怎么保住视线和连续性？</a><p>分开生成再合成会有贴上去的感觉。一起生成时两人的脸偶尔互相混入，改一行对白还可能重做整镜。</p></li>
+              <li id="thread-dialogue"><p class="thread-meta"><time datetime="2026-08-25">8 月 25 日</time> · 双人对话求助</p><a href="https://www.reddit.com/r/aifilmmaking/comments/1vxqjdk/what_are_you_using_for_clean_twocharacter/" target="_blank" rel="noopener noreferrer">科幻短片怎样拍出能剪的双人对白？</a><p>作者列出跨镜脸漂、声线变化、眼神错位和反打剪辑不连续，正在找可用工作流。</p></li>
+              <li id="thread-position"><p class="thread-meta"><time datetime="2026-09">9 月</time> · 请求反馈</p><a href="https://www.reddit.com/r/aifilmmaking/comments/1wgabz0/issues_with_character_position_consistency/" target="_blank" rel="noopener noreferrer">角色脸做稳了，为什么在场景里跳位？</a><p>作者在 Google Flow 用角色设定图维持外形，场景和人物相对位置仍会跳变。</p></li>
+              <li id="thread-short-film"><p class="thread-meta"><time datetime="2026-09-01">9 月 1 日</time> · 12 分钟短片复盘</p><a href="https://www.reddit.com/r/aifilmmaking/comments/1w484j8/what_i_learned_about_character_consistency_while/" target="_blank" rel="noopener noreferrer">做完 12 分钟 AI 短片后的角色一致性复盘</a><p>作者用头像与服装参考维持身份，后期修正变声；多人比例和站位出错时先重做较便宜的构图静帧。</p></li>
+            </ul>
+          </article>
+          <article class="thread-group">
+            <h4>r/aivideomaking</h4>
+            <ul>
+              <li id="thread-long-face"><p class="thread-meta"><time datetime="2026-11-13">11 月 13 日</time> · 长镜头求助</p><a href="https://www.reddit.com/r/aivideomaking/comments/1xv55mr/how_are_people_generating_human_looking_faces_and/" target="_blank" rel="noopener noreferrer">长一点的视频里怎么保住真实人脸？</a><p>即使用三视图作参考，人物连续转头时下颌仍会变形，十五秒内就能出现。</p></li>
+              <li id="thread-blocking"><p class="thread-meta"><time datetime="2026-11-04">11 月 4 日</time> · 多镜头流程求助</p><a href="https://www.reddit.com/r/aivideomaking/comments/1xnqxop/whats_the_current_cutting_edge_for_ai_filmmaking/" target="_blank" rel="noopener noreferrer">四角色跨镜头怎样保持站位和机位？</a><p>作者尝试用 Blender 和本地工作流约束镜头。单个镜头效果不错，换角度时角色位置、动作和场景仍难重现。</p></li>
+              <li id="thread-campaign"><p class="thread-meta"><time datetime="2026-05-08">5 月 8 日</time> · 小团队选型求助</p><a href="https://www.reddit.com/r/aivideomaking/comments/1t7h00s/how_do_you_keep_a_character_consistent_across_10/" target="_blank" rel="noopener noreferrer">十多支短视频怎么维持同一张脸和服装？</a><p>两人团队需要在几天内交付广告素材。作者说固定种子和复用图像提示仍会漂移，还需要控制订阅与操作成本。</p></li>
+              <li id="thread-cost"><p class="thread-meta"><time datetime="2026-10">10 月</time> · 生成成本求助</p><a href="https://www.reddit.com/r/aivideomaking/comments/1x946xm/for_those_who_make_ai_videos_how_much_do_yall/" target="_blank" rel="noopener noreferrer">短视频每月究竟要花多少钱？</a><p>创作者反复生成合适的素材时很快用完积分。此帖补充成本证据，主题集中在重试和额度。</p></li>
+            </ul>
+          </article>
+          <article class="thread-group">
+            <h4>r/comfyui</h4>
+            <ul>
+              <li id="thread-refgpu"><p class="thread-meta"><time datetime="2026-11-21">11 月 21 日</time> · 参考生视频求助</p><a href="https://www.reddit.com/r/comfyui/comments/1y1y7fx/photorealistic_facial_identity_consistency/" target="_blank" rel="noopener noreferrer">写实人物脸不够像，硬件还是参考图的影响？</a><p>作者给了 MiniMax H3 参考生视频配置和 12 GB 显存环境，想知道硬件、模型和角色微调分别能改善多少。</p></li>
+              <li id="thread-entry"><p class="thread-meta"><time datetime="2026-05-16">5 月 16 日</time> · 角色入镜求助</p><a href="https://www.reddit.com/r/comfyui/comments/1tep06o/recreating_the_character_enters_midgen_trend/" target="_blank" rel="noopener noreferrer">角色中途入画，换种子就变脸怎么办？</a><p>作者用 LTX 2.3 做角色进场。同一提示词与配置下身体和服饰还认得出，面部随生成变化。</p></li>
+              <li id="thread-stitch"><p class="thread-meta"><time datetime="2026-03-28">3 月 28 日</time> · 延长镜头求助</p><a href="https://www.reddit.com/r/comfyui/comments/1s5zj46/how_do_you_fix_long_video_artifacts_in_wan_22_i2v/" target="_blank" rel="noopener noreferrer">Wan 长镜出现脸漂和闪烁，分段又有接缝</a><p>作者在自己的设置下从约五秒往更长生成时遇到脸漂和画面退化，拆段后接缝依然可见。</p></li>
+              <li id="thread-location"><p class="thread-meta"><time datetime="2026-05-19">5 月 19 日</time> · 场景工作流求助</p><a href="https://www.reddit.com/r/comfyui/comments/1thhdg5/workflow_for_keeping_same_character_same_location/" target="_blank" rel="noopener noreferrer">跨次生成能否同时固定角色和同一地点？</a><p>初学者想让服装和姿势按要求变化，同时让人物身份和背景空间保持稳定。</p></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="field-block validation" id="field-checklist">
+        <div class="validation-heading">
+          <div><p class="eyebrow">首轮产品验证</p><h3>用同一组角色做两套对照</h3></div>
+          <p id="validation-progress" class="validation-progress" role="status" aria-live="polite">0 / 6 已完成</p>
+        </div>
+        <p>用自有或明确授权的虚构角色 A、B，固定服装、机位意图、道具和台词。选一个支持所需时长、参考图和音频的模型。对照组直接用角色参考生成，实验组用同一组素材先固定每镜首帧再生视频。</p>
+        <ul class="shot-matrix" aria-label="四个测试镜头">
+          <li><strong>单人对照</strong><span>短近景，检查脸和服装</span></li>
+          <li><strong>连续转头</strong><span>约 12 秒，检查头部转动和末段</span></li>
+          <li><strong>双人同框</strong><span>A 问 B 答，两人都可见，固定道具</span></li>
+          <li><strong>同场反打</strong><span>保留站位、声线和道具状态</span></li>
+        </ul>
+        <ol class="validation-list">
+          <li><label><input type="checkbox" value="brief"><span><strong>固定测试素材和评分标准</strong> <span>备两套角色参考图、一张简单站位图和两句对白。预先写明怎么判脸漂、串脸、声线漂移、眼神错位和道具跳变。</span></span></label></li>
+          <li><label><input type="checkbox" value="runs"><span><strong>跑完 24 次生成</strong> <span>4 个镜头 × 2 种流程 × 3 次。每个镜头任务两组内固定版本、画幅、提示词和时长，能控制种子时使用成对种子。按镜头保留所有输出。</span></span></label></li>
+          <li><label><input type="checkbox" value="score"><span><strong>记录通过率、返工和成本</strong> <span>两人尽量盲评，逐镜看身份、服装、说话人和声音，逐剪辑点看视线、站位和道具。记录生成数、通过数、额度和人工分钟，算每个可用镜头成本。</span></span></label></li>
+          <li><label><input type="checkbox" value="edit"><span><strong>额外改一句对白</strong> <span>从一组可用的正反打选一个句子，只改文字，记录实际重做的镜头数、耗时和是否损伤其他画面或声音。单列此项增量成本。</span></span></label></li>
+          <li><label><input type="checkbox" value="review"><span><strong>给 5 位目标创作者看同一套结果</strong> <span>把成功、失败样片和每镜结果放在一个对照页，让短片创作者用它做一次实在的判断。问他们最近一次重做什么镜头、花多久，有无愿意试用的下一组素材。</span></span></label></li>
+          <li><label><input type="checkbox" value="decide"><span><strong>按行为决定下一步</strong> <span>首轮建议门槛是 5 人中至少 3 人用对照做出了选型或重做判断。若至少 2 人带自有素材再用一次，优先原型化验收工具；若反复来查不同模型和场景，先补选型库。</span></span></label></li>
+        </ol>
+        <p class="field-note">记录字段可直接用：镜头号、流程、生成序号、模型版本、素材与参数、失败类型、是否可剪、积分或金额、生成与人工耗时、需重做的镜头。数值门槛是试点设计，模型结果和用户反馈待实测。</p>
+      </div>
+    </section>
+
+    <section class="shell chapter" id="takeaways" aria-labelledby="takeaways-title">
+      <div class="section-head">
+        <div><p class="eyebrow">研究结论</p><h2 id="takeaways-title">这些内容对我们有什么用？</h2></div>
+        <p>以做英文市场的独立站或 AI 工具为应用场景。真实需求和可追踪的用户行为，决定是否继续投入。</p>
+      </div>
+      <div class="takeaways">
+        <article class="takeaway">
+          <div class="takeaway-icon icon-search" aria-hidden="true"></div>
+          <h3>用讨论找产品线索</h3>
+          <p>找具体人群在什么场景下求助、现用方案哪里不够用、他们愿意花多少时间解决。一个高赞帖可以提示方向，多个社区和独立发言的重复问题更适合进入验证。</p>
+          <div class="inline-sources"><a data-source="niko-list">Niko 的社区清单</a><a data-source="yanhua-example">Yanhua 的示例报告</a></div>
+        </article>
+        <article class="takeaway">
+          <div class="takeaway-icon icon-chat" aria-hidden="true"></div>
+          <h3>用社区互动试内容</h3>
+          <p>先按版规回应已经发生的讨论。等我们有可复现的过程、结果或反例，再考虑单独发帖。一个帖子只承担一个目标，例如求反馈、验证具体需求或解释一种做法。</p>
+          <div class="inline-sources"><a data-source="zuo-start">左海的发帖教程</a><a data-source="mimi-start">宓宓的冷启动流程</a></div>
+        </article>
+        <article class="takeaway">
+          <div class="takeaway-icon icon-chart" aria-hidden="true"></div>
+          <h3>用业务数据决定是否放大</h3>
+          <p>曝光看可见性，评论看问题和反馈，访问看引流，激活与付费看业务结果。GEO 和 AI 辅助可以另行测试，分别记录引用变化与节省工时。</p>
+          <div class="inline-sources"><a data-source="karen-traffic">凯伦的站外访问</a><a data-source="cookie-workflow">饼干哥哥的回帖复盘</a></div>
+        </article>
+      </div>
+      <div class="reading-routes">
+        <h3>按当前任务读</h3>
+        <div>
+          <p><strong>第一次参与</strong> <a data-source="zuo-start">左海入门</a> · <a data-source="momo-guide">夏林果踩坑</a> · <a data-source="mimi-start">宓宓 SOP</a></p>
+          <p><strong>在做产品冷启动</strong> <a data-source="niko-list">Niko 选区</a> · <a data-source="iris-30k">Iris 的发布节奏</a> · <a data-source="mimi-guide">宓宓获客复盘</a></p>
+          <p><strong>已有少量稳定反馈</strong> <a data-source="yang-loop">Yangyi 运营复盘</a> · <a data-source="cookie-workflow">人工审阅工作流</a> · <a data-source="yanhua-tool">监测搜索可见性</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell chapter cases" id="cases" aria-labelledby="cases-title">
+      <div class="section-head">
+        <div><p class="eyebrow">案例数据</p><h2 id="cases-title">这些数字能说明什么？</h2></div>
+        <p>数字来自作者记录。每行保留原始指标和观察范围，方便回到原帖核对。</p>
+      </div>
+      <table class="evidence-table">
+        <thead><tr><th scope="col">案例</th><th scope="col">作者报告的结果</th><th scope="col">对我们可用的信号</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><a data-source="iris-30k">生姜 Iris</a></th><td><strong>约 3 万曝光</strong><small>一周 · Reddit 社区运营</small></td><td>适合参考选区和发布节奏，后续看访问和使用数据。</td></tr>
+          <tr><th scope="row"><a data-source="zuo-ban">左海</a></th><td><strong>约 4 万浏览</strong><small>单帖 · 后续遭遇封禁</small></td><td>触达和社区处置是两项独立记录。</td></tr>
+          <tr><th scope="row"><a data-source="momo-first">夏林果</a></th><td><strong>约 6,000 曝光</strong><small>新号首帖 · 站内可见性</small></td><td>可记录首帖早期反馈，再补看读者是否持续讨论。</td></tr>
+          <tr><th scope="row"><a data-source="liang-rust">Coder Liang</a></th><td><strong>73 分、54 条评论</strong><small>单日 · 技术讨论帖</small></td><td>打开 <a data-source="liang-reddit">Reddit 原帖</a> 看评论有没有提供反例或新线索。</td></tr>
+          <tr><th scope="row"><a data-source="karen-traffic">凯伦</a></th><td><strong>近 1,000 次访问</strong><small>单帖 · 网站引荐</small></td><td>这个量级值得单独记账。订单与转化需另行测量。</td></tr>
+          <tr><th scope="row"><a data-source="shrimp-orders">浅水虾</a></th><td><strong>3 单来自其他渠道</strong><small>ChatGPT、Google、Bing</small></td><td>同一站点出现 Reddit 流量时，仍保留逐笔订单的来源。</td></tr>
+          <tr><th scope="row"><a data-source="iris-launch">Iris 的开源发布</a></th><td><strong>约 6,000 GitHub 星标</strong><small>一周 · 多平台共同发布</small></td><td>可参考渠道组合。Reddit 的独立贡献需要单独对照。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="shell chapter" id="library" aria-labelledby="library-title">
+      <div class="section-head">
+        <div><p class="eyebrow">资料索引</p><h2 id="library-title">人物与原帖</h2></div>
+        <p>每条资料附阅读价值。持续实操指已核对到多篇相关实践或工具演示，发帖频率以账号实际动态为准。</p>
+      </div>
+      <form class="library-controls" role="search" aria-label="搜索 Reddit 研究资料">
+        <div class="search-field">
+          <label for="search">关键词</label>
+          <input id="search" type="search" placeholder="搜作者、原帖标题或用途" autocomplete="off">
+        </div>
+        <div class="select-field">
+          <label for="focus">分享类型</label>
+          <select id="focus">
+            <option value="">全部类型</option>
+            <option>系列教程</option>
+            <option>持续实操</option>
+            <option>专题与案例</option>
+          </select>
+        </div>
+      </form>
+      <fieldset class="topic-filter">
+        <legend class="sr-only">按主题筛选</legend>
+        <div id="topic-options" class="topic-options"></div>
+      </fieldset>
+      <div class="library-bar">
+        <p id="result-count" role="status" aria-live="polite"></p>
+        <button id="toggle-library" class="text-button" type="button">展开全部资料</button>
+      </div>
+      <div id="creator-list" class="creator-list"></div>
+      <noscript><p>人物资料索引需要 JavaScript。请启用后重新打开本页。</p></noscript>
+    </section>
+
+    <div class="pilot-background">
+      <section class="shell chapter" id="pilot" aria-labelledby="pilot-title">
+        <div class="section-head">
+          <div><p class="eyebrow">把研究转成行动</p><h2 id="pilot-title">做一个两周试点</h2></div>
+          <p>选一个已经能试用的小产品和一种目标用户。若产品还在想法阶段，先把这两周用于需求访谈和问题验证。</p>
+        </div>
+        <ol class="pilot-steps">
+          <li><span>第 1–3 天</span><h3>建立观察清单</h3><p>选 3 个候选版块，阅读规则与置顶。在近一个月的帖子里记录约 20 条相关原始讨论，归纳重复问题和替代方案。</p></li>
+          <li><span>第 4–7 天</span><h3>用真实回答验证需求</h3><p>挑几条我们确实能帮上的问题，人工回复。记录是否有人补充细节、追问、愿意给反馈，以及回复是否被移除。</p></li>
+          <li><span>第 8–14 天</span><h3>做一次可追踪的发布</h3><p>在允许的版块发一篇有完整证据的经验帖，按要求说明产品关系。用网站引荐或允许使用的 UTM 观察访问和激活。</p></li>
+        </ol>
+        <div class="pilot-details">
+          <article>
+            <h3>该记录什么？</h3>
+            <p>日期、版块、原帖链接、问题原话、现有替代方案、社区规则、采取的行动、是否被移除、回复质量、访问、激活和耗时。没有观测到的指标留空。</p>
+          </article>
+          <article>
+            <h3>什么时候继续？</h3>
+            <p>有多位独立用户反复提到同一痛点，就进入访谈或原型验证。有相关访问却很少激活，先检查受众、落地页和产品门槛。反馈集中在技术争论时，把它当作内容信号。</p>
+          </article>
+          <article>
+            <h3>如何看 SEO / GEO？</h3>
+            <p>固定问题、地区和测试工具，记录发布前基线，并在第 14、30 天重复测。分别看网页搜索排名、AI 答案引用和实际引荐，保留对应链接。</p>
+          </article>
+        </div>
+        <p class="pilot-example"><strong>套到 AI 视频角色工具</strong> 已把三个候选版块、真实求助和 24 次镜头对照方案列在 <a href="#field-research">AI 视频实地调研</a>。</p>
+      </section>
+    </div>
+
+    <section class="shell chapter rules" id="rules" aria-labelledby="rules-title">
+      <div class="section-head">
+        <div><p class="eyebrow">规则与出处</p><h2 id="rules-title">发布前回到官方规则</h2></div>
+        <p>第三方教程反映个人做法和当时的观察。准备参与时，以 Reddit 站规、当前版规及版主说明为准。</p>
+      </div>
+      <ul class="rule-links">
+        <li><div><h3>垃圾信息和自我推广</h3><p>看重复或未经请求的推广如何被处理，以及平台如何建议品牌账号参与。</p></div><a href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">官方 Spam 说明</a></li>
+        <li><div><h3>社区审核与账号门槛</h3><p>版块可以自己设规则。Karma 是参与反馈的一部分，CQS 也可能用于过滤。</p></div><span><a href="https://support.reddithelp.com/hc/en-us/articles/204511829-What-is-karma" target="_blank" rel="noopener noreferrer">Karma</a> · <a href="https://support.reddithelp.com/hc/en-us/articles/19023371170196-What-is-the-Contributor-Quality-Score" target="_blank" rel="noopener noreferrer">CQS</a> · <a href="https://support.reddithelp.com/hc/en-us/articles/15484574206484-Automoderator" target="_blank" rel="noopener noreferrer">Automoderator</a></span></li>
+        <li><div><h3>封禁处理与自动化</h3><p>遇到封禁先查看通知和申诉途径。自动化动作要遵守平台要求，草稿与发布各设人工检查。</p></div><span><a href="https://support.reddithelp.com/hc/en-us/articles/360045734911-My-account-was-banned-for-spam-inauthentic-activity-or-ban-evasion" target="_blank" rel="noopener noreferrer">封禁与申诉</a> · <a href="https://support.reddithelp.com/hc/en-us/articles/53416317564820-Changelog-September-10-2026" target="_blank" rel="noopener noreferrer">自动化执行更新</a></span></li>
+        <li><div><h3>衡量站内自然互动</h3><p>Reddit Pro 能辅助看讨论热度和自然内容表现。站外引荐与转化在自己的分析工具里另记。</p></div><a href="https://www.business.reddit.com/learning-hub/articles/measure-reddit-organic-engagement" target="_blank" rel="noopener noreferrer">Reddit Pro 测量指南</a></li>
+      </ul>
+      <p class="source-note">研究从希平的 10 人名单开始，另查证了宓宓要出海、Niko 和饼干哥哥 AGI 的原始资料。X 账号和文章来自各作者公开页面，日期按北京时间。<a href="https://x.com/xiping_ai/status/2124315678710620390" target="_blank" rel="noopener noreferrer">希平原帖</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner"><span>出海研究笔记 · Reddit 运营实战</span><a href="#top">回到顶部</a></div>
+  </footer>
+</body>
+</html>

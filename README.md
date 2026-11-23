@@ -17,6 +17,7 @@
 | 007 | [Petalwake 实时尾流](projects/007-petalwake/README.md) | 原库用 Three.js、WebGL2 和 GLSL 模拟扫帚尾流，卷起花瓣、水雾，压弯草叶并留下掉瓣轨迹。对我们最有价值的是把参考视频的观感写成可调规则，用固定航线、截图和粒子指标验证改动。 | [引导图](#petalwake-实时尾流引导图) | [在线研究与原版试玩](https://yydshly.github.io/1123_codex_project/007-petalwake/) |
 | 008 | [TanStarter 源码模板研究](projects/008-tanstarter-research/README.md) | TanStarter 接好账号、收款和运营后台，MkImage 在同一底座上实现积分生图、异步任务和作品库。对照七款模板，判断哪些工作值得复用，以及现有 AI 入口该先验证什么。 | [引导图](#tanstarter-源码模板引导图) | [在线研究网页](https://yydshly.github.io/1123_codex_project/008-tanstarter-research/) |
 | 009 | [海堤街景研究](projects/009-coastal-street-study/README.md) | 从《潮线失序》公开试玩拆解海滨氛围、驾驶和路线引导，对照 [《镜海》原库](https://github.com/yydshly/mirror-coast-web)，用 Sidmouth 实拍校准 30 米样段。做成约 130 米的原创街区，可步行上车、沿支路停车下车、使用望远镜并汇回主街。 | [引导图](#海堤街景研究引导图) | [在线研究](https://yydshly.github.io/1123_codex_project/009-coastal-street-study/) · [3D 试玩](https://yydshly.github.io/1123_codex_project/009-coastal-street-study/demo/) |
+| 010 | [Reddit 运营实战研究](projects/010-reddit-ops-research/README.md) | 整理 13 位中文创作者的 37 条运营资料，核对 3 个版块与 12 条 AI 视频角色相关原帖，提炼 5 类重复痛点。把双人对白问题做成首轮对照测试，用创作者实际选型和重做判断决定先做选型库还是镜头验收工具。 | [引导图](#reddit-运营实战引导图) | [在线研究网页](https://yydshly.github.io/1123_codex_project/010-reddit-ops-research/) |
 
 ## Motion2MixamoRig 引导图
 
@@ -71,6 +72,12 @@
 [![海堤街景研究引导图，从《潮线失序》和《镜海》拆解环境与玩法，展示提示词、实机动线和可复用价值](projects/009-coastal-street-study/web/assets/coastal-street-research-summary.png)](projects/009-coastal-street-study/web/assets/coastal-street-research-summary.png)
 
 从参考游戏和街景实拍提取能执行的尺度、材质、交互与验收约束，再沿同一路线实机检查驾驶、停靠和观景。 [研究详情](projects/009-coastal-street-study/README.md) · [在线试玩](https://yydshly.github.io/1123_codex_project/009-coastal-street-study/demo/)
+
+## Reddit 运营实战引导图
+
+[![Reddit 的四步调研用法、值得关注的四类用户，以及 AI 视频角色工具的首轮验证方案](projects/010-reddit-ops-research/web/reddit-overview.png)](projects/010-reddit-ops-research/web/reddit-overview.png)
+
+社群帮助我们找到人，原帖和评论提供任务、失败与替代做法。图中把这些证据连接到双人对白实测，说明如何用创作者的实际使用行为决定先做选型库还是镜头验收工具。[研究详情](projects/010-reddit-ops-research/README.md) · [在线研究网页](https://yydshly.github.io/1123_codex_project/010-reddit-ops-research/) · [高清 PNG](projects/010-reddit-ops-research/web/reddit-overview.png)
 
 ## 收录约定
 

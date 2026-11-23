@@ -16,6 +16,7 @@ AI_PRODUCT_RADAR = "006-ai-product-radar"
 PETALWAKE = "007-petalwake"
 TANSTARTER_RESEARCH = "008-tanstarter-research"
 COASTAL_STUDY = "009-coastal-street-study"
+REDDIT_RESEARCH = "010-reddit-ops-research"
 REPOSITORY = "https://github.com/yydshly/1123_codex_project"
 SOURCE = ROOT / "projects" / PROJECT
 STATIC_SUFFIXES = {
@@ -85,6 +86,7 @@ def build(output):
     copy_static_site(ROOT / "projects" / TANSTARTER_RESEARCH / "web", output / TANSTARTER_RESEARCH)
     copy_static_site(coastal_source / "web", output / COASTAL_STUDY)
     copytree(coastal_dist, output / COASTAL_STUDY / "demo")
+    copy_static_site(ROOT / "projects" / REDDIT_RESEARCH / "web", output / REDDIT_RESEARCH)
 
 
 if __name__ == "__main__":

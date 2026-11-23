@@ -13,6 +13,7 @@ on:
       - 'projects/007-petalwake/**'
       - 'projects/008-tanstarter-research/**'
       - 'projects/009-coastal-street-study/**'
+      - 'projects/010-reddit-ops-research/**'
       - 'scripts/build_pages.py'
   workflow_dispatch:
 
